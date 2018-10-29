@@ -302,7 +302,7 @@ public class FoodGUI extends javax.swing.JFrame {
     public boolean checkMenu(String foodname){
         for(int i=0; i<model.getRowCount(); i++){
             if(model.getValueAt(i, 1).equals(foodname)){
-                System.out.println("ซ้ำ");
+//                System.out.println("ซ้ำ");
                 return true;
             }            
         }
