@@ -34,6 +34,7 @@ public class FoodGUI extends javax.swing.JFrame {
     /**
      * Creates new form FoodGUI
      */
+    
     public FoodGUI() {
         initComponents();
         pmf = new PanelMainFood(this);
@@ -55,7 +56,7 @@ public class FoodGUI extends javax.swing.JFrame {
         column_table = new Object[3];
         column_table[0] = "Qty";
         column_table[1] = "Product";
-        column_table[2] = "รวม";
+        column_table[2] = "ราคารวม";
         model = new DefaultTableModel();
         model.setColumnIdentifiers(column_table);
         jTable1.setModel(model);
@@ -298,7 +299,23 @@ public class FoodGUI extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-    
+    public boolean checkMenu(String foodname){
+        for(int i=0; i<model.getRowCount(); i++){
+            if(model.getValueAt(i, 1).equals(foodname)){
+                System.out.println("ซ้ำ");
+                return true;
+            }            
+        }
+        return false;
+    }
+    public int checkRowDuplicate(String foodname){
+        for(int i=0; i<model.getRowCount(); i++){
+            if(model.getValueAt(i, 1).equals(foodname)){
+                return i;
+            }            
+        }
+        return 0;
+    }
 
     /**
      * @param args the command line arguments

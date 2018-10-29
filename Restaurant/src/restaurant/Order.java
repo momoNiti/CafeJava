@@ -21,7 +21,7 @@ public class Order {
     public int getOrderNumber() {
         return orderNumber;
     }
-
+    
     public void setOrderNumber(int orderNumber) {
         this.orderNumber = orderNumber;
     }

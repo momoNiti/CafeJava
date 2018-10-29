@@ -188,14 +188,19 @@ public class PanelMainFood extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        
-        row_table[0] = "1";
+        row_table[0] = 1;
         row_table[1] = "Name";
-        row_table[2] = ".";
+        row_table[2] = 1;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
 //        row_table[3] = new Boolean(true);
-        fg.addRowTable(row_table);
-        jButton1.setEnabled(false);
+//        jButton1.setEnabled(false);
 //        System.out.println(fg.getValue(row, column));
 
         
