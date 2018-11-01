@@ -42,30 +42,38 @@ public class PanelDrink extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
 
         jLabel1.setText("Drink");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("อิตตาเลี่ยนโซดา");
 
-        jButton2.setText("jButton2");
+        jButton2.setText("กรีนทีมัคคิอาโต้");
 
-        jButton3.setText("jButton3");
+        jButton3.setText("ยูนิคอร์นเฟรปเป้");
 
-        jButton4.setText("jButton4");
+        jButton4.setText("ดับเบิ้ลช็อกโก้");
 
-        jButton5.setText("jButton5");
+        jButton5.setText("น้ำเปล่า");
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("59");
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("69");
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("79");
 
-        jLabel5.setText("jLabel5");
+        jLabel5.setText("89");
 
-        jLabel6.setText("jLabel6");
+        jLabel6.setText("95");
 
-        jLabel7.setText("jLabel7");
+        jLabel7.setText("15");
+
+        jButton6.setText("นมอัญชัญ");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -83,7 +91,8 @@ public class PanelDrink extends javax.swing.JPanel {
                             .addComponent(jButton2)
                             .addComponent(jButton3)
                             .addComponent(jButton4)
-                            .addComponent(jButton5))
+                            .addComponent(jButton5)
+                            .addComponent(jButton6))
                         .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
@@ -92,16 +101,18 @@ public class PanelDrink extends javax.swing.JPanel {
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
                             .addComponent(jLabel4))))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(14, 14, 14)
-                .addComponent(jLabel2)
-                .addGap(14, 14, 14)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jButton6))
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jLabel3))
@@ -125,6 +136,10 @@ public class PanelDrink extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -132,6 +147,7 @@ public class PanelDrink extends javax.swing.JPanel {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

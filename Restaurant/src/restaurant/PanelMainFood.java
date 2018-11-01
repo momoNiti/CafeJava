@@ -61,48 +61,58 @@ public class PanelMainFood extends javax.swing.JPanel {
 
         jLabel1.setText("Main Course");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("ฮันนี่โทสต์มะม่วง");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("jButton2");
+        jButton2.setText("แพนเค้กราสเบอร์รี่");
 
-        jButton3.setText("jButton3");
+        jButton3.setText("วาฟเฟิลไอศกรีม");
 
-        jButton4.setText("jButton4");
+        jButton4.setText("ช็อกโกแลตลาวา");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("jButton5");
+        jButton5.setText("เฟรนช์โทสต์ราสป์เบอร์รี่");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("jButton6");
+        jButton6.setText("เครปข้าวเหนียวมะม่วง");
 
-        jButton7.setText("jButton7");
+        jButton7.setText("โมจิหยดน้ำ");
 
-        jButton8.setText("jButton8");
+        jButton8.setText("สปาเก็ตตี้คาโบนาร่า");
 
-        jButton9.setText("jButton9");
+        jButton9.setText("สปาเก็ตตี้ขี้เมาทะเล");
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("259");
 
         jLabel3.setText("ราคา");
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("159");
 
-        jLabel5.setText("jLabel5");
+        jLabel5.setText("239");
 
-        jLabel6.setText("jLabel6");
+        jLabel6.setText("85");
 
-        jLabel7.setText("jLabel7");
+        jLabel7.setText("129");
 
-        jLabel8.setText("jLabel8");
+        jLabel8.setText("129");
 
-        jLabel9.setText("jLabel9");
+        jLabel9.setText("129");
 
-        jLabel10.setText("jLabel10");
+        jLabel10.setText("189");
 
-        jLabel11.setText("jLabel11");
+        jLabel11.setText("199");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -137,7 +147,7 @@ public class PanelMainFood extends javax.swing.JPanel {
                             .addComponent(jLabel4)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,6 +215,14 @@ public class PanelMainFood extends javax.swing.JPanel {
 
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     // Variables declaration - 
 

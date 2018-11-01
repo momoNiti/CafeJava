@@ -48,31 +48,36 @@ public class PanelSnack extends javax.swing.JPanel {
 
         jLabel1.setText("Snack");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("เฟรนฟราย");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        jButton2.setText("เฟรนฟรายชีส");
 
-        jButton3.setText("jButton3");
+        jButton3.setText("มันบด");
 
-        jButton4.setText("jButton4");
+        jButton4.setText("มันบดอบชีส");
 
-        jButton5.setText("jButton5");
+        jButton5.setText("ผักขมอบชีส");
 
-        jButton6.setText("jButton6");
+        jButton6.setText("ขนมปังกระเทียม");
 
         jLabel2.setText("ราคา");
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("49");
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("79");
 
-        jLabel5.setText("jLabel5");
+        jLabel5.setText("35");
 
-        jLabel6.setText("jLabel6");
+        jLabel6.setText("59");
 
-        jLabel7.setText("jLabel7");
+        jLabel7.setText("69");
 
-        jLabel8.setText("jLabel8");
+        jLabel8.setText("39");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -103,7 +108,7 @@ public class PanelSnack extends javax.swing.JPanel {
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel4))))))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,6 +144,10 @@ public class PanelSnack extends javax.swing.JPanel {
                 .addContainerGap(227, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
