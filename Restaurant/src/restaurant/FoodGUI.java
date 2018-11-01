@@ -217,13 +217,13 @@ public class FoodGUI extends javax.swing.JFrame {
         pos_PanelLayout.setHorizontalGroup(
             pos_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pos_PanelLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(49, 49, 49)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(DynamicPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         pos_PanelLayout.setVerticalGroup(
             pos_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,7 +237,7 @@ public class FoodGUI extends javax.swing.JFrame {
                         .addGroup(pos_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(DynamicPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -245,36 +245,35 @@ public class FoodGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1244, 1244, 1244)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(pos_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(pos_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(pos_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jLabel1)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(579, 579, 579)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(pos_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMainFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFoodActionPerformed
+    private void jDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDrinkActionPerformed
         // TODO add your handling code here:
-        if(evt.getSource() == jMainFood){
-            pmf.setVisible(true);
+        if(evt.getSource() == jDrink){
+            pmf.setVisible(false);
             ps.setVisible(false);
-            pd.setVisible(false);
+            pd.setVisible(true);
         }
-    }//GEN-LAST:event_jMainFoodActionPerformed
+    }//GEN-LAST:event_jDrinkActionPerformed
 
     private void jSnackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSnackActionPerformed
         // TODO add your handling code here:
@@ -285,14 +284,29 @@ public class FoodGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jSnackActionPerformed
 
-    private void jDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDrinkActionPerformed
+    private void jMainFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFoodActionPerformed
         // TODO add your handling code here:
-        if(evt.getSource() == jDrink){
-            pmf.setVisible(false);
+        if(evt.getSource() == jMainFood){
+            pmf.setVisible(true);
             ps.setVisible(false);
-            pd.setVisible(true);
+            pd.setVisible(false);
         }
-    }//GEN-LAST:event_jDrinkActionPerformed
+    }//GEN-LAST:event_jMainFoodActionPerformed
+
+    private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jSubmitActionPerformed
+
+    private void jDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteActionPerformed
+        // TODO add your handling code here:
+        row_delete = pos_jTable.getSelectedRow();
+        if(row_delete>=0){
+            model.removeRow(row_delete);
+        }
+        else{
+            System.out.println("Cant delete");
+        }
+    }//GEN-LAST:event_jDeleteActionPerformed
     
     public void addRowTable(Object row_table){
         model.addRow((Object[]) row_table);
@@ -307,22 +321,7 @@ public class FoodGUI extends javax.swing.JFrame {
     }
     public int getRowDelete(){
         return row_delete;
-    }
-    private void jDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteActionPerformed
-        // TODO add your handling code here:
-        row_delete = pos_jTable.getSelectedRow();
-        if(row_delete>=0){
-            model.removeRow(row_delete);
-        }
-        else{
-            System.out.println("Cant delete");
-        }
-    }//GEN-LAST:event_jDeleteActionPerformed
-
-    private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jSubmitActionPerformed
-    public boolean checkMenu(String foodname){
+    }    public boolean checkMenu(String foodname){
         for(int i=0; i<model.getRowCount(); i++){
             if(model.getValueAt(i, 1).equals(foodname)){
 //                System.out.println("ซ้ำ");
