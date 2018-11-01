@@ -18,7 +18,7 @@ public class PanelDrink extends javax.swing.JPanel {
     public PanelDrink(FoodGUI fg) {
         this.fg = fg;
         initComponents();
-        row_table = new Object[4];
+        row_table = new Object[3];
     }
 
     /** This method is called from within the constructor to
@@ -31,18 +31,18 @@ public class PanelDrink extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        italianSoda_b = new javax.swing.JButton();
+        greenTeaMacchiato_b = new javax.swing.JButton();
+        unicornFrappe_b = new javax.swing.JButton();
+        doubleChoco_b = new javax.swing.JButton();
+        water_b = new javax.swing.JButton();
+        freshMilkXButterflyPea_p = new javax.swing.JLabel();
+        italianSoda_p = new javax.swing.JLabel();
+        greenTeaMacchiato_p = new javax.swing.JLabel();
+        unicornFrappe_p = new javax.swing.JLabel();
+        doubleChoco_p = new javax.swing.JLabel();
+        water_p = new javax.swing.JLabel();
+        freshMilkXButterflyPea_b = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -53,32 +53,57 @@ public class PanelDrink extends javax.swing.JPanel {
 
         jLabel1.setText("Drink");
 
-        jButton1.setText("อิตตาเลี่ยนโซดา");
-
-        jButton2.setText("กรีนทีมัคคิอาโต้");
-
-        jButton3.setText("ยูนิคอร์นเฟรปเป้");
-
-        jButton4.setText("ดับเบิ้ลช็อกโก้");
-
-        jButton5.setText("น้ำเปล่า");
-
-        jLabel2.setText("59");
-
-        jLabel3.setText("69");
-
-        jLabel4.setText("79");
-
-        jLabel5.setText("89");
-
-        jLabel6.setText("95");
-
-        jLabel7.setText("15");
-
-        jButton6.setText("นมอัญชัญ");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        italianSoda_b.setText("อิตตาเลี่ยนโซดา");
+        italianSoda_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                italianSoda_bActionPerformed(evt);
+            }
+        });
+
+        greenTeaMacchiato_b.setText("กรีนทีมัคคิอาโต้");
+        greenTeaMacchiato_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                greenTeaMacchiato_bActionPerformed(evt);
+            }
+        });
+
+        unicornFrappe_b.setText("ยูนิคอร์นเฟรปเป้");
+        unicornFrappe_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                unicornFrappe_bActionPerformed(evt);
+            }
+        });
+
+        doubleChoco_b.setText("ดับเบิ้ลช็อกโก้");
+        doubleChoco_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                doubleChoco_bActionPerformed(evt);
+            }
+        });
+
+        water_b.setText("น้ำเปล่า");
+        water_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                water_bActionPerformed(evt);
+            }
+        });
+
+        freshMilkXButterflyPea_p.setText("59");
+
+        italianSoda_p.setText("69");
+
+        greenTeaMacchiato_p.setText("79");
+
+        unicornFrappe_p.setText("89");
+
+        doubleChoco_p.setText("95");
+
+        water_p.setText("15");
+
+        freshMilkXButterflyPea_b.setText("นมอัญชัน");
+        freshMilkXButterflyPea_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                freshMilkXButterflyPea_bActionPerformed(evt);
             }
         });
 
@@ -111,20 +136,20 @@ public class PanelDrink extends javax.swing.JPanel {
                             .addComponent(jLabel8)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1)
-                                    .addComponent(jButton2)
-                                    .addComponent(jButton3)
-                                    .addComponent(jButton4)
-                                    .addComponent(jButton5)
-                                    .addComponent(jButton6))
+                                    .addComponent(italianSoda_b)
+                                    .addComponent(greenTeaMacchiato_b)
+                                    .addComponent(unicornFrappe_b)
+                                    .addComponent(doubleChoco_b)
+                                    .addComponent(water_b)
+                                    .addComponent(freshMilkXButterflyPea_b))
                                 .addGap(42, 42, 42)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4))))
+                                    .addComponent(water_p)
+                                    .addComponent(doubleChoco_p)
+                                    .addComponent(unicornFrappe_p)
+                                    .addComponent(italianSoda_p)
+                                    .addComponent(freshMilkXButterflyPea_p)
+                                    .addComponent(greenTeaMacchiato_p))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
@@ -144,64 +169,156 @@ public class PanelDrink extends javax.swing.JPanel {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jButton6)
+                    .addComponent(freshMilkXButterflyPea_p)
+                    .addComponent(freshMilkXButterflyPea_b)
                     .addComponent(jLabel9))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel3)
+                    .addComponent(italianSoda_b)
+                    .addComponent(italianSoda_p)
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jLabel4)
+                    .addComponent(greenTeaMacchiato_b)
+                    .addComponent(greenTeaMacchiato_p)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jLabel5)
+                    .addComponent(unicornFrappe_b)
+                    .addComponent(unicornFrappe_p)
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jLabel6)
+                    .addComponent(doubleChoco_b)
+                    .addComponent(doubleChoco_p)
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jLabel7)
+                    .addComponent(water_b)
+                    .addComponent(water_p)
                     .addComponent(jLabel14))
                 .addContainerGap(229, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void freshMilkXButterflyPea_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freshMilkXButterflyPea_bActionPerformed
+       double price = Double.parseDouble(freshMilkXButterflyPea_p.getText());
+        row_table[0] = 1;
+        row_table[1] = freshMilkXButterflyPea_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_freshMilkXButterflyPea_bActionPerformed
+
+    private void italianSoda_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_italianSoda_bActionPerformed
+        double price = Double.parseDouble(italianSoda_p.getText());
+        row_table[0] = 1;
+        row_table[1] = italianSoda_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_italianSoda_bActionPerformed
+
+    private void greenTeaMacchiato_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_greenTeaMacchiato_bActionPerformed
+        double price = Double.parseDouble(greenTeaMacchiato_p.getText());
+        row_table[0] = 1;
+        row_table[1] = greenTeaMacchiato_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_greenTeaMacchiato_bActionPerformed
+
+    private void unicornFrappe_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unicornFrappe_bActionPerformed
+        double price = Double.parseDouble(unicornFrappe_p.getText());
+        row_table[0] = 1;
+        row_table[1] = unicornFrappe_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_unicornFrappe_bActionPerformed
+
+    private void doubleChoco_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doubleChoco_bActionPerformed
+        double price = Double.parseDouble(doubleChoco_p.getText());
+        row_table[0] = 1;
+        row_table[1] = doubleChoco_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_doubleChoco_bActionPerformed
+
+    private void water_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_water_bActionPerformed
+        double price = Double.parseDouble(water_p.getText());
+        row_table[0] = 1;
+        row_table[1] = water_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_water_bActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton doubleChoco_b;
+    private javax.swing.JLabel doubleChoco_p;
+    private javax.swing.JButton freshMilkXButterflyPea_b;
+    private javax.swing.JLabel freshMilkXButterflyPea_p;
+    private javax.swing.JButton greenTeaMacchiato_b;
+    private javax.swing.JLabel greenTeaMacchiato_p;
+    private javax.swing.JButton italianSoda_b;
+    private javax.swing.JLabel italianSoda_p;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton unicornFrappe_b;
+    private javax.swing.JLabel unicornFrappe_p;
+    private javax.swing.JButton water_b;
+    private javax.swing.JLabel water_p;
     // End of variables declaration//GEN-END:variables
 
 }

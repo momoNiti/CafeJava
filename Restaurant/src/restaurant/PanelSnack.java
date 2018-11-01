@@ -294,7 +294,7 @@ public class PanelSnack extends javax.swing.JPanel {
         }
         else{
             fg.addRowTable(row_table);
-        }        // TODO add your handling code here:
+        }
     }//GEN-LAST:event_garlicBread_bActionPerformed
 
 
