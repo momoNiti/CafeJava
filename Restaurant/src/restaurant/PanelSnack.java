@@ -19,7 +19,7 @@ public class PanelSnack extends javax.swing.JPanel {
     public PanelSnack(FoodGUI fg) {
         this.fg = fg;
         initComponents();
-        row_table = new Object[4];
+        row_table = new Object[3];
     }
 
     /**
@@ -32,19 +32,19 @@ public class PanelSnack extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        frenchFries_b = new javax.swing.JButton();
+        frenchFriesCheese_b = new javax.swing.JButton();
+        mashPotato_b = new javax.swing.JButton();
+        mashPotatoXCornCheese_b = new javax.swing.JButton();
+        bakedSpinachXCheese_b = new javax.swing.JButton();
+        garlicBread_b = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        frenchFries_p = new javax.swing.JLabel();
+        frenchFriesCheese_p = new javax.swing.JLabel();
+        mashPotato_p = new javax.swing.JLabel();
+        mashPotatoXCornCheese_p = new javax.swing.JLabel();
+        bakedSpinachXCheese_p = new javax.swing.JLabel();
+        garlicBread_p = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -54,36 +54,61 @@ public class PanelSnack extends javax.swing.JPanel {
 
         jLabel1.setText("Snack");
 
-        jButton1.setText("เฟรนฟราย");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        frenchFries_b.setText("เฟรนฟราย");
+        frenchFries_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                frenchFries_bActionPerformed(evt);
             }
         });
 
-        jButton2.setText("เฟรนฟรายชีส");
+        frenchFriesCheese_b.setText("เฟรนฟรายชีส");
+        frenchFriesCheese_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                frenchFriesCheese_bActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("มันบด");
+        mashPotato_b.setText("มันบด");
+        mashPotato_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mashPotato_bActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("มันบดอบชีส");
+        mashPotatoXCornCheese_b.setText("มันบดอบชีส");
+        mashPotatoXCornCheese_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mashPotatoXCornCheese_bActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("ผักขมอบชีส");
+        bakedSpinachXCheese_b.setText("ผักโขมอบชีส");
+        bakedSpinachXCheese_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bakedSpinachXCheese_bActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("ขนมปังกระเทียม");
+        garlicBread_b.setText("ขนมปังกระเทียม");
+        garlicBread_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                garlicBread_bActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("ราคา");
 
-        jLabel3.setText("49");
+        frenchFries_p.setText("49");
 
-        jLabel4.setText("79");
+        frenchFriesCheese_p.setText("79");
 
-        jLabel5.setText("35");
+        mashPotato_p.setText("35");
 
-        jLabel6.setText("59");
+        mashPotatoXCornCheese_p.setText("59");
 
-        jLabel7.setText("69");
+        bakedSpinachXCheese_p.setText("69");
 
-        jLabel8.setText("39");
+        garlicBread_p.setText("39");
 
         jLabel9.setText("บาท");
 
@@ -109,20 +134,20 @@ public class PanelSnack extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton1)
-                                .addComponent(jButton2)
-                                .addComponent(jButton3)
-                                .addComponent(jButton4)
-                                .addComponent(jButton5)
-                                .addComponent(jButton6)))
+                                .addComponent(frenchFries_b)
+                                .addComponent(frenchFriesCheese_b)
+                                .addComponent(mashPotato_b)
+                                .addComponent(mashPotatoXCornCheese_b)
+                                .addComponent(bakedSpinachXCheese_b)
+                                .addComponent(garlicBread_b)))
                         .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))))
+                            .addComponent(garlicBread_p)
+                            .addComponent(bakedSpinachXCheese_p)
+                            .addComponent(mashPotatoXCornCheese_p)
+                            .addComponent(mashPotato_p)
+                            .addComponent(frenchFries_p)
+                            .addComponent(frenchFriesCheese_p))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
@@ -142,50 +167,146 @@ public class PanelSnack extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel3)
+                    .addComponent(frenchFries_b)
+                    .addComponent(frenchFries_p)
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jLabel4)
+                    .addComponent(frenchFriesCheese_b)
+                    .addComponent(frenchFriesCheese_p)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jLabel5)
+                    .addComponent(mashPotato_b)
+                    .addComponent(mashPotato_p)
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jLabel6)
+                    .addComponent(mashPotatoXCornCheese_b)
+                    .addComponent(mashPotatoXCornCheese_p)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jLabel7)
+                    .addComponent(bakedSpinachXCheese_b)
+                    .addComponent(bakedSpinachXCheese_p)
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(jLabel8)
+                    .addComponent(garlicBread_b)
+                    .addComponent(garlicBread_p)
                     .addComponent(jLabel14))
                 .addContainerGap(227, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void frenchFries_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frenchFries_bActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        double price = Double.parseDouble(frenchFries_p.getText());
+        row_table[0] = 1;
+        row_table[1] = frenchFries_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_frenchFries_bActionPerformed
+
+    private void frenchFriesCheese_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frenchFriesCheese_bActionPerformed
+        // TODO add your handling code here:
+        double price = Double.parseDouble(frenchFriesCheese_p.getText());
+        row_table[0] = 1;
+        row_table[1] = frenchFriesCheese_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_frenchFriesCheese_bActionPerformed
+
+    private void mashPotato_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mashPotato_bActionPerformed
+        double price = Double.parseDouble(mashPotato_p.getText());
+        row_table[0] = 1;
+        row_table[1] = mashPotato_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_mashPotato_bActionPerformed
+
+    private void mashPotatoXCornCheese_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mashPotatoXCornCheese_bActionPerformed
+        double price = Double.parseDouble(mashPotatoXCornCheese_p.getText());
+        row_table[0] = 1;
+        row_table[1] = mashPotatoXCornCheese_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_mashPotatoXCornCheese_bActionPerformed
+
+    private void bakedSpinachXCheese_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bakedSpinachXCheese_bActionPerformed
+        double price = Double.parseDouble(bakedSpinachXCheese_p.getText());
+        row_table[0] = 1;
+        row_table[1] = bakedSpinachXCheese_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_bakedSpinachXCheese_bActionPerformed
+
+    private void garlicBread_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_garlicBread_bActionPerformed
+        double price = Double.parseDouble(garlicBread_p.getText());
+        row_table[0] = 1;
+        row_table[1] = garlicBread_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_garlicBread_bActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton bakedSpinachXCheese_b;
+    private javax.swing.JLabel bakedSpinachXCheese_p;
+    private javax.swing.JButton frenchFriesCheese_b;
+    private javax.swing.JLabel frenchFriesCheese_p;
+    private javax.swing.JButton frenchFries_b;
+    private javax.swing.JLabel frenchFries_p;
+    private javax.swing.JButton garlicBread_b;
+    private javax.swing.JLabel garlicBread_p;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -193,12 +314,10 @@ public class PanelSnack extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton mashPotatoXCornCheese_b;
+    private javax.swing.JLabel mashPotatoXCornCheese_p;
+    private javax.swing.JButton mashPotato_b;
+    private javax.swing.JLabel mashPotato_p;
     // End of variables declaration//GEN-END:variables
 }

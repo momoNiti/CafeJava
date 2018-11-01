@@ -16,8 +16,6 @@ import javax.swing.table.TableCellRenderer;
 public class PanelMainFood extends javax.swing.JPanel {
     Object[] row_table;
     private FoodGUI fg;
-//    JRadioButton rb;
-
     /**
      * Creates new form PanelMainFood
      */
@@ -25,8 +23,6 @@ public class PanelMainFood extends javax.swing.JPanel {
         this.fg = fg;
         initComponents();
         row_table = new Object[3];
-//        rb = new JRadioButton();
-        
     }
 
     /**
