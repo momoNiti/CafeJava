@@ -41,24 +41,24 @@ public class PanelMainFood extends javax.swing.JPanel {
         jLabel17 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         honeyTostMango_b = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        rasberryPancake_b = new javax.swing.JButton();
+        icecremeWaffle_b = new javax.swing.JButton();
+        chocolateLava_b = new javax.swing.JButton();
+        rasberryFrenchTost_b = new javax.swing.JButton();
+        mangoStickyRiceCrepe_b = new javax.swing.JButton();
+        mojiWater_b = new javax.swing.JButton();
+        spaghettiCarbonara_b = new javax.swing.JButton();
+        spaghettiSpicyXSeafood_b = new javax.swing.JButton();
         honeyTostMango_p = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        rasberryPancake_p = new javax.swing.JLabel();
+        icecremeWaffle_p = new javax.swing.JLabel();
+        chocolateLava_p = new javax.swing.JLabel();
+        rasberryFrenchTost_p = new javax.swing.JLabel();
+        mangoStickyRiceCrepe_p = new javax.swing.JLabel();
+        mojiWater_p = new javax.swing.JLabel();
+        spaghettiCarbonara_p = new javax.swing.JLabel();
+        spaghettiSpicyXSeafood_p = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -80,51 +80,81 @@ public class PanelMainFood extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setText("แพนเค้กราสเบอร์รี่");
-
-        jButton3.setText("วาฟเฟิลไอศกรีม");
-
-        jButton4.setText("ช็อกโกแลตลาวา");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        rasberryPancake_b.setText("แพนเค้กราสเบอร์รี่");
+        rasberryPancake_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                rasberryPancake_bActionPerformed(evt);
             }
         });
 
-        jButton5.setText("เฟรนช์โทสต์ราสป์เบอร์รี่");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        icecremeWaffle_b.setText("วาฟเฟิลไอศกรีม");
+        icecremeWaffle_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                icecremeWaffle_bActionPerformed(evt);
             }
         });
 
-        jButton6.setText("เครปข้าวเหนียวมะม่วง");
+        chocolateLava_b.setText("ช็อกโกแลตลาวา");
+        chocolateLava_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chocolateLava_bActionPerformed(evt);
+            }
+        });
 
-        jButton7.setText("โมจิหยดน้ำ");
+        rasberryFrenchTost_b.setText("เฟรนช์โทสต์ราสป์เบอร์รี่");
+        rasberryFrenchTost_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rasberryFrenchTost_bActionPerformed(evt);
+            }
+        });
 
-        jButton8.setText("สปาเก็ตตี้คาโบนาร่า");
+        mangoStickyRiceCrepe_b.setText("เครปข้าวเหนียวมะม่วง");
+        mangoStickyRiceCrepe_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mangoStickyRiceCrepe_bActionPerformed(evt);
+            }
+        });
 
-        jButton9.setText("สปาเก็ตตี้ขี้เมาทะเล");
+        mojiWater_b.setText("โมจิหยดน้ำ");
+        mojiWater_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mojiWater_bActionPerformed(evt);
+            }
+        });
+
+        spaghettiCarbonara_b.setText("สปาเก็ตตี้คาโบนาร่า");
+        spaghettiCarbonara_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spaghettiCarbonara_bActionPerformed(evt);
+            }
+        });
+
+        spaghettiSpicyXSeafood_b.setText("สปาเก็ตตี้ขี้เมาทะเล");
+        spaghettiSpicyXSeafood_b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spaghettiSpicyXSeafood_bActionPerformed(evt);
+            }
+        });
 
         honeyTostMango_p.setText("259");
 
         jLabel3.setText("ราคา");
 
-        jLabel4.setText("159");
+        rasberryPancake_p.setText("159");
 
-        jLabel5.setText("239");
+        icecremeWaffle_p.setText("239");
 
-        jLabel6.setText("85");
+        chocolateLava_p.setText("85");
 
-        jLabel7.setText("129");
+        rasberryFrenchTost_p.setText("129");
 
-        jLabel8.setText("129");
+        mangoStickyRiceCrepe_p.setText("129");
 
-        jLabel9.setText("129");
+        mojiWater_p.setText("129");
 
-        jLabel10.setText("189");
+        spaghettiCarbonara_p.setText("189");
 
-        jLabel11.setText("199");
+        spaghettiSpicyXSeafood_p.setText("199");
 
         jLabel12.setText("บาท");
 
@@ -157,43 +187,43 @@ public class PanelMainFood extends javax.swing.JPanel {
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(honeyTostMango_b)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4)
-                            .addComponent(jButton5)
-                            .addComponent(jButton6)
-                            .addComponent(jButton7)
-                            .addComponent(jButton8)
-                            .addComponent(jButton9))
+                            .addComponent(rasberryPancake_b)
+                            .addComponent(icecremeWaffle_b)
+                            .addComponent(chocolateLava_b)
+                            .addComponent(rasberryFrenchTost_b)
+                            .addComponent(mangoStickyRiceCrepe_b)
+                            .addComponent(mojiWater_b)
+                            .addComponent(spaghettiCarbonara_b)
+                            .addComponent(spaghettiSpicyXSeafood_b))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel11)
+                                    .addComponent(spaghettiSpicyXSeafood_p)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel21))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel10)
+                                    .addComponent(spaghettiCarbonara_p)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel20))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel9)
+                                    .addComponent(mojiWater_p)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel19))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel8)
+                                    .addComponent(mangoStickyRiceCrepe_p)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel16))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel7)
+                                    .addComponent(rasberryFrenchTost_p)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel18))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
+                                    .addComponent(icecremeWaffle_p)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel14))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
+                                    .addComponent(rasberryPancake_p)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel12))
                                 .addGroup(layout.createSequentialGroup()
@@ -201,7 +231,7 @@ public class PanelMainFood extends javax.swing.JPanel {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel13)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
+                                .addComponent(chocolateLava_p)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel15))
                             .addComponent(jLabel3))))
@@ -221,50 +251,50 @@ public class PanelMainFood extends javax.swing.JPanel {
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jLabel4)
+                    .addComponent(rasberryPancake_b)
+                    .addComponent(rasberryPancake_p)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jLabel5)
+                    .addComponent(icecremeWaffle_b)
+                    .addComponent(icecremeWaffle_p)
                     .addComponent(jLabel14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jLabel6)
+                    .addComponent(chocolateLava_b)
+                    .addComponent(chocolateLava_p)
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jLabel7)
+                    .addComponent(rasberryFrenchTost_b)
+                    .addComponent(rasberryFrenchTost_p)
                     .addComponent(jLabel18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(jLabel8)
+                    .addComponent(mangoStickyRiceCrepe_b)
+                    .addComponent(mangoStickyRiceCrepe_p)
                     .addComponent(jLabel16))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jLabel9)
+                    .addComponent(mojiWater_b)
+                    .addComponent(mojiWater_p)
                     .addComponent(jLabel19))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8)
-                    .addComponent(jLabel10)
+                    .addComponent(spaghettiCarbonara_b)
+                    .addComponent(spaghettiCarbonara_p)
                     .addComponent(jLabel20))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9)
-                    .addComponent(jLabel11)
+                    .addComponent(spaghettiSpicyXSeafood_b)
+                    .addComponent(spaghettiSpicyXSeafood_p)
                     .addComponent(jLabel21))
                 .addContainerGap(123, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void honeyTostMango_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_honeyTostMango_bActionPerformed
-        // TODO add your handling code here:
+
         double price = Double.parseDouble(honeyTostMango_p.getText());
         row_table[0] = 1;
         row_table[1] = honeyTostMango_b.getText();
@@ -281,30 +311,150 @@ public class PanelMainFood extends javax.swing.JPanel {
 
     }//GEN-LAST:event_honeyTostMango_bActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void chocolateLava_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chocolateLava_bActionPerformed
+        double price = Double.parseDouble(chocolateLava_p.getText());
+        row_table[0] = 1;
+        row_table[1] = chocolateLava_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_chocolateLava_bActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void rasberryFrenchTost_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rasberryFrenchTost_bActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        double price = Double.parseDouble(rasberryFrenchTost_p.getText());
+        row_table[0] = 1;
+        row_table[1] = rasberryFrenchTost_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_rasberryFrenchTost_bActionPerformed
+
+    private void rasberryPancake_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rasberryPancake_bActionPerformed
+        double price = Double.parseDouble(rasberryPancake_p.getText());
+        row_table[0] = 1;
+        row_table[1] = rasberryPancake_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_rasberryPancake_bActionPerformed
+
+    private void icecremeWaffle_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_icecremeWaffle_bActionPerformed
+        // TODO add your handling code here:
+        double price = Double.parseDouble(icecremeWaffle_p.getText());
+        row_table[0] = 1;
+        row_table[1] = icecremeWaffle_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_icecremeWaffle_bActionPerformed
+
+    private void mangoStickyRiceCrepe_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mangoStickyRiceCrepe_bActionPerformed
+        // TODO add your handling code here:
+        double price = Double.parseDouble(mangoStickyRiceCrepe_p.getText());
+        row_table[0] = 1;
+        row_table[1] = mangoStickyRiceCrepe_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_mangoStickyRiceCrepe_bActionPerformed
+
+    private void mojiWater_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mojiWater_bActionPerformed
+        // TODO add your handling code here:
+        double price = Double.parseDouble(mojiWater_p.getText());
+        row_table[0] = 1;
+        row_table[1] = mojiWater_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_mojiWater_bActionPerformed
+
+    private void spaghettiCarbonara_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spaghettiCarbonara_bActionPerformed
+        // TODO add your handling code here:
+        double price = Double.parseDouble(spaghettiCarbonara_p.getText());
+        row_table[0] = 1;
+        row_table[1] = spaghettiCarbonara_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_spaghettiCarbonara_bActionPerformed
+
+    private void spaghettiSpicyXSeafood_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spaghettiSpicyXSeafood_bActionPerformed
+        // TODO add your handling code here:
+        double price = Double.parseDouble(spaghettiSpicyXSeafood_p.getText());
+        row_table[0] = 1;
+        row_table[1] = spaghettiSpicyXSeafood_b.getText();
+        row_table[2] = price;
+        if(fg.checkMenu((String) row_table[1])){
+           int row = fg.checkRowDuplicate((String) row_table[1]);
+           int value = (int) fg.model.getValueAt(row, 0);
+           fg.model.setValueAt(value+1, row, 0);
+           fg.model.setValueAt(price * (value+1), row, 2);
+        }
+        else{
+            fg.addRowTable(row_table);
+        }
+    }//GEN-LAST:event_spaghettiSpicyXSeafood_bActionPerformed
 
     // Variables declaration - 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton chocolateLava_b;
+    private javax.swing.JLabel chocolateLava_p;
     private javax.swing.JButton honeyTostMango_b;
     private javax.swing.JLabel honeyTostMango_p;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton icecremeWaffle_b;
+    private javax.swing.JLabel icecremeWaffle_p;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -316,11 +466,17 @@ public class PanelMainFood extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton mangoStickyRiceCrepe_b;
+    private javax.swing.JLabel mangoStickyRiceCrepe_p;
+    private javax.swing.JButton mojiWater_b;
+    private javax.swing.JLabel mojiWater_p;
+    private javax.swing.JButton rasberryFrenchTost_b;
+    private javax.swing.JLabel rasberryFrenchTost_p;
+    private javax.swing.JButton rasberryPancake_b;
+    private javax.swing.JLabel rasberryPancake_p;
+    private javax.swing.JButton spaghettiCarbonara_b;
+    private javax.swing.JLabel spaghettiCarbonara_p;
+    private javax.swing.JButton spaghettiSpicyXSeafood_b;
+    private javax.swing.JLabel spaghettiSpicyXSeafood_p;
     // End of variables declaration//GEN-END:variables
 }
