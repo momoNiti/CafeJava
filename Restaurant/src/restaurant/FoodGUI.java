@@ -198,7 +198,7 @@ public class FoodGUI extends javax.swing.JFrame {
         DynamicPanel.setLayout(DynamicPanelLayout);
         DynamicPanelLayout.setHorizontalGroup(
             DynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 225, Short.MAX_VALUE)
+            .addGap(0, 280, Short.MAX_VALUE)
         );
         DynamicPanelLayout.setVerticalGroup(
             DynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,7 +218,7 @@ public class FoodGUI extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(DynamicPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
