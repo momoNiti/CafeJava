@@ -163,7 +163,7 @@ public class Login extends javax.swing.JFrame {
         boolean res = uc.checkLogin(u);
         if(res){
             JOptionPane.showMessageDialog(null, "Welcome " + u.getUname());
-            new FoodGUI().setVisible(true);
+            new MainGUI().setVisible(true);
             this.dispose();
         }
         else{

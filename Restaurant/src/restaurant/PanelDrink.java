@@ -12,11 +12,11 @@ package restaurant;
  */
 public class PanelDrink extends javax.swing.JPanel {
     Object[] row_table;
-    private FoodGUI fg;
+    private posGUI pos;
 
     /** Creates new form PanelDrink */
-    public PanelDrink(FoodGUI fg) {
-        this.fg = fg;
+    public PanelDrink(posGUI pos) {
+        this.pos = pos;
         initComponents();
         row_table = new Object[3];
     }
@@ -206,14 +206,14 @@ public class PanelDrink extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = freshMilkXButterflyPea_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_freshMilkXButterflyPea_bActionPerformed
 
@@ -222,14 +222,14 @@ public class PanelDrink extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = italianSoda_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_italianSoda_bActionPerformed
 
@@ -238,14 +238,14 @@ public class PanelDrink extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = greenTeaMacchiato_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_greenTeaMacchiato_bActionPerformed
 
@@ -254,14 +254,14 @@ public class PanelDrink extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = unicornFrappe_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_unicornFrappe_bActionPerformed
 
@@ -270,14 +270,14 @@ public class PanelDrink extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = doubleChoco_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_doubleChoco_bActionPerformed
 
@@ -286,14 +286,14 @@ public class PanelDrink extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = water_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_water_bActionPerformed
 

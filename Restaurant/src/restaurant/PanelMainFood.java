@@ -15,12 +15,12 @@ import javax.swing.table.TableCellRenderer;
  */
 public class PanelMainFood extends javax.swing.JPanel {
     Object[] row_table;
-    private FoodGUI fg;
+    private posGUI pos;
     /**
      * Creates new form PanelMainFood
      */
-    public PanelMainFood(FoodGUI fg) {
-        this.fg = fg;
+    public PanelMainFood(posGUI pos) {
+        this.pos = pos;
         initComponents();
         row_table = new Object[3];
     }
@@ -295,14 +295,14 @@ public class PanelMainFood extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = honeyTostMango_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
 
     }//GEN-LAST:event_honeyTostMango_bActionPerformed
@@ -312,14 +312,14 @@ public class PanelMainFood extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = chocolateLava_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_chocolateLava_bActionPerformed
 
@@ -329,14 +329,14 @@ public class PanelMainFood extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = rasberryFrenchTost_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_rasberryFrenchTost_bActionPerformed
 
@@ -345,14 +345,14 @@ public class PanelMainFood extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = rasberryPancake_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_rasberryPancake_bActionPerformed
 
@@ -362,14 +362,14 @@ public class PanelMainFood extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = icecremeWaffle_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_icecremeWaffle_bActionPerformed
 
@@ -379,14 +379,14 @@ public class PanelMainFood extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = mangoStickyRiceCrepe_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_mangoStickyRiceCrepe_bActionPerformed
 
@@ -396,14 +396,14 @@ public class PanelMainFood extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = mojiWater_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_mojiWater_bActionPerformed
 
@@ -413,14 +413,14 @@ public class PanelMainFood extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = spaghettiCarbonara_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_spaghettiCarbonara_bActionPerformed
 
@@ -430,14 +430,14 @@ public class PanelMainFood extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = spaghettiSpicyXSeafood_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_spaghettiSpicyXSeafood_bActionPerformed
 

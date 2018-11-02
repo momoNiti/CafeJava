@@ -11,13 +11,13 @@ package restaurant;
  */
 public class PanelSnack extends javax.swing.JPanel {
     Object[] row_table;
-    private FoodGUI fg;
+    private posGUI pos;
 
     /**
      * Creates new form PanelSnack
      */
-    public PanelSnack(FoodGUI fg) {
-        this.fg = fg;
+    public PanelSnack(posGUI pos) {
+        this.pos = pos;
         initComponents();
         row_table = new Object[3];
     }
@@ -205,14 +205,14 @@ public class PanelSnack extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = frenchFries_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_frenchFries_bActionPerformed
 
@@ -222,14 +222,14 @@ public class PanelSnack extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = frenchFriesCheese_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_frenchFriesCheese_bActionPerformed
 
@@ -238,14 +238,14 @@ public class PanelSnack extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = mashPotato_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_mashPotato_bActionPerformed
 
@@ -254,14 +254,14 @@ public class PanelSnack extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = mashPotatoXCornCheese_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_mashPotatoXCornCheese_bActionPerformed
 
@@ -270,14 +270,14 @@ public class PanelSnack extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = bakedSpinachXCheese_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_bakedSpinachXCheese_bActionPerformed
 
@@ -286,14 +286,14 @@ public class PanelSnack extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = garlicBread_b.getText();
         row_table[2] = price;
-        if(fg.checkMenu((String) row_table[1])){
-           int row = fg.checkRowDuplicate((String) row_table[1]);
-           int value = (int) fg.model.getValueAt(row, 0);
-           fg.model.setValueAt(value+1, row, 0);
-           fg.model.setValueAt(price * (value+1), row, 2);
+        if(pos.checkMenu((String) row_table[1])){
+           int row = pos.checkRowDuplicate((String) row_table[1]);
+           int value = (int) pos.model.getValueAt(row, 0);
+           pos.model.setValueAt(value+1, row, 0);
+           pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            fg.addRowTable(row_table);
+            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_garlicBread_bActionPerformed
 
