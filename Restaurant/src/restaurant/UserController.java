@@ -9,6 +9,9 @@ import com.mysql.jdbc.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -67,4 +70,33 @@ public class UserController extends User {
         }
         return false;
     }
+    
+//    public int insertWorkTime(User u){
+//        int res = 0;
+//        String sql = "";
+//        String timeNow = "";
+//        DateFormat dateFormat_day = new SimpleDateFormat("dd/MM/yyyy");
+//        DateFormat dateFormat_hour = new SimpleDateFormat("HH:mm:ss");
+//
+//        
+//        try{
+//            Date date = new Date();
+//            timeNow = dateFormat.format(date);
+//            sql = "INSERT INTO log_in(uname, roles, name, surname, email, login_time, logout_time) VALUES(?, ?, ?, ?, ?, ?, ?)";
+//            pst = (PreparedStatement) conn.prepareStatement(sql);
+//            pst.setString(1, u.getUname());
+//            pst.setString(2, u.getRoles());
+//            pst.setString(3, u.getName());
+//            pst.setString(4, u.getSurname());
+//            pst.setString(5, u.getEmail());
+//            pst.setString(6, timeNow);
+//            pst.setString(7, timeNow);
+//            res = pst.executeUpdate();
+//        }
+//        catch(SQLException ex){
+//            JOptionPane.showMessageDialog(null, ex);
+//        }
+//        
+//        return res;
+//    }
 }

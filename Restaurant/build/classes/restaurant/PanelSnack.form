@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="frenchFries_b" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="frenchFriesCheese_b" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="mashPotato_b" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="mashPotatoXCornCheese_b" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="bakedSpinachXCheese_b" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="garlicBread_b" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="garlicBread_p" min="-2" max="-2" attributes="0"/>
+                          <Component id="bakedSpinachXCheese_p" min="-2" max="-2" attributes="0"/>
+                          <Component id="mashPotatoXCornCheese_p" min="-2" max="-2" attributes="0"/>
+                          <Component id="mashPotato_p" min="-2" max="-2" attributes="0"/>
+                          <Component id="frenchFries_p" min="-2" max="-2" attributes="0"/>
+                          <Component id="frenchFriesCheese_p" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="frenchFries_b" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="frenchFries_p" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="frenchFriesCheese_b" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="frenchFriesCheese_p" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="mashPotato_b" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="mashPotato_p" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="mashPotatoXCornCheese_b" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="mashPotatoXCornCheese_p" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="bakedSpinachXCheese_b" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bakedSpinachXCheese_p" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="garlicBread_b" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="garlicBread_p" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="227" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Snack"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="frenchFries_b">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe40;&#xe1f;&#xe23;&#xe19;&#xe1f;&#xe23;&#xe32;&#xe22;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="frenchFries_bActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="frenchFriesCheese_b">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe40;&#xe1f;&#xe23;&#xe19;&#xe1f;&#xe23;&#xe32;&#xe22;&#xe0a;&#xe35;&#xe2a;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="frenchFriesCheese_bActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="mashPotato_b">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe21;&#xe31;&#xe19;&#xe1a;&#xe14;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mashPotato_bActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="mashPotatoXCornCheese_b">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe21;&#xe31;&#xe19;&#xe1a;&#xe14;&#xe2d;&#xe1a;&#xe0a;&#xe35;&#xe2a;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mashPotatoXCornCheese_bActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bakedSpinachXCheese_b">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe1c;&#xe31;&#xe01;&#xe42;&#xe02;&#xe21;&#xe2d;&#xe1a;&#xe0a;&#xe35;&#xe2a;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bakedSpinachXCheese_bActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="garlicBread_b">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe02;&#xe19;&#xe21;&#xe1b;&#xe31;&#xe07;&#xe01;&#xe23;&#xe30;&#xe40;&#xe17;&#xe35;&#xe22;&#xe21;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="garlicBread_bActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe23;&#xe32;&#xe04;&#xe32;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="frenchFries_p">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="49"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="frenchFriesCheese_p">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="79"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="mashPotato_p">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="35"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="mashPotatoXCornCheese_p">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="59"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="bakedSpinachXCheese_p">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="69"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="garlicBread_p">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="39"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe1a;&#xe32;&#xe17;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe1a;&#xe32;&#xe17;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel11">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe1a;&#xe32;&#xe17;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel12">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe1a;&#xe32;&#xe17;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel13">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe1a;&#xe32;&#xe17;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel14">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xe1a;&#xe32;&#xe17;"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
