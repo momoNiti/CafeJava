@@ -264,15 +264,18 @@ public class posGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_jDeleteActionPerformed
 
     private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
+
         Order[] o = new Order[model.getRowCount()];
         for(int i=0; i<model.getRowCount(); i++){
             int quantity = (int) model.getValueAt(i, 0);
             String name = (String) model.getValueAt(i, 1);
             Double price = (Double) model.getValueAt(i, 2);
             o[i] =  new Order(quantity, name, price);
-    }
+        }
+    
         for(int i=0; i<model.getRowCount(); i++){
             System.out.println(o[i].getQuantity() + " " + o[i].getName() + " " + o[i].getPrice());
+            
         }
     }//GEN-LAST:event_jSubmitActionPerformed
 

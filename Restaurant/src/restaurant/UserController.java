@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  *
  * @author STUDY fuckin HARD
  */
-public class UserController extends User {
+public class UserController{
     Database db;
     Connection conn;
     PreparedStatement pst;

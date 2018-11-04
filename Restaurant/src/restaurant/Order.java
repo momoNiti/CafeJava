@@ -15,7 +15,6 @@ public class Order {
     private double price;
     private double price_include_vat;
 
-
     public Order(int quantity, String name, double price){
         this.quantity = quantity;
         this.name = name;
