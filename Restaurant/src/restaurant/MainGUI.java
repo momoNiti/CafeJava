@@ -44,8 +44,10 @@ public class MainGUI extends javax.swing.JFrame {
         btnSignUp_color.setOpaque(false);
         btnEX_color.setOpaque(false);
         
-        if(u.getRoles().equals("admin")){
-            System.out.println("OK!!!!!!");
+        if(u.getRoles().equals("cashier")){
+            btnDB.setVisible(false);
+            btnEX.setVisible(false);
+            btnSignUp.setVisible(false);
         }
     }
 
