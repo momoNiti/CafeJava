@@ -13,42 +13,9 @@ import java.util.ArrayList;
  */
 
 
-public class Order {
+public class Order extends Foods{
     private int orderNumber;
-    private String foodName;
-    private int amount;
-    private double price;
-    public int getOrderNumber() {
-        return orderNumber;
-    }
     
-    public void setOrderNumber(int orderNumber) {
-        this.orderNumber = orderNumber;
-    }
-
-    public String getFoodName() {
-        return foodName;
-    }
-
-    public void setFoodName(String foodName) {
-        this.foodName = foodName;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
     
 //    java.util.List<Item> items = new ArrayList<Item>();
