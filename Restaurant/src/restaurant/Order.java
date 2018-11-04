@@ -13,20 +13,11 @@ public class Order {
     private int quantity;
     private String name;
     private double price;
-    private double price_include_vat;
 
     public Order(int quantity, String name, double price){
         this.quantity = quantity;
         this.name = name;
         this.price = price;
-    }
-    
-    public double getPrice_include_vat() {
-        return price_include_vat;
-    }
-
-    public void setPrice_include_vat(double price_include_vat) {
-        this.price_include_vat = price_include_vat;
     }
     public int getQuantity() {
         return quantity;

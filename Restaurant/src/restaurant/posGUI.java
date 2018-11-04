@@ -73,7 +73,7 @@ public class posGUI extends javax.swing.JPanel {
         pos_jTable = new javax.swing.JTable();
         jDelete = new javax.swing.JButton();
         jSubmit = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jTotal = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -104,11 +104,18 @@ public class posGUI extends javax.swing.JPanel {
         });
 
         jSubmit.setText("Submit");
+        jSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jSubmitMouseClicked(evt);
+            }
+        });
         jSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSubmitActionPerformed(evt);
             }
         });
+
+        jTotal.setEditable(false);
 
         jLabel1.setText("Total");
 
@@ -130,7 +137,7 @@ public class posGUI extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(29, 29, 29)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12)))))
                 .addContainerGap())
         );
@@ -142,7 +149,7 @@ public class posGUI extends javax.swing.JPanel {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jDelete)
@@ -264,19 +271,23 @@ public class posGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_jDeleteActionPerformed
 
     private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
-
-        Order[] o = new Order[model.getRowCount()];
+        myOrder myo = new myOrder();
         for(int i=0; i<model.getRowCount(); i++){
             int quantity = (int) model.getValueAt(i, 0);
             String name = (String) model.getValueAt(i, 1);
             Double price = (Double) model.getValueAt(i, 2);
-            o[i] =  new Order(quantity, name, price);
+            myo.addFood(new Order(quantity, name, price));
         }
     
-        for(int i=0; i<model.getRowCount(); i++){
-            System.out.println(o[i].getQuantity() + " " + o[i].getName() + " " + o[i].getPrice());
-            
-        }
+//        for(int i=0; i<model.getRowCount(); i++){
+//        }
+        myo.showFood();
+//        myo.setOrderNumber();
+//        System.out.println(myo.getOrderNumber());
+        myo.calculatePrice();
+        
+        jTotal.setText(Double.toString(myo.getPrice_include_vat()));
+        
     }//GEN-LAST:event_jSubmitActionPerformed
 
     private void jMainFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFoodActionPerformed
@@ -305,6 +316,10 @@ public class posGUI extends javax.swing.JPanel {
             pd.setVisible(true);
         }
     }//GEN-LAST:event_jDrinkActionPerformed
+
+    private void jSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSubmitMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jSubmitMouseClicked
 
         public void addRowTable(Object row_table){
         model.addRow((Object[]) row_table);
@@ -349,7 +364,7 @@ public class posGUI extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jSnack;
     private javax.swing.JButton jSubmit;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTotal;
     private javax.swing.JPanel pos_Panel;
     private javax.swing.JTable pos_jTable;
     // End of variables declaration//GEN-END:variables

@@ -27,10 +27,10 @@ public class OrderController{
         
     }
     
-    public int insertOrder(Order o){
+    public int insertOrder(myOrder myo){
         int res = 0;
         String sql = "";
-        
+
         try{
             sql = "INSERT INTO order(order_number, quantity, food_name, price) VALUES(?, ?, ?, ?)";
             pst = (PreparedStatement) conn.prepareStatement(sql);
