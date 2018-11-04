@@ -35,7 +35,6 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPassword = new javax.swing.JPasswordField();
         signIn = new javax.swing.JButton();
-        singUp = new javax.swing.JButton();
         exit = new javax.swing.JButton();
         jUsername = new javax.swing.JTextField();
 
@@ -63,13 +62,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        singUp.setText("Sign up");
-        singUp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                singUpActionPerformed(evt);
-            }
-        });
-
         exit.setText("Exit");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,36 +75,31 @@ public class Login extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(92, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(83, 83, 83)
-                            .addComponent(singUp)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGap(63, 63, 63)
+                            .addComponent(signIn)
+                            .addGap(18, 18, 18)
                             .addComponent(exit)
-                            .addContainerGap(85, Short.MAX_VALUE))
+                            .addContainerGap(103, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addGap(65, 65, 65)
                             .addComponent(jLabel1)
                             .addGap(151, 151, 151)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel2)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(jLabel3)
-                                            .addGap(3, 3, 3)))
-                                    .addComponent(jLabel4))
-                                .addGap(54, 54, 54)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jRoles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                    .addComponent(jUsername)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(signIn)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel2)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addGap(3, 3, 3)))
+                            .addComponent(jLabel4))
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jRoles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                            .addComponent(jUsername))
                         .addGap(62, 62, 62))))
         );
         layout.setVerticalGroup(
@@ -132,12 +119,11 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRoles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(signIn)
-                    .addComponent(exit)
-                    .addComponent(singUp))
-                .addContainerGap(84, Short.MAX_VALUE))
+                    .addComponent(exit))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         pack();
@@ -163,7 +149,8 @@ public class Login extends javax.swing.JFrame {
         boolean res = uc.checkLogin(u);
         if(res){
             JOptionPane.showMessageDialog(null, "Welcome " + u.getUname());
-            new MainGUI().setVisible(true);
+            new MainGUI(u).setVisible(true);
+
             this.dispose();
         }
         else{
@@ -173,11 +160,6 @@ public class Login extends javax.swing.JFrame {
             jRoles.setSelectedIndex(0);
         }
     }//GEN-LAST:event_signInActionPerformed
-
-    private void singUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singUpActionPerformed
-        new SignUp().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_singUpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,7 +209,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jRoles;
     private javax.swing.JTextField jUsername;
     private javax.swing.JButton signIn;
-    private javax.swing.JButton singUp;
     // End of variables declaration//GEN-END:variables
 
 }
