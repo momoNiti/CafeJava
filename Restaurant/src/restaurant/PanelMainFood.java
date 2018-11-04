@@ -5,9 +5,6 @@
  */
 package restaurant;
 
-import javax.swing.JButton;
-import javax.swing.JRadioButton;
-import javax.swing.table.TableCellRenderer;
 
 /**
  *
