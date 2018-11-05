@@ -27,8 +27,8 @@ public class myOrder {
             System.out.println(o.get(i).getQuantity() + " " + o.get(i).getName() + " " + o.get(i).getPrice_each() + " " + o.get(i).getPrice());
         }
     }
-    public void setOrderNumber(){
-        orderNumber = orderNumber+1;
+    public void setOrderNumber(int orderNumber){
+        this.orderNumber += orderNumber;
     }
     public int getOrderNumber() {
         return orderNumber;

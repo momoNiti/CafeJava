@@ -307,8 +307,10 @@ public class posGUI extends javax.swing.JPanel {
         }
         myo.showFood();
         myo.setPriceTotal(priceTotal);
+        myo.setOrderNumber(1);
         System.out.println("Your price Total = " + "  " + myo.getPriceTotal());
         System.out.println("Price Include vat 7 % =  " + myo.getPrice_include_vat());
+        System.out.println("Number Order =  " + myo.getOrderNumber());
     }//GEN-LAST:event_jSubmitActionPerformed
 
     private void jMainFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFoodActionPerformed

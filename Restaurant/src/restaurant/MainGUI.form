@@ -24,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="sidePanel" min="-2" pref="224" max="-2" attributes="0"/>
+              <Component id="sidePanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="DynamicPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
@@ -49,11 +49,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="btnEX" alignment="0" max="32767" attributes="0"/>
@@ -63,14 +58,19 @@
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="btnPOS" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnDB" min="-2" max="-2" attributes="0"/>
@@ -86,7 +86,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#xe23;&#xe49;&#xe32;&#xe19; &#xe19;&#xe49;&#xe2d;&#xe22;&#xe08;&#xe19;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe2a;&#xe31;&#xe48;&#xe07;&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21; &#xe2a;&#xe01;&#xe1b;&#xe23;&#xe01;&#xe40;&#xe2b;&#xe21;&#xe37;&#xe2d;&#xe19;&#xe40;&#xe14;&#xe34;&#xe21;&#xe08;&#xe19;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe2a;&#xe31;&#xe48;&#xe07;&#xe1b;&#xe34;&#xe14;"/>
+            <Property name="text" type="java.lang.String" value="&#xe23;&#xe49;&#xe32;&#xe19; &#xe19;&#xe49;&#xe2d;&#xe22;&#xe08;&#xe19;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe2a;&#xe31;&#xe48;&#xe07;&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21; "/>
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="btnPOS">
