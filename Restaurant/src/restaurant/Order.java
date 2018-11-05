@@ -14,10 +14,13 @@ public class Order {
     private String name;
     private double price;
 
-    public Order(int quantity, String name, double price){
+
+    private double price_each;
+    public Order(int quantity, String name, double price_each, double price){
         this.quantity = quantity;
         this.name = name;
         this.price = price;
+        this.price_each = price_each;
     }
     public int getQuantity() {
         return quantity;
@@ -41,6 +44,13 @@ public class Order {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+    public double getPrice_each() {
+        return price_each;
+    }
+
+    public void setPrice_each(double price_each) {
+        this.price_each = price_each;
     }
     
 }

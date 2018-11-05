@@ -7,7 +7,7 @@ package restaurant;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import javax.accessibility.AccessibleRole;
+
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,6 +24,7 @@ public class posGUI extends javax.swing.JPanel {
     Object[] row_table, column_table;
     DefaultTableModel model;
     private int selected_row;
+
     
     private MainGUI mg;
     /**
@@ -49,10 +50,11 @@ public class posGUI extends javax.swing.JPanel {
         pd.setVisible(false);
         
         //table
-        column_table = new Object[3];
+        column_table = new Object[4];
         column_table[0] = "Qty";
         column_table[1] = "Product";
-        column_table[2] = "ราคารวม";
+        column_table[2] = "ราคาต่อจำนวน";
+        column_table[3] = "ราคารวม";
         model = new DefaultTableModel();
         model.setColumnIdentifiers(column_table);
         pos_jTable.setModel(model);
@@ -295,8 +297,9 @@ public class posGUI extends javax.swing.JPanel {
         for(int i=0; i<model.getRowCount(); i++){
             int quantity = (int) model.getValueAt(i, 0);
             String name = (String) model.getValueAt(i, 1);
-            Double price = (Double) model.getValueAt(i, 2);
-            myo.addFood(new Order(quantity, name, price));
+            Double price_each = (Double) model.getValueAt(i, 2);
+            Double price = (Double) model.getValueAt(i, 3);
+            myo.addFood(new Order(quantity, name, price_each, price));
         }
     
 //        for(int i=0; i<model.getRowCount(); i++){
@@ -347,35 +350,29 @@ public class posGUI extends javax.swing.JPanel {
         // TODO add your handling code here:
         selected_row = pos_jTable.getSelectedRow();
         int value = (int) model.getValueAt(selected_row, 0);
-        model.setValueAt(value+1, selected_row, 0);
+        model.setValueAt(value+1, selected_row, 0); 
+        double price_each = (double) model.getValueAt(selected_row, 2);
+        model.setValueAt(price_each*(value+1), selected_row, 3);
     }//GEN-LAST:event_jIncreseQtyActionPerformed
 
     private void jDecreseQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDecreseQtyActionPerformed
         // TODO add your handling code here:
         selected_row = pos_jTable.getSelectedRow();
         int value = (int) model.getValueAt(selected_row, 0);
+        double price_each = (double) model.getValueAt(selected_row, 2);
 
         if(value > 1){
             model.setValueAt(value-1, selected_row, 0);
+            model.setValueAt(price_each*(value-1), selected_row, 3);
         }
         else{
             model.removeRow(selected_row);
         }
+        
+        
+        
     }//GEN-LAST:event_jDecreseQtyActionPerformed
-
-//    public void addRowTable(Object row_table){
-//        model.addRow((Object[]) row_table);
-//    }
-//    public int getLastRow(){
-//        return model.getRowCount();
-//    }
-
-//    public Object getValue(int row, int column){
-//        return model.getValueAt(row, column);
-//    }
-//    public int getRowDelete(){
-//        return row_delete;
-//    }    
+   
     public boolean checkMenu(String foodname){
         for(int i=0; i<model.getRowCount(); i++){
             if(model.getValueAt(i, 1).equals(foodname)){

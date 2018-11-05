@@ -18,7 +18,7 @@ public class PanelDrink extends javax.swing.JPanel {
     public PanelDrink(posGUI pos) {
         this.pos = pos;
         initComponents();
-        row_table = new Object[3];
+        row_table = new Object[4];
     }
 
     /** This method is called from within the constructor to
@@ -206,11 +206,12 @@ public class PanelDrink extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = freshMilkXButterflyPea_b.getText();
         row_table[2] = price;
+        row_table[3] = price;
         if(pos.checkMenu((String) row_table[1])){
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 2);
+           pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
             pos.model.addRow(row_table);
@@ -223,11 +224,12 @@ public class PanelDrink extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = italianSoda_b.getText();
         row_table[2] = price;
+        row_table[3] = price;
         if(pos.checkMenu((String) row_table[1])){
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 2);
+           pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
             pos.model.addRow(row_table);
@@ -240,11 +242,12 @@ public class PanelDrink extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = greenTeaMacchiato_b.getText();
         row_table[2] = price;
+        row_table[3] = price;
         if(pos.checkMenu((String) row_table[1])){
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 2);
+           pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
             pos.model.addRow(row_table);
@@ -257,11 +260,12 @@ public class PanelDrink extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = unicornFrappe_b.getText();
         row_table[2] = price;
+        row_table[3] = price;
         if(pos.checkMenu((String) row_table[1])){
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 2);
+           pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
             pos.model.addRow(row_table);
@@ -274,11 +278,12 @@ public class PanelDrink extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = doubleChoco_b.getText();
         row_table[2] = price;
+        row_table[3] = price;
         if(pos.checkMenu((String) row_table[1])){
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 2);
+           pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
             pos.model.addRow(row_table);
@@ -291,11 +296,12 @@ public class PanelDrink extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = water_b.getText();
         row_table[2] = price;
+        row_table[3] = price;
         if(pos.checkMenu((String) row_table[1])){
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 2);
+           pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
             pos.model.addRow(row_table);

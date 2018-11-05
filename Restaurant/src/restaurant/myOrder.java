@@ -22,7 +22,7 @@ public class myOrder {
     }
     public void showFood(){
         for(int i=0; i<o.size(); i++){
-            System.out.println(o.get(i).getQuantity() + " " + o.get(i).getName() + " " + o.get(i).getPrice());
+            System.out.println(o.get(i).getQuantity() + " " + o.get(i).getName() + " " + o.get(i).getPrice_each() + " " + o.get(i).getPrice());
         }
     }
     public void setOrderNumber(){

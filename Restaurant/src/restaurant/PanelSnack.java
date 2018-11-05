@@ -19,7 +19,7 @@ public class PanelSnack extends javax.swing.JPanel {
     public PanelSnack(posGUI pos) {
         this.pos = pos;
         initComponents();
-        row_table = new Object[3];
+        row_table = new Object[4];
     }
 
     /**
@@ -205,11 +205,12 @@ public class PanelSnack extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = frenchFries_b.getText();
         row_table[2] = price;
+        row_table[3] = price;
         if(pos.checkMenu((String) row_table[1])){
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 2);
+           pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
             pos.model.addRow(row_table);
@@ -223,11 +224,12 @@ public class PanelSnack extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = frenchFriesCheese_b.getText();
         row_table[2] = price;
+        row_table[3] = price;
         if(pos.checkMenu((String) row_table[1])){
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 2);
+           pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
             pos.model.addRow(row_table);
@@ -240,11 +242,12 @@ public class PanelSnack extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = mashPotato_b.getText();
         row_table[2] = price;
+        row_table[3] = price;
         if(pos.checkMenu((String) row_table[1])){
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 2);
+           pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
             pos.model.addRow(row_table);
@@ -257,11 +260,12 @@ public class PanelSnack extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = mashPotatoXCornCheese_b.getText();
         row_table[2] = price;
+        row_table[3] = price;
         if(pos.checkMenu((String) row_table[1])){
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 2);
+           pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
             pos.model.addRow(row_table);
@@ -274,11 +278,12 @@ public class PanelSnack extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = bakedSpinachXCheese_b.getText();
         row_table[2] = price;
+        row_table[3] = price;
         if(pos.checkMenu((String) row_table[1])){
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 2);
+           pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
             pos.model.addRow(row_table);
@@ -291,11 +296,12 @@ public class PanelSnack extends javax.swing.JPanel {
         row_table[0] = 1;
         row_table[1] = garlicBread_b.getText();
         row_table[2] = price;
+        row_table[3] = price;
         if(pos.checkMenu((String) row_table[1])){
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 2);
+           pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
             pos.model.addRow(row_table);
