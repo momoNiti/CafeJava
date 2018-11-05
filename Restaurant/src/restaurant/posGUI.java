@@ -23,7 +23,7 @@ public class posGUI extends javax.swing.JPanel {
     //table
     Object[] row_table, column_table;
     DefaultTableModel model;
-    private int row_delete;
+    private int selected_row;
     
     private MainGUI mg;
     /**
@@ -122,6 +122,11 @@ public class posGUI extends javax.swing.JPanel {
         jLabel1.setText("Total");
 
         jDecreseQty.setText("<");
+        jDecreseQty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jDecreseQtyActionPerformed(evt);
+            }
+        });
 
         jIncreseQty.setText(">");
         jIncreseQty.addActionListener(new java.awt.event.ActionListener() {
@@ -146,7 +151,7 @@ public class posGUI extends javax.swing.JPanel {
                         .addGap(12, 12, 12))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jDecreseQty)
-                        .addGap(12, 12, 12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jIncreseQty)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jSubmit)
@@ -276,9 +281,9 @@ public class posGUI extends javax.swing.JPanel {
 
     private void jDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteActionPerformed
         // TODO add your handling code here:
-        row_delete = pos_jTable.getSelectedRow();
-        if(row_delete>=0){
-            model.removeRow(row_delete);
+        selected_row = pos_jTable.getSelectedRow();
+        if(selected_row>=0){
+            model.removeRow(selected_row);
         }
         else{
             System.out.println("Cant delete");
@@ -334,12 +339,29 @@ public class posGUI extends javax.swing.JPanel {
 
     private void jSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSubmitMouseClicked
         // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_jSubmitMouseClicked
 
     private void jIncreseQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIncreseQtyActionPerformed
         // TODO add your handling code here:
-        
+        selected_row = pos_jTable.getSelectedRow();
+        int value = (int) model.getValueAt(selected_row, 0);
+        model.setValueAt(value+1, selected_row, 0);
     }//GEN-LAST:event_jIncreseQtyActionPerformed
+
+    private void jDecreseQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDecreseQtyActionPerformed
+        // TODO add your handling code here:
+        selected_row = pos_jTable.getSelectedRow();
+        int value = (int) model.getValueAt(selected_row, 0);
+
+        if(value > 1){
+            model.setValueAt(value-1, selected_row, 0);
+        }
+        else{
+            model.removeRow(selected_row);
+        }
+    }//GEN-LAST:event_jDecreseQtyActionPerformed
 
 //    public void addRowTable(Object row_table){
 //        model.addRow((Object[]) row_table);
