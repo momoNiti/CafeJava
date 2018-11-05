@@ -14,8 +14,9 @@ import java.util.ArrayList;
 public class myOrder {
     private int orderNumber = 0;
     private ArrayList<Order> o = new ArrayList<Order>();
-    private double price_include_vat = 0;
-    private double priceTotal = 0;
+    private double price_include_vat;
+    private double priceTotal;
+    final double vat = 0.07;
 
     
     public void addFood(Order o){
@@ -33,12 +34,13 @@ public class myOrder {
         return orderNumber;
     }
    
-    public void setPrice(){
-        for(int i=0; i<o.size(); i++){
-            price_include_vat += o.get(i).getPrice();
-        }
-    }
+//    public void setPrice(){
+//
+//    }
+    
     public double getPrice_include_vat() {
+        double temp = priceTotal * vat;
+        price_include_vat = temp + priceTotal;
         return price_include_vat;
     }
     
