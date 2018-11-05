@@ -19,18 +19,21 @@ public class posGUI extends javax.swing.JPanel {
     PanelMainFood pmf;
     PanelSnack ps;
     PanelDrink pd;
-
+    myOrder myo;
+    private MainGUI mg;
     //table
     Object[] row_table, column_table;
     DefaultTableModel model;
     private int selected_row;
-
     
-    private MainGUI mg;
+    private int priceTotal;
+    
+    
     /**
      * Creates new form posGUI
      */
     public posGUI(MainGUI mg) {
+        myo = new myOrder();
         this.mg = mg;
         initComponents();
         pmf = new PanelMainFood(this);
@@ -290,10 +293,11 @@ public class posGUI extends javax.swing.JPanel {
         else{
             System.out.println("Cant delete");
         }
+        calculatePrice();
     }//GEN-LAST:event_jDeleteActionPerformed
 
     private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
-        myOrder myo = new myOrder();
+        
         for(int i=0; i<model.getRowCount(); i++){
             int quantity = (int) model.getValueAt(i, 0);
             String name = (String) model.getValueAt(i, 1);
@@ -301,16 +305,9 @@ public class posGUI extends javax.swing.JPanel {
             Double price = (Double) model.getValueAt(i, 3);
             myo.addFood(new Order(quantity, name, price_each, price));
         }
-    
-//        for(int i=0; i<model.getRowCount(); i++){
-//        }
         myo.showFood();
-//        myo.setOrderNumber();
-//        System.out.println(myo.getOrderNumber());
-        myo.calculatePrice();
-        
-        jTotal.setText(Double.toString(myo.getPrice_include_vat()));
-        
+        myo.setPriceTotal(priceTotal);
+        System.out.println("Your price Total = " + "  " + myo.getPriceTotal());
     }//GEN-LAST:event_jSubmitActionPerformed
 
     private void jMainFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFoodActionPerformed
@@ -341,9 +338,7 @@ public class posGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_jDrinkActionPerformed
 
     private void jSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSubmitMouseClicked
-        // TODO add your handling code here:
-        
-        
+
     }//GEN-LAST:event_jSubmitMouseClicked
 
     private void jIncreseQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIncreseQtyActionPerformed
@@ -353,6 +348,7 @@ public class posGUI extends javax.swing.JPanel {
         model.setValueAt(value+1, selected_row, 0); 
         double price_each = (double) model.getValueAt(selected_row, 2);
         model.setValueAt(price_each*(value+1), selected_row, 3);
+        calculatePrice();
     }//GEN-LAST:event_jIncreseQtyActionPerformed
 
     private void jDecreseQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDecreseQtyActionPerformed
@@ -368,11 +364,18 @@ public class posGUI extends javax.swing.JPanel {
         else{
             model.removeRow(selected_row);
         }
-        
-        
-        
+        calculatePrice();
     }//GEN-LAST:event_jDecreseQtyActionPerformed
-   
+    
+    public void calculatePrice(){
+        int temp = 0;
+        for(int i=0; i<model.getRowCount(); i++){
+            temp += (double)model.getValueAt(i, 3);
+        }
+        priceTotal = temp;
+//        System.out.println("restaurant.posGUI.calculatePrice()");
+        jTotal.setText(Double.toString(priceTotal));
+    }
     public boolean checkMenu(String foodname){
         for(int i=0; i<model.getRowCount(); i++){
             if(model.getValueAt(i, 1).equals(foodname)){

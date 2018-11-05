@@ -298,12 +298,13 @@ public class PanelMainFood extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
+
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
-
+        pos.calculatePrice();
     }//GEN-LAST:event_honeyTostMango_bActionPerformed
 
     private void chocolateLava_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chocolateLava_bActionPerformed
@@ -317,11 +318,13 @@ public class PanelMainFood extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
+
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_chocolateLava_bActionPerformed
 
     private void rasberryFrenchTost_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rasberryFrenchTost_bActionPerformed
@@ -336,11 +339,13 @@ public class PanelMainFood extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
+
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_rasberryFrenchTost_bActionPerformed
 
     private void rasberryPancake_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rasberryPancake_bActionPerformed
@@ -354,11 +359,13 @@ public class PanelMainFood extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
+
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_rasberryPancake_bActionPerformed
 
     private void icecremeWaffle_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_icecremeWaffle_bActionPerformed
@@ -373,11 +380,13 @@ public class PanelMainFood extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
+
         }
         else{
-//            pos.addRowTable(row_table);
             pos.model.addRow(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_icecremeWaffle_bActionPerformed
 
     private void mangoStickyRiceCrepe_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mangoStickyRiceCrepe_bActionPerformed
@@ -395,8 +404,8 @@ public class PanelMainFood extends javax.swing.JPanel {
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_mangoStickyRiceCrepe_bActionPerformed
 
     private void mojiWater_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mojiWater_bActionPerformed
@@ -413,9 +422,9 @@ public class PanelMainFood extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
-//            pos.addRowTable(row_table);
             pos.model.addRow(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_mojiWater_bActionPerformed
 
     private void spaghettiCarbonara_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spaghettiCarbonara_bActionPerformed
@@ -432,10 +441,9 @@ public class PanelMainFood extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 3);
         }
         else{
-//            pos.addRowTable(row_table);
             pos.model.addRow(row_table);
-
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_spaghettiCarbonara_bActionPerformed
 
     private void spaghettiSpicyXSeafood_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spaghettiSpicyXSeafood_bActionPerformed
@@ -449,12 +457,12 @@ public class PanelMainFood extends javax.swing.JPanel {
            int row = pos.checkRowDuplicate((String) row_table[1]);
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
-           pos.model.setValueAt(price * (value+1), row, 3);
+           pos.model.setValueAt(price * (value+1), row, 3); 
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_spaghettiSpicyXSeafood_bActionPerformed
 
     // Variables declaration - 

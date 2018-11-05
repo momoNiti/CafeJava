@@ -212,11 +212,12 @@ public class PanelDrink extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_freshMilkXButterflyPea_bActionPerformed
 
     private void italianSoda_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_italianSoda_bActionPerformed
@@ -230,11 +231,12 @@ public class PanelDrink extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_italianSoda_bActionPerformed
 
     private void greenTeaMacchiato_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_greenTeaMacchiato_bActionPerformed
@@ -248,11 +250,12 @@ public class PanelDrink extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_greenTeaMacchiato_bActionPerformed
 
     private void unicornFrappe_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unicornFrappe_bActionPerformed
@@ -266,11 +269,12 @@ public class PanelDrink extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_unicornFrappe_bActionPerformed
 
     private void doubleChoco_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doubleChoco_bActionPerformed
@@ -284,11 +288,12 @@ public class PanelDrink extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_doubleChoco_bActionPerformed
 
     private void water_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_water_bActionPerformed
@@ -302,11 +307,12 @@ public class PanelDrink extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_water_bActionPerformed
 
 

@@ -211,11 +211,12 @@ public class PanelSnack extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_frenchFries_bActionPerformed
 
     private void frenchFriesCheese_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frenchFriesCheese_bActionPerformed
@@ -230,11 +231,12 @@ public class PanelSnack extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_frenchFriesCheese_bActionPerformed
 
     private void mashPotato_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mashPotato_bActionPerformed
@@ -248,11 +250,12 @@ public class PanelSnack extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
-        }        // TODO add your handling code here:
+        }
+        pos.calculatePrice();
     }//GEN-LAST:event_mashPotato_bActionPerformed
 
     private void mashPotatoXCornCheese_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mashPotatoXCornCheese_bActionPerformed
@@ -266,11 +269,12 @@ public class PanelSnack extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
-        }        // TODO add your handling code here:
+        }
+        pos.calculatePrice();
     }//GEN-LAST:event_mashPotatoXCornCheese_bActionPerformed
 
     private void bakedSpinachXCheese_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bakedSpinachXCheese_bActionPerformed
@@ -284,11 +288,12 @@ public class PanelSnack extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
-        }        // TODO add your handling code here:
+        }
+        pos.calculatePrice();
     }//GEN-LAST:event_bakedSpinachXCheese_bActionPerformed
 
     private void garlicBread_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_garlicBread_bActionPerformed
@@ -302,11 +307,12 @@ public class PanelSnack extends javax.swing.JPanel {
            int value = (int) pos.model.getValueAt(row, 0);
            pos.model.setValueAt(value+1, row, 0);
            pos.model.setValueAt(price * (value+1), row, 3);
+           pos.calculatePrice();
         }
         else{
             pos.model.addRow(row_table);
-//            pos.addRowTable(row_table);
         }
+        pos.calculatePrice();
     }//GEN-LAST:event_garlicBread_bActionPerformed
 
 
