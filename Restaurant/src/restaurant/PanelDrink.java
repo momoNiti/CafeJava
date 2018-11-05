@@ -213,7 +213,8 @@ public class PanelDrink extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_freshMilkXButterflyPea_bActionPerformed
 
@@ -229,7 +230,8 @@ public class PanelDrink extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_italianSoda_bActionPerformed
 
@@ -245,7 +247,8 @@ public class PanelDrink extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_greenTeaMacchiato_bActionPerformed
 
@@ -261,7 +264,8 @@ public class PanelDrink extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_unicornFrappe_bActionPerformed
 
@@ -277,7 +281,8 @@ public class PanelDrink extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_doubleChoco_bActionPerformed
 
@@ -293,7 +298,8 @@ public class PanelDrink extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_water_bActionPerformed
 

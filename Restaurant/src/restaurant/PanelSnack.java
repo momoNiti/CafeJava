@@ -212,7 +212,8 @@ public class PanelSnack extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_frenchFries_bActionPerformed
 
@@ -229,7 +230,8 @@ public class PanelSnack extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_frenchFriesCheese_bActionPerformed
 
@@ -245,7 +247,8 @@ public class PanelSnack extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_mashPotato_bActionPerformed
 
@@ -261,7 +264,8 @@ public class PanelSnack extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_mashPotatoXCornCheese_bActionPerformed
 
@@ -277,7 +281,8 @@ public class PanelSnack extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_bakedSpinachXCheese_bActionPerformed
 
@@ -293,7 +298,8 @@ public class PanelSnack extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_garlicBread_bActionPerformed
 

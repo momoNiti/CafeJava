@@ -75,6 +75,8 @@ public class posGUI extends javax.swing.JPanel {
         jSubmit = new javax.swing.JButton();
         jTotal = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jDecreseQty = new javax.swing.JButton();
+        jIncreseQty = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jMainFood = new javax.swing.JButton();
@@ -119,6 +121,15 @@ public class posGUI extends javax.swing.JPanel {
 
         jLabel1.setText("Total");
 
+        jDecreseQty.setText("<");
+
+        jIncreseQty.setText(">");
+        jIncreseQty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jIncreseQtyActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -129,16 +140,18 @@ public class posGUI extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jSubmit)
-                                .addGap(18, 18, 18)
-                                .addComponent(jDelete))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(29, 29, 29)
-                                .addComponent(jTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)))))
+                        .addComponent(jLabel1)
+                        .addGap(29, 29, 29)
+                        .addComponent(jTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jDecreseQty)
+                        .addGap(12, 12, 12)
+                        .addComponent(jIncreseQty)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSubmit)
+                        .addGap(18, 18, 18)
+                        .addComponent(jDelete)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -153,7 +166,9 @@ public class posGUI extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jDelete)
-                    .addComponent(jSubmit))
+                    .addComponent(jSubmit)
+                    .addComponent(jIncreseQty)
+                    .addComponent(jDecreseQty))
                 .addContainerGap())
         );
 
@@ -321,20 +336,25 @@ public class posGUI extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jSubmitMouseClicked
 
-        public void addRowTable(Object row_table){
-        model.addRow((Object[]) row_table);
+    private void jIncreseQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIncreseQtyActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jIncreseQtyActionPerformed
 
-    }
-    public int getLastRow(){
-        return model.getRowCount();
-    }
+//    public void addRowTable(Object row_table){
+//        model.addRow((Object[]) row_table);
+//    }
+//    public int getLastRow(){
+//        return model.getRowCount();
+//    }
 
-    public Object getValue(int row, int column){
-        return model.getValueAt(row, column);
-    }
-    public int getRowDelete(){
-        return row_delete;
-    }    public boolean checkMenu(String foodname){
+//    public Object getValue(int row, int column){
+//        return model.getValueAt(row, column);
+//    }
+//    public int getRowDelete(){
+//        return row_delete;
+//    }    
+    public boolean checkMenu(String foodname){
         for(int i=0; i<model.getRowCount(); i++){
             if(model.getValueAt(i, 1).equals(foodname)){
 //                System.out.println("ซ้ำ");
@@ -354,8 +374,10 @@ public class posGUI extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DynamicPanel;
+    private javax.swing.JButton jDecreseQty;
     private javax.swing.JButton jDelete;
     private javax.swing.JButton jDrink;
+    private javax.swing.JButton jIncreseQty;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JButton jMainFood;

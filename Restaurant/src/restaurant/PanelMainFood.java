@@ -299,7 +299,8 @@ public class PanelMainFood extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
 
     }//GEN-LAST:event_honeyTostMango_bActionPerformed
@@ -316,7 +317,8 @@ public class PanelMainFood extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_chocolateLava_bActionPerformed
 
@@ -333,7 +335,8 @@ public class PanelMainFood extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_rasberryFrenchTost_bActionPerformed
 
@@ -349,7 +352,8 @@ public class PanelMainFood extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_rasberryPancake_bActionPerformed
 
@@ -366,7 +370,8 @@ public class PanelMainFood extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+//            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
         }
     }//GEN-LAST:event_icecremeWaffle_bActionPerformed
 
@@ -383,7 +388,8 @@ public class PanelMainFood extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_mangoStickyRiceCrepe_bActionPerformed
 
@@ -400,7 +406,8 @@ public class PanelMainFood extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+//            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
         }
     }//GEN-LAST:event_mojiWater_bActionPerformed
 
@@ -417,7 +424,9 @@ public class PanelMainFood extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+//            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+
         }
     }//GEN-LAST:event_spaghettiCarbonara_bActionPerformed
 
@@ -434,7 +443,8 @@ public class PanelMainFood extends javax.swing.JPanel {
            pos.model.setValueAt(price * (value+1), row, 2);
         }
         else{
-            pos.addRowTable(row_table);
+            pos.model.addRow(row_table);
+//            pos.addRowTable(row_table);
         }
     }//GEN-LAST:event_spaghettiSpicyXSeafood_bActionPerformed
 
