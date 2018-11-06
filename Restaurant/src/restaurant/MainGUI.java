@@ -18,12 +18,13 @@ public class MainGUI extends javax.swing.JFrame {
     GridBagLayout layout = new GridBagLayout();
     posGUI pos;
     SignUpGUI sign;
+    private User u;
     /**
      * Creates new form MainGUI
      */
     public MainGUI(User u) {
+        this.u = u;
         initComponents();
-        
         pos = new posGUI(this);
         sign = new SignUpGUI(this);
         
@@ -49,6 +50,8 @@ public class MainGUI extends javax.swing.JFrame {
             btnEX.setVisible(false);
             btnSignUp.setVisible(false);
         }
+        jUsername.setText(u.getUname());
+//        System.out.println("check user in maingui = " + u.getUname());
     }
 
     /**
@@ -75,6 +78,9 @@ public class MainGUI extends javax.swing.JFrame {
         btnEX = new javax.swing.JPanel();
         btnEX_color = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jLogOut = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jUsername = new javax.swing.JLabel();
         DynamicPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -188,6 +194,18 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel5.setText("jLabel5");
         btnEX.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
 
+        jLogOut.setText("log out");
+        jLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLogOutActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("User : ");
+
+        jUsername.setBackground(new java.awt.Color(255, 204, 204));
+        jUsername.setText("         ");
+
         javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
         sidePanel.setLayout(sidePanelLayout);
         sidePanelLayout.setHorizontalGroup(
@@ -203,6 +221,14 @@ public class MainGUI extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addComponent(jUsername)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLogOut)
+                .addContainerGap())
         );
         sidePanelLayout.setVerticalGroup(
             sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,7 +243,11 @@ public class MainGUI extends javax.swing.JFrame {
                 .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 20, Short.MAX_VALUE)
+                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLogOut)
+                    .addComponent(jLabel7)
+                    .addComponent(jUsername)))
         );
 
         DynamicPanel.setBackground(new java.awt.Color(255, 255, 204));
@@ -307,7 +337,15 @@ public class MainGUI extends javax.swing.JFrame {
         btnDB_color.setOpaque(false);
         btnSignUp_color.setOpaque(false);
         btnEX_color.setOpaque(true);
+
     }//GEN-LAST:event_btnEXMouseClicked
+
+    private void jLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogOutActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Login main = new Login();
+        main.run();
+    }//GEN-LAST:event_jLogOutActionPerformed
     public void setColor(JPanel panel){
         panel.setBackground(new Color(102,153,255));
     }
@@ -365,6 +403,9 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JButton jLogOut;
+    private javax.swing.JLabel jUsername;
     private javax.swing.JPanel sidePanel;
     // End of variables declaration//GEN-END:variables
 }

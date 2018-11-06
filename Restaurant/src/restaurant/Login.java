@@ -141,7 +141,7 @@ public class Login extends javax.swing.JFrame {
         String uname = jUsername.getText();
         String pwd = jPassword.getText();
         String roles = jRoles.getSelectedItem().toString();
-        User u  = new User();
+        User u = new User();
         u.setUname(uname);
         u.setPwd(pwd);
         u.setRoles(roles);
@@ -151,7 +151,7 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Welcome " + u.getUname());
             new MainGUI(u).setVisible(true);
 
-            this.dispose();
+            this.setVisible(false);
         }
         else{
             JOptionPane.showMessageDialog(null, "Wrong");

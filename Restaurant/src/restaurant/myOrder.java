@@ -11,18 +11,11 @@ import java.util.ArrayList;
  *
  * @author STUDY fuckin HARD
  */
-public class myOrder {
-    private int orderNumber = 0;
+public class myOrder{
     private ArrayList<Order> o = new ArrayList<Order>();
-
-
-    
-
     private double price_include_vat;
     private double priceTotal;
     final double vat = 0.07;
-
-    
     public void addFood(Order o){
         this.o.add(o);
     }
@@ -31,12 +24,7 @@ public class myOrder {
             System.out.println(o.get(i).getQuantity() + " " + o.get(i).getName() + " " + o.get(i).getPrice_each() + " " + o.get(i).getPrice());
         }
     }
-    public void setOrderNumber(int orderNumber){
-        this.orderNumber += orderNumber;
-    }
-    public int getOrderNumber() {
-        return orderNumber;
-    }
+
 
     public double getPrice_include_vat() {
         double temp = priceTotal * vat;

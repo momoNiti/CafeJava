@@ -17,10 +17,10 @@ import java.text.SimpleDateFormat;
  * @author STUDY fuckin HARD
  */
 public class OrderController{
-    User u;
     Database db;
     Connection conn;
     PreparedStatement pst;
+    User u;
 
     public OrderController(){
         super();
@@ -34,15 +34,19 @@ public class OrderController{
         String myJson = gson.toJson(myo);
         int res = 0;
         String sql = "";
-
+        
+        java.util.Date date=new java.util.Date();
+        java.sql.Date sqlDate=new java.sql.Date(date.getTime());
+        java.sql.Timestamp sqlTime = new java.sql.Timestamp(date.getTime());
+        System.out.println(u.getUname());
         try{
-            sql = "INSERT INTO order_foods(orderID, detail, orderDate, user) VALUES(?, cast(? as json), ?, ?)";
+            sql = "INSERT INTO order_foods(detail, orderDate, user) VALUES(cast(? as json), ?, ?)";
             pst = (PreparedStatement) conn.prepareStatement(sql);
-            pst.setInt(1, myo.getOrderNumber());
-            pst.setString(2, myJson);
-            pst.setDate(3, myo.getCurrentDatetime());
-            pst.setString(4, u.getUname());
+            pst.setString(1, myJson);
+            pst.setTimestamp(2, sqlTime);
+            pst.setString(3, u.getUname());
             res = pst.executeUpdate();
+            
         }
         catch(SQLException ex){
             System.out.println(ex);

@@ -13,8 +13,6 @@ public class Order {
     private int quantity;
     private String name;
     private double price;
-
-
     private double price_each;
     public Order(int quantity, String name, double price_each, double price){
         this.quantity = quantity;

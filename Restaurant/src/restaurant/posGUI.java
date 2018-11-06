@@ -31,7 +31,6 @@ public class posGUI extends javax.swing.JPanel {
      * Creates new form posGUI
      */
     public posGUI(MainGUI mg) {
-        
         this.mg = mg;
         initComponents();
         pmf = new PanelMainFood(this);
@@ -318,8 +317,6 @@ public class posGUI extends javax.swing.JPanel {
             Double price = (Double) model.getValueAt(i, 3);
             myo.addFood(new Order(quantity, name, price_each, price));
         }
-        myo.setPriceTotal(priceTotal);
-        myo.setOrderNumber(1);
         int res = oc.insertOrder(myo);
         if(res > 0){
                 JOptionPane.showMessageDialog(null, "Finish insert order to database");   
