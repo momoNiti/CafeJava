@@ -317,6 +317,7 @@ public class posGUI extends javax.swing.JPanel {
             Double price = (Double) model.getValueAt(i, 3);
             myo.addFood(new Order(quantity, name, price_each, price));
         }
+        myo.setUser(mg.getU().getUname());
         int res = oc.insertOrder(myo);
         if(res > 0){
                 JOptionPane.showMessageDialog(null, "Finish insert order to database");   
@@ -324,6 +325,10 @@ public class posGUI extends javax.swing.JPanel {
             else{
                 JOptionPane.showMessageDialog(null, "Unable to insert");
             }
+        for(int i=0; i<model.getRowCount(); i++){
+            model.removeRow(i);
+            calculatePrice();
+        }
         
     }//GEN-LAST:event_jSubmitActionPerformed
 

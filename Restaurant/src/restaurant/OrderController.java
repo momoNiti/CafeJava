@@ -20,7 +20,6 @@ public class OrderController{
     Database db;
     Connection conn;
     PreparedStatement pst;
-    User u;
 
     public OrderController(){
         super();
@@ -38,13 +37,12 @@ public class OrderController{
         java.util.Date date=new java.util.Date();
         java.sql.Date sqlDate=new java.sql.Date(date.getTime());
         java.sql.Timestamp sqlTime = new java.sql.Timestamp(date.getTime());
-        System.out.println(u.getUname());
         try{
             sql = "INSERT INTO order_foods(detail, orderDate, user) VALUES(cast(? as json), ?, ?)";
             pst = (PreparedStatement) conn.prepareStatement(sql);
             pst.setString(1, myJson);
             pst.setTimestamp(2, sqlTime);
-            pst.setString(3, u.getUname());
+            pst.setString(3, myo.getUser());
             res = pst.executeUpdate();
             
         }
