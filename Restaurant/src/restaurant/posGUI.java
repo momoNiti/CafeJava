@@ -7,9 +7,11 @@ package restaurant;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author STUDY fuckin HARD
@@ -19,7 +21,6 @@ public class posGUI extends javax.swing.JPanel {
     PanelMainFood pmf;
     PanelSnack ps;
     PanelDrink pd;
-    myOrder myo;
     private MainGUI mg;
     //table
     Object[] row_table, column_table;
@@ -33,7 +34,7 @@ public class posGUI extends javax.swing.JPanel {
      * Creates new form posGUI
      */
     public posGUI(MainGUI mg) {
-        myo = new myOrder();
+        
         this.mg = mg;
         initComponents();
         pmf = new PanelMainFood(this);
@@ -98,10 +99,24 @@ public class posGUI extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Qty", "Product", "รวม"
+                "Qty", "Product", "ราคาต่อจำนวน", "รวม"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(pos_jTable);
+        if (pos_jTable.getColumnModel().getColumnCount() > 0) {
+            pos_jTable.getColumnModel().getColumn(0).setResizable(false);
+            pos_jTable.getColumnModel().getColumn(1).setResizable(false);
+            pos_jTable.getColumnModel().getColumn(2).setResizable(false);
+            pos_jTable.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         jDelete.setText("Delete");
         jDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -297,7 +312,8 @@ public class posGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_jDeleteActionPerformed
 
     private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
-        
+        myOrder myo = new myOrder();
+        OrderController oc = new OrderController();
         for(int i=0; i<model.getRowCount(); i++){
             int quantity = (int) model.getValueAt(i, 0);
             String name = (String) model.getValueAt(i, 1);
@@ -305,12 +321,19 @@ public class posGUI extends javax.swing.JPanel {
             Double price = (Double) model.getValueAt(i, 3);
             myo.addFood(new Order(quantity, name, price_each, price));
         }
-        myo.showFood();
         myo.setPriceTotal(priceTotal);
         myo.setOrderNumber(1);
-        System.out.println("Your price Total = " + "  " + myo.getPriceTotal());
-        System.out.println("Price Include vat 7 % =  " + myo.getPrice_include_vat());
-        System.out.println("Number Order =  " + myo.getOrderNumber());
+        Date date = new Date();
+        myo.setOrderDate(date);
+
+        int res = oc.insertOrder(myo);
+        if(res > 0){
+                JOptionPane.showMessageDialog(null, "Finish insert order to database");   
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Unable to insert");
+            }
+        
     }//GEN-LAST:event_jSubmitActionPerformed
 
     private void jMainFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFoodActionPerformed

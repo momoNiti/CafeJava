@@ -5,7 +5,10 @@
  */
 package restaurant;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -14,6 +17,10 @@ import java.util.ArrayList;
 public class myOrder {
     private int orderNumber = 0;
     private ArrayList<Order> o = new ArrayList<Order>();
+    private Date orderDate;
+    
+
+
     private double price_include_vat;
     private double priceTotal;
     final double vat = 0.07;
@@ -33,11 +40,7 @@ public class myOrder {
     public int getOrderNumber() {
         return orderNumber;
     }
-   
-//    public void setPrice(){
-//
-//    }
-    
+
     public double getPrice_include_vat() {
         double temp = priceTotal * vat;
         price_include_vat = temp + priceTotal;
@@ -50,5 +53,15 @@ public class myOrder {
 
     public void setPriceTotal(double priceTotal) {
         this.priceTotal = priceTotal;
+    }
+    public ArrayList<Order> getO() {
+        return o;
+    }
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
     }
 }

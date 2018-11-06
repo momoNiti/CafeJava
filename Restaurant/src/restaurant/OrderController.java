@@ -5,20 +5,22 @@
  */
 package restaurant;
 
+import com.google.gson.Gson;
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
+import java.text.SimpleDateFormat;
+        
 
 /**
  *
  * @author STUDY fuckin HARD
  */
 public class OrderController{
+    User u;
     Database db;
     Connection conn;
     PreparedStatement pst;
-    private int orderNumber = 1;
 
     public OrderController(){
         super();
@@ -28,22 +30,24 @@ public class OrderController{
     }
     
     public int insertOrder(myOrder myo){
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String currentTime = dateformat.format(myo.getOrderDate());
+        Gson gson = new Gson();
+        String myJson = gson.toJson(myo);
         int res = 0;
         String sql = "";
 
         try{
-            sql = "INSERT INTO order(order_number, quantity, food_name, price) VALUES(?, ?, ?, ?)";
+            sql = "INSERT INTO order_foods(orderID, detail, orderDate, user) VALUES(?, cast(? as json), ?, ?)";
             pst = (PreparedStatement) conn.prepareStatement(sql);
-            pst.setInt(1, orderNumber);
-            pst.setInt(2, o.getQuantity());
-            pst.setString(3, o.getName());
-            pst.setDouble(4, o.getPrice());
+            pst.setInt(1, myo.getOrderNumber());
+            pst.setString(2, myJson);
+            pst.setString(3, currentTime);
+            pst.setString(4, u.getUname());
             res = pst.executeUpdate();
-            orderNumber ++;
-
         }
         catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, ex);
+            System.out.println(ex);
         }
         
         return res;
