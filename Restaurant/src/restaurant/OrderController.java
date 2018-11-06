@@ -30,8 +30,6 @@ public class OrderController{
     }
     
     public int insertOrder(myOrder myo){
-        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String currentTime = dateformat.format(myo.getOrderDate());
         Gson gson = new Gson();
         String myJson = gson.toJson(myo);
         int res = 0;
@@ -42,7 +40,7 @@ public class OrderController{
             pst = (PreparedStatement) conn.prepareStatement(sql);
             pst.setInt(1, myo.getOrderNumber());
             pst.setString(2, myJson);
-            pst.setString(3, currentTime);
+            pst.setDate(3, myo.getCurrentDatetime());
             pst.setString(4, u.getUname());
             res = pst.executeUpdate();
         }

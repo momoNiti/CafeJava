@@ -5,10 +5,7 @@
  */
 package restaurant;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -17,9 +14,9 @@ import java.util.Date;
 public class myOrder {
     private int orderNumber = 0;
     private ArrayList<Order> o = new ArrayList<Order>();
-    private Date orderDate;
-    
 
+
+    
 
     private double price_include_vat;
     private double priceTotal;
@@ -57,11 +54,5 @@ public class myOrder {
     public ArrayList<Order> getO() {
         return o;
     }
-    public Date getOrderDate() {
-        return orderDate;
-    }
 
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
-    }
 }

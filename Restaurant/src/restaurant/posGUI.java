@@ -7,9 +7,6 @@ package restaurant;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -323,9 +320,6 @@ public class posGUI extends javax.swing.JPanel {
         }
         myo.setPriceTotal(priceTotal);
         myo.setOrderNumber(1);
-        Date date = new Date();
-        myo.setOrderDate(date);
-
         int res = oc.insertOrder(myo);
         if(res > 0){
                 JOptionPane.showMessageDialog(null, "Finish insert order to database");   
