@@ -41,7 +41,8 @@ public class UserController{
             pst.setString(5, u.getSurname());
             pst.setString(6, u.getEmail());
             res = pst.executeUpdate();
-
+            conn.close();
+            pst.close();
         }
         catch(SQLException ex){
             JOptionPane.showMessageDialog(null, ex);
@@ -59,6 +60,8 @@ public class UserController{
             pst.setString(3, u.getRoles());
             ResultSet rs = pst.executeQuery();
             if(rs.next()){
+                conn.close();
+                pst.close();
                 return true;
             }
             else{

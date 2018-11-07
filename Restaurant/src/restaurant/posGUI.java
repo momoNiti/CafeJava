@@ -318,9 +318,10 @@ public class posGUI extends javax.swing.JPanel {
             myo.addFood(new Order(quantity, name, price_each, price));
         }
         myo.setUser(mg.getU().getUname());
+        
         int res = oc.insertOrder(myo);
         if(res > 0){
-                JOptionPane.showMessageDialog(null, "Finish insert order to database");   
+                JOptionPane.showMessageDialog(null, "Finish insert order to database");
             }
             else{
                 JOptionPane.showMessageDialog(null, "Unable to insert");

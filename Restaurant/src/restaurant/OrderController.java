@@ -44,6 +44,8 @@ public class OrderController{
             pst.setTimestamp(2, sqlTime);
             pst.setString(3, myo.getUser());
             res = pst.executeUpdate();
+            conn.close();
+            pst.close();
             
         }
         catch(SQLException ex){
