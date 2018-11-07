@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public class myOrder{
     private ArrayList<Order> o = new ArrayList<Order>();
     private double price_include_vat;
+
+    
     private double priceTotal;
     private String user;
 
@@ -28,7 +30,10 @@ public class myOrder{
         }
     }
 
-
+    public void setPrice_include_vat(double price_include_vat) {
+        double temp = price_include_vat * vat;
+        this.price_include_vat = price_include_vat + temp ;
+    }
     public double getPrice_include_vat() {
         double temp = priceTotal * vat;
         price_include_vat = temp + priceTotal;

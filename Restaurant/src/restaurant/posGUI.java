@@ -318,18 +318,18 @@ public class posGUI extends javax.swing.JPanel {
             myo.addFood(new Order(quantity, name, price_each, price));
         }
         myo.setUser(mg.getU().getUname());
+        myo.setPriceTotal(priceTotal);
+        myo.setPrice_include_vat(priceTotal);
         
         int res = oc.insertOrder(myo);
         if(res > 0){
                 JOptionPane.showMessageDialog(null, "Finish insert order to database");
+                mg.dispose();
+                new MainGUI(mg.getU()).setVisible(true);
             }
             else{
                 JOptionPane.showMessageDialog(null, "Unable to insert");
             }
-        for(int i=0; i<model.getRowCount(); i++){
-            model.removeRow(i);
-            calculatePrice();
-        }
         
     }//GEN-LAST:event_jSubmitActionPerformed
 
