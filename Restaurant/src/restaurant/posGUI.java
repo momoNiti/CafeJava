@@ -72,7 +72,11 @@ public class posGUI extends javax.swing.JPanel {
         pos_Panel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        pos_jTable = new javax.swing.JTable();
+        pos_jTable = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false;   //Disallow the editing of any cell
+            }
+        };
         jDelete = new javax.swing.JButton();
         jSubmit = new javax.swing.JButton();
         jTotal = new javax.swing.JTextField();
@@ -90,6 +94,7 @@ public class posGUI extends javax.swing.JPanel {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        pos_jTable.getTableHeader().setReorderingAllowed(false);
         pos_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -416,7 +421,7 @@ public class posGUI extends javax.swing.JPanel {
         }
         return 0;
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DynamicPanel;
     private javax.swing.JButton jDecreseQty;

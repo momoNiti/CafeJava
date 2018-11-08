@@ -18,7 +18,7 @@ public class MainGUI extends javax.swing.JFrame {
     GridBagLayout layout = new GridBagLayout();
     posGUI pos;
     SignUpGUI sign;
-
+    PanelDB pDB;
     
     private User u;
     /**
@@ -29,6 +29,7 @@ public class MainGUI extends javax.swing.JFrame {
         initComponents();
         pos = new posGUI(this);
         sign = new SignUpGUI(this);
+        pDB = new PanelDB(this);
         
         DynamicPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
@@ -297,6 +298,7 @@ public class MainGUI extends javax.swing.JFrame {
         btnEX_color.setOpaque(false);
         
         pos.setVisible(true);
+        pDB.setVisible(false);
         sign.setVisible(false);
     }//GEN-LAST:event_btnPOSMouseClicked
 
@@ -310,6 +312,10 @@ public class MainGUI extends javax.swing.JFrame {
         btnDB_color.setOpaque(true);
         btnSignUp_color.setOpaque(false);
         btnEX_color.setOpaque(false);
+        
+        pos.setVisible(false);
+        pDB.setVisible(true);
+        sign.setVisible(false);
     }//GEN-LAST:event_btnDBMouseClicked
 
     private void btnSignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSignUpMouseClicked
@@ -324,8 +330,9 @@ public class MainGUI extends javax.swing.JFrame {
         btnSignUp_color.setOpaque(true);
         btnEX_color.setOpaque(false);
         
-        sign.setVisible(true);
         pos.setVisible(false);
+        pDB.setVisible(false);
+        sign.setVisible(true);
     }//GEN-LAST:event_btnSignUpMouseClicked
 
     private void btnEXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEXMouseClicked
