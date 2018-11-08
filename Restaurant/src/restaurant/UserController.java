@@ -67,11 +67,56 @@ public class UserController{
             else{
                 return false;
             }
-            
+    
         }
         catch(SQLException ex){
             JOptionPane.showMessageDialog(null, ex);
         }
         return false;
     }
+    
+//    public int loginTime(userHours uh){
+//        int res = 0;
+//        String sql = "";
+//        java.sql.Timestamp sqlTime = new java.sql.Timestamp(uh.getStart_work().getTime());
+//        try{
+//            sql = "INSERT INTO working_hours(username, name, surname, start_work) VALUES(?, ?, ?, ?)";
+//            pst = (PreparedStatement) conn.prepareStatement(sql);
+//            pst.setString(1, uh.getUname());
+//            pst.setString(2, uh.getName());
+//            pst.setString(3, uh.getSurname());
+//            pst.setTimestamp(4, sqlTime);
+//            pst.setString(5, uh.getSurname());
+//            pst.setString(6, uh.getEmail());
+//            res = pst.executeUpdate();
+//            conn.close();
+//            pst.close();
+//        }
+//        catch(SQLException ex){
+//            JOptionPane.showMessageDialog(null, ex);
+//        }
+//        
+//        return res;
+//    }
+//    
+//    public int logoutTime(userHours uh){
+//        int res = 0;
+//        String sql = "";
+//        java.sql.Timestamp sqlTime = new java.sql.Timestamp(uh.getEnd_work().getTime());
+//        try{
+//            sql = "update working_hours set end_work = ? where id=?;";
+////            sql = "INSERT INTO working_hours(username, name, surname, end_work) VALUES(?, ?, ?, ?)";
+//            pst = (PreparedStatement) conn.prepareStatement(sql);
+//            pst.setString(1, u.getUname());
+//            pst.setString(2, u.getPwd());
+//            res = pst.executeUpdate();
+//            conn.close();
+//            pst.close();
+//        }
+//        catch(SQLException ex){
+//            JOptionPane.showMessageDialog(null, ex);
+//        }
+//       
+//        return res;
+//    }
 }

@@ -35,7 +35,6 @@ public class OrderController{
         String sql = "";
         
         java.util.Date date=new java.util.Date();
-        java.sql.Date sqlDate=new java.sql.Date(date.getTime());
         java.sql.Timestamp sqlTime = new java.sql.Timestamp(date.getTime());
         try{
             sql = "INSERT INTO order_foods(detail, orderDate, user) VALUES(cast(? as json), ?, ?)";
