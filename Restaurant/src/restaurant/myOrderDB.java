@@ -22,6 +22,14 @@ public class myOrderDB {
     private Timestamp date;
     final double vat = 0.07;
     
+    public myOrderDB(int orderID, ArrayList<orderedDB> odb, double priceTotal, double price_include_vat, Timestamp date, String user) {
+        this.price_include_vat = price_include_vat;
+        this.priceTotal = priceTotal;
+        this.user = user;
+        this.orderID = orderID;
+        this.date = date;
+        this.odb = odb;
+    }
     public int getOrderID() {
         return orderID;
     }

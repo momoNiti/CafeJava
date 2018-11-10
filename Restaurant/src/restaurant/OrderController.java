@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
         
@@ -26,7 +27,6 @@ public class OrderController{
     Database db;
     Connection conn;
     PreparedStatement pst;
-    myOrderDB myoDB;
     public OrderController(){
         super();
         db = new Database();
@@ -77,8 +77,9 @@ public class OrderController{
 //        System.out.println(size);
         return size;
     }
-    public void showDB(){
-        myoDB = new myOrderDB();
+    public ArrayList<myOrderDB> collectData(){
+        showDB result = new showDB();
+        ArrayList<myOrderDB> myoDB = new ArrayList<myOrderDB>();
         Gson gson = new Gson();
         String sql = "";
         try{
@@ -89,40 +90,45 @@ public class OrderController{
                 pst.setInt(1, i);
                 ResultSet rs = pst.executeQuery();
                 while(rs.next()){
+                    int orderID = rs.getInt(1);
                     Type orderedDBType = new TypeToken<ArrayList<orderedDB>>(){}.getType();
                     ArrayList<orderedDB> oDB= gson.fromJson(rs.getString(2), orderedDBType);
-                    myoDB.setOrderID(rs.getInt(1));
-                    myoDB.setOdb(oDB);
-                    myoDB.setPriceTotal(rs.getDouble(3));
-                    myoDB.setPrice_include_vat(rs.getDouble(4));
-                    myoDB.setDate(rs.getTimestamp(5));
-                    myoDB.setUser(rs.getString(6));
+                    double priceTotal = rs.getDouble(3);
+                    double price_include_vat = rs.getDouble(4);
+                    Timestamp date = rs.getTimestamp(5);
+                    String user = rs.getString(6);
+                    
+                    myOrderDB temp = new myOrderDB(orderID, oDB, priceTotal, price_include_vat, date, user);
+                    myoDB.add(temp);
                     }   
                 } 
             }
+            return myoDB;
         }
         catch(Exception ex){
             ex.printStackTrace();
             
         }
-        finally{
-            System.out.println("Order Id = : " + myoDB.getOrderID());
-            System.out.println("Items : ");
-            for(int i=0; i<myoDB.getOdb().size(); i++){
-                System.out.println("---Name : " + myoDB.getOdb().get(i).getName());
-                System.out.println("---Price each : " + myoDB.getOdb().get(i).getPrice_each());
-                System.out.println("---Quantity : " + myoDB.getOdb().get(i).getQuantity());
-                System.out.println("---Price : " + myoDB.getOdb().get(i).getPrice());
-            }
-            System.out.println("Price total = " + myoDB.getPriceTotal());
-            System.out.println("Price include vat = " + myoDB.getPrice_include_vat());
-            System.out.println("Date : " + myoDB.getDate());
-            System.out.println("User : " + myoDB.getUser());
-        }
+        return myoDB;
     }
 
     public static void main(String[] args) {
         OrderController ordc = new OrderController();
-        ordc.showDB();
+        showDB run = new showDB();
+        run.setMyoDB(ordc.collectData());
+        for(int i=0; i<run.getMyoDB().size(); i++){
+            System.out.println("Order id :  " + run.getMyoDB().get(i).getOrderID());
+            for(int j=0; j<run.getMyoDB().get(i).getOdb().size(); j++){
+                System.out.println("------ name :  " + run.getMyoDB().get(i).getOdb().get(j).getName());
+                System.out.println("------ quanitty :  " +run.getMyoDB().get(i).getOdb().get(j).getQuantity());
+                System.out.println("------ price each :  " +run.getMyoDB().get(i).getOdb().get(j).getPrice_each());
+                System.out.println("------ price :  " +run.getMyoDB().get(i).getOdb().get(j).getPrice());
+            }
+            System.out.println("Price total :  " + run.getMyoDB().get(i).getPriceTotal());
+            System.out.println("Price include vat :  " + run.getMyoDB().get(i).getPrice_include_vat());
+            System.out.println("Date :  " + run.getMyoDB().get(i).getDate());
+            System.out.println("User :  " + run.getMyoDB().get(i).getUser());
+            System.out.println("----------------------------------------");
+        }
     }
 }
