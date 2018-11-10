@@ -5,6 +5,8 @@
  */
 package restaurant;
 
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 /**
@@ -13,20 +15,19 @@ import java.util.ArrayList;
  */
 public class myOrderDB {
     private ArrayList<orderedDB> odb = new ArrayList<orderedDB>();
-
-    public void setOdb(ArrayList<orderedDB> odb) {
-        this.odb = odb;
-    }
-
-
     private double price_include_vat;
-
-    
     private double priceTotal;
     private String user;
-
-
+    private int orderID;
+    private Timestamp date;
     final double vat = 0.07;
+    
+    public int getOrderID() {
+        return orderID;
+    }
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
+    }
     public void addFood(orderedDB odb){
         this.odb.add(odb);
     }
@@ -62,4 +63,14 @@ public class myOrderDB {
     public ArrayList<orderedDB> getOdb() {
         return odb;
     }
+    public void setOdb(ArrayList<orderedDB> odb) {
+        this.odb = odb;
+    }
+    public Timestamp getDate() {
+        return date;
+    }
+    public void setDate(Timestamp date) {
+        this.date = date;
+    }
+
 }

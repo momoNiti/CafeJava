@@ -6,12 +6,15 @@
 package restaurant;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.mysql.jdbc.PreparedStatement;
+import java.lang.reflect.Type;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
         
 
@@ -24,8 +27,6 @@ public class OrderController{
     Connection conn;
     PreparedStatement pst;
     myOrderDB myoDB;
-    orderedDB oDB;
-
     public OrderController(){
         super();
         db = new Database();
@@ -77,9 +78,8 @@ public class OrderController{
         return size;
     }
     public void showDB(){
-        
+        myoDB = new myOrderDB();
         Gson gson = new Gson();
-//        gson.fromJson(json, myOrderDB.class);
         String sql = "";
         try{
             sql = "SELECT * FROM restaurant.order_foods WHERE orderID=?";
@@ -89,28 +89,38 @@ public class OrderController{
                 pst.setInt(1, i);
                 ResultSet rs = pst.executeQuery();
                 while(rs.next()){
-                    System.out.println(rs.getString(1)); //ID
-                    oDB = gson.fromJson(rs.getString(2), orderedDB.class);
-//                    myoDB = gson.fromJson(rs.getString(2), myOrderDB.class); // JSon
-//                    oDB = gson.fromJson(rs.getString(2), orderedDB.class);
-//                    System.out.println(rs.getString(2)); //JSon
-//                    System.out.println(rs.getString(3)); // price_total
-//                    System.out.println(rs.getString(4)); // price_include_vat
-//                    System.out.println(rs.getString(5)); // date
-//                    System.out.println(rs.getString(6)); // user
-//                System.out.println(pst.toString());
-                }
-                System.out.println("-----");
-                }
+                    Type orderedDBType = new TypeToken<ArrayList<orderedDB>>(){}.getType();
+                    ArrayList<orderedDB> oDB= gson.fromJson(rs.getString(2), orderedDBType);
+                    myoDB.setOrderID(rs.getInt(1));
+                    myoDB.setOdb(oDB);
+                    myoDB.setPriceTotal(rs.getDouble(3));
+                    myoDB.setPrice_include_vat(rs.getDouble(4));
+                    myoDB.setDate(rs.getTimestamp(5));
+                    myoDB.setUser(rs.getString(6));
+                    }   
+                } 
             }
-            System.out.println(oDB);
         }
         catch(Exception ex){
             ex.printStackTrace();
             
         }
+        finally{
+            System.out.println("Order Id = : " + myoDB.getOrderID());
+            System.out.println("Items : ");
+            for(int i=0; i<myoDB.getOdb().size(); i++){
+                System.out.println("---Name : " + myoDB.getOdb().get(i).getName());
+                System.out.println("---Price each : " + myoDB.getOdb().get(i).getPrice_each());
+                System.out.println("---Quantity : " + myoDB.getOdb().get(i).getQuantity());
+                System.out.println("---Price : " + myoDB.getOdb().get(i).getPrice());
+            }
+            System.out.println("Price total = " + myoDB.getPriceTotal());
+            System.out.println("Price include vat = " + myoDB.getPrice_include_vat());
+            System.out.println("Date : " + myoDB.getDate());
+            System.out.println("User : " + myoDB.getUser());
+        }
     }
-    
+
     public static void main(String[] args) {
         OrderController ordc = new OrderController();
         ordc.showDB();
