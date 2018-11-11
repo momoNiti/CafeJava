@@ -17,11 +17,11 @@ public class PanelDB extends javax.swing.JPanel {
     public PanelDB(MainGUI mg) {
         initComponents();
         this.mg = mg;
-        OrderController ordc = new OrderController();
-        showDB run = new showDB();
-        while(true){
-            run.setMyoDB(ordc.collectData());
-        }
+//        OrderController ordc = new OrderController();
+//        showDB run = new showDB();
+//        while(true){
+//            
+//        }
         
     }
 

@@ -351,9 +351,8 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void jLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogOutActionPerformed
         // TODO add your handling code here:
-        this.dispose();
-        Login main = new Login();
-        main.run();
+        new Login().run();
+        this.dispose(); 
     }//GEN-LAST:event_jLogOutActionPerformed
     public void setColor(JPanel panel){
         panel.setBackground(new Color(102,153,255));

@@ -25,7 +25,7 @@ public class GraphingData extends JPanel {
     final int PAD = 20;
  
     protected void paintComponent(Graphics g) {
-        JFreeChart chart = ChartFactory.createLineChart(TOOL_TIP_TEXT_KEY, TOOL_TIP_TEXT_KEY, TOOL_TIP_TEXT_KEY, dataset);
+//        JFreeChart chart = ChartFactory.createLineChart(TOOL_TIP_TEXT_KEY, TOOL_TIP_TEXT_KEY, TOOL_TIP_TEXT_KEY, dataset);
         run.setMyoDB(ordc.collectData());
         data = new double[run.getMyoDB().size()];
         for(int i=0; i<run.getMyoDB().size(); i++){
@@ -91,13 +91,12 @@ public class GraphingData extends JPanel {
         return max;
     }
  
-    public static void main(String[] args) {
-        JFrame f = new JFrame();
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new GraphingData());
-        f.setSize(400,400);
-        f.setLocation(200,200);
-        f.setVisible(true);
-        
-    }
+//    public static void main(String[] args) {
+//        JFrame f = new JFrame();
+//        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        f.add(new GraphingData());
+//        f.setSize(400,400);
+//        f.setLocation(200,200);
+//        f.setVisible(true);   
+//    }
 }

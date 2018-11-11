@@ -150,8 +150,7 @@ public class Login extends javax.swing.JFrame {
         if(res){
             JOptionPane.showMessageDialog(null, "Welcome " + u.getUname());
             new MainGUI(u).setVisible(true);
-
-            this.setVisible(false);
+//            this.dispose();
         }
         else{
             JOptionPane.showMessageDialog(null, "Wrong");
