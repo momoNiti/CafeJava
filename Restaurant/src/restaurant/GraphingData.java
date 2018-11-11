@@ -10,93 +10,45 @@ package restaurant;
  * @author STUDY fuckin HARD
  */
 import java.awt.*;
-import java.awt.font.*;
-import java.awt.geom.*;
-import javafx.scene.chart.Chart;
+import java.util.Iterator;
+import java.util.Set;
 import javax.swing.*;
 import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
+
  
 public class GraphingData extends JPanel {
+    
     OrderController ordc = new OrderController();
     showDB run = new showDB();
-    
-    double[] data;
-    final int PAD = 20;
- 
-    protected void paintComponent(Graphics g) {
-//        JFreeChart chart = ChartFactory.createLineChart(TOOL_TIP_TEXT_KEY, TOOL_TIP_TEXT_KEY, TOOL_TIP_TEXT_KEY, dataset);
+    public GraphingData(){
         run.setMyoDB(ordc.collectData());
-        data = new double[run.getMyoDB().size()];
-        for(int i=0; i<run.getMyoDB().size(); i++){
-            data[i] = run.getMyoDB().get(i).getPrice_include_vat();
+        Set keys = run.getPricePerDay().keySet();
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        for(Iterator i = keys.iterator(); i.hasNext();){
+            int key = (int) i.next();
+            double value = (double) run.getPricePerDay().get(key);
+            String key_s = String.valueOf(key);
+            dataset.setValue(value, "Value", key_s);
         }
-        super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D)g;
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-                            RenderingHints.VALUE_ANTIALIAS_ON);
-        int w = getWidth();
-        int h = getHeight();
-        // Draw ordinate.
-        g2.draw(new Line2D.Double(PAD, PAD, PAD, h-PAD));
-        // Draw abcissa.
-        g2.draw(new Line2D.Double(PAD, h-PAD, w-PAD, h-PAD));
-        // Draw labels.
-        Font font = g2.getFont();
-        FontRenderContext frc = g2.getFontRenderContext();
-        LineMetrics lm = font.getLineMetrics("0", frc);
-        float sh = lm.getAscent() + lm.getDescent();
-        // Ordinate label.
-        String s = "data";
-        float sy = PAD + ((h - 2*PAD) - s.length()*sh)/2 + lm.getAscent();
-        for(int i = 0; i < s.length(); i++) {
-            String letter = String.valueOf(s.charAt(i));
-            float sw = (float)font.getStringBounds(letter, frc).getWidth();
-            float sx = (PAD - sw)/2;
-            g2.drawString(letter, sx, sy);
-            sy += sh;
-        }
-        // Abcissa label.
-        s = "x axis";
-        sy = h - PAD + (PAD - sh)/2 + lm.getAscent();
-        float sw = (float)font.getStringBounds(s, frc).getWidth();
-        float sx = (w - sw)/2;
-        g2.drawString(s, sx, sy);
-        // Draw lines.
-        double xInc = (double)(w - 2*PAD)/(data.length-1);
-        double scale = (double)(h - 2*PAD)/getMax();
-        g2.setPaint(Color.green.darker());
-        for(int i = 0; i < data.length-1; i++) {
-            double x1 = PAD + i*xInc;
-            double y1 = h - PAD - scale*data[i];
-            double x2 = PAD + (i+1)*xInc;
-            double y2 = h - PAD - scale*data[i+1];
-            g2.draw(new Line2D.Double(x1, y1, x2, y2));
-        }
-        // Mark data points.
-        g2.setPaint(Color.red);
-        for(int i = 0; i < data.length; i++) {
-            double x = PAD + i*xInc;
-            double y = h - PAD - scale*data[i];
-            g2.fill(new Ellipse2D.Double(x-2, y-2, 4, 4));
-        }
+        JFreeChart chart = ChartFactory.createLineChart("Price per day", "Date", "Price", (CategoryDataset) dataset, PlotOrientation.VERTICAL, false, true, true);
+        chart.setBackgroundPaint(Color.yellow);
+        BarRenderer renderer = new BarRenderer();
+        CategoryPlot plot = chart.getCategoryPlot();
+        ChartFrame frame = new ChartFrame("Price per day", chart);
+        frame.setVisible(true);
+        frame.setSize(450,350);
     }
+
+
+    public static void main(String[] args) {
+        GraphingData graph = new GraphingData();
  
-    private double getMax() {
-        double max = -Integer.MAX_VALUE;
-        for(int i = 0; i < data.length; i++) {
-            if(data[i] > max)
-                max = data[i];
-        }
-        return max;
     }
- 
-//    public static void main(String[] args) {
-//        JFrame f = new JFrame();
-//        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        f.add(new GraphingData());
-//        f.setSize(400,400);
-//        f.setLocation(200,200);
-//        f.setVisible(true);   
-//    }
 }

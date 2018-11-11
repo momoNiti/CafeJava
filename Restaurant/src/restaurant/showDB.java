@@ -18,7 +18,8 @@ import java.util.TreeMap;
 public class showDB {
     private ArrayList<myOrderDB> myoDB = new ArrayList<myOrderDB>();
     private Map map = new TreeMap(); //Because Treemap -> order of key is important;
-    public Map sumPricePerDay(){
+    
+    public Map getPricePerDay(){
         for(int i=0; i<myoDB.size(); i++){
             int date_temp = myoDB.get(i).getDate().getDate();
             int month_temp = myoDB.get(i).getDate().getMonth();
@@ -46,7 +47,8 @@ public class showDB {
         OrderController ordc = new OrderController();
         showDB run = new showDB();
         run.setMyoDB(ordc.collectData());
-        run.sumPricePerDay();   
+        run.getPricePerDay();
+        System.out.println(run.getPricePerDay().entrySet());
 
     }
 }
