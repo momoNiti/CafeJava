@@ -90,6 +90,8 @@ public class posGUI extends javax.swing.JPanel {
         jDrink = new javax.swing.JButton();
         DynamicPanel = new javax.swing.JPanel();
 
+        setPreferredSize(new java.awt.Dimension(1143, 616));
+
         pos_Panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));

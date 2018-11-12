@@ -46,6 +46,8 @@ public class SignUpGUI extends javax.swing.JPanel {
         exit = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
+        setPreferredSize(new java.awt.Dimension(1143, 616));
+
         jRoles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "admin", "cashier" }));
 
         jLabel6.setText("Name");
