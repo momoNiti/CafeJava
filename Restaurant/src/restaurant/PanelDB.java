@@ -5,24 +5,40 @@
  */
 package restaurant;
 
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.util.Iterator;
+import java.util.Set;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
+
 /**
  *
  * @author STUDY fuckin HARD
  */
 public class PanelDB extends javax.swing.JPanel {
     private MainGUI mg;
+    showDB show;
     /**
      * Creates new form PanelDB
      */
     public PanelDB(MainGUI mg) {
+        show = new showDB();
         initComponents();
         this.mg = mg;
-//        OrderController ordc = new OrderController();
-//        showDB run = new showDB();
-//        while(true){
-//            
-//        }
-        
+        GridBagLayout layout = new GridBagLayout();
+        this.setLayout(layout);
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        this.add(show.getGraph(), c);
     }
 
     /**
@@ -33,6 +49,8 @@ public class PanelDB extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        setBackground(new java.awt.Color(0, 204, 153));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

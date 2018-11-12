@@ -5,11 +5,22 @@
  */
 package restaurant;
 
+import java.awt.Color;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
@@ -43,12 +54,25 @@ public class showDB {
     public void setMyoDB(ArrayList<myOrderDB> myoDB) {
         this.myoDB = myoDB;
     }
-    public static void main(String[] args) {
+    public ChartPanel getGraph(){
         OrderController ordc = new OrderController();
         showDB run = new showDB();
         run.setMyoDB(ordc.collectData());
-        run.getPricePerDay();
-        System.out.println(run.getPricePerDay().entrySet());
-
+        Set keys = run.getPricePerDay().keySet();
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        for(Iterator i = keys.iterator(); i.hasNext();){
+            int key = (int) i.next();
+            double value = (double) run.getPricePerDay().get(key);
+            String key_s = String.valueOf(key);
+            dataset.setValue(value, "Value", key_s);
+        }
+        JFreeChart chart = ChartFactory.createLineChart("Price per day", "Date", "Price", (CategoryDataset) dataset, PlotOrientation.VERTICAL, false, true, true);
+        chart.setBackgroundPaint(Color.yellow);
+        BarRenderer renderer = new BarRenderer();
+        CategoryPlot plot = chart.getCategoryPlot();
+        ChartPanel panel = new ChartPanel(chart);
+        panel.setSize(450,350);
+        panel.setVisible(true);
+        return panel;
     }
 }

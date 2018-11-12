@@ -30,15 +30,16 @@ public class MainGUI extends javax.swing.JFrame {
         pos = new posGUI(this);
         sign = new SignUpGUI(this);
         pDB = new PanelDB(this);
-        
         DynamicPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
         DynamicPanel.add(pos, c);
         DynamicPanel.add(sign, c);
+        DynamicPanel.add(pDB, c);
         pos.setVisible(true);
         sign.setVisible(false);
+        pDB.setVisible(false);
         setColor(btnPOS);
         resetColor(btnDB);
         resetColor(btnSignUp);

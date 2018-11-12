@@ -112,23 +112,4 @@ public class OrderController{
         return myoDB;
     }
 
-//    public static void main(String[] args) {
-//        OrderController ordc = new OrderController();
-//        showDB run = new showDB();
-//        run.setMyoDB(ordc.collectData());
-//        for(int i=0; i<run.getMyoDB().size(); i++){
-//            System.out.println("Order id :  " + run.getMyoDB().get(i).getOrderID());
-//            for(int j=0; j<run.getMyoDB().get(i).getOdb().size(); j++){
-//                System.out.println("------ name :  " + run.getMyoDB().get(i).getOdb().get(j).getName());
-//                System.out.println("------ quanitty :  " +run.getMyoDB().get(i).getOdb().get(j).getQuantity());
-//                System.out.println("------ price each :  " +run.getMyoDB().get(i).getOdb().get(j).getPrice_each());
-//                System.out.println("------ price :  " +run.getMyoDB().get(i).getOdb().get(j).getPrice());
-//            }
-//            System.out.println("Price total :  " + run.getMyoDB().get(i).getPriceTotal());
-//            System.out.println("Price include vat :  " + run.getMyoDB().get(i).getPrice_include_vat());
-//            System.out.println("Date :  " + run.getMyoDB().get(i).getDate());
-//            System.out.println("User :  " + run.getMyoDB().get(i).getUser());
-//            System.out.println("----------------------------------------");
-//        }
-//    }
 }
