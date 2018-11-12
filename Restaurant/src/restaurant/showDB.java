@@ -21,6 +21,8 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.xy.XYBarDataset;
+import org.jfree.data.xy.XYDataset;
 
 /**
  *
@@ -59,6 +61,7 @@ public class showDB {
         showDB run = new showDB();
         run.setMyoDB(ordc.collectData());
         Set keys = run.getPricePerDay().keySet();
+//        XYDataset dataset = new XYBarDataset();
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for(Iterator i = keys.iterator(); i.hasNext();){
             int key = (int) i.next();
@@ -66,6 +69,7 @@ public class showDB {
             String key_s = String.valueOf(key);
             dataset.setValue(value, "Value", key_s);
         }
+//        JFreeChart chart = ChartFactory.createXYLineChart(title, xAxisLabel, yAxisLabel, dataset, PlotOrientation.HORIZONTAL, true, true, true)
         JFreeChart chart = ChartFactory.createLineChart("Price per day", "Date", "Price", (CategoryDataset) dataset, PlotOrientation.VERTICAL, false, true, true);
         chart.setBackgroundPaint(Color.yellow);
         BarRenderer renderer = new BarRenderer();

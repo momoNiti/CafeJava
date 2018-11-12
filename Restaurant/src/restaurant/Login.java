@@ -149,8 +149,10 @@ public class Login extends javax.swing.JFrame {
         boolean res = uc.checkLogin(u);
         if(res){
             JOptionPane.showMessageDialog(null, "Welcome " + u.getUname());
-            new MainGUI(u).setVisible(true);
-//            this.dispose();
+            MainGUI mg = new MainGUI(u);
+            mg.setVisible(true);
+            mg.setLocationRelativeTo(null);
+            this.dispose();
         }
         else{
             JOptionPane.showMessageDialog(null, "Wrong");
@@ -190,12 +192,17 @@ public class Login extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                Login run = new Login();
+                run.setVisible(true);
+//                new Login().setVisible(true);
+                run.setLocationRelativeTo(null);
             }
         });
     }
     public void run() {
-        new Login().setVisible(true);
+        Login run = new Login();
+        run.setVisible(true);
+        run.setLocationRelativeTo(null);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
