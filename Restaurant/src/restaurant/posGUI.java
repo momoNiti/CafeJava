@@ -332,8 +332,10 @@ public class posGUI extends javax.swing.JPanel {
         if(res > 0){
                 JOptionPane.showMessageDialog(null, "Finish insert order to database");
                 mg.dispose();
-                new MainGUI(mg.getU()).setVisible(true);
-            }
+                MainGUI run = new MainGUI(mg.getU());
+                run.setVisible(true);
+                run.setLocationRelativeTo(null);
+        }
             else{
                 JOptionPane.showMessageDialog(null, "Unable to insert");
             }

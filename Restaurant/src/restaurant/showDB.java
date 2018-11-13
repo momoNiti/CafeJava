@@ -40,21 +40,19 @@ public class showDB {
     private Map map = new TreeMap(); //Because Treemap -> order of key is important;
     public Map getPricePerDay(){
         for(int i=0; i<myoDB.size(); i++){
-            Timestamp time = myoDB.get(i).getDate();
-            Date date = new Date(time.getTime());
-            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-            String date_formated = formatter.format(date);
-            if(map.containsKey(date_formated)){
+            Timestamp time = myoDB.get(i).getDate(); //ดึงเวลาจาก database (เป็น format ของ sql)
+            Date date = new Date(time.getTime()); // แปลงจาก sql เป็น Date
+            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy"); // สร้าง Format ตามที่ต้องการ
+            String date_formated = formatter.format(date); //ได้วันเดือนปีตามที่ format ไว้
+            if(map.containsKey(date_formated)){ // ถ้า map มี key อยู่แล้ว ให้เพิ่มค่าเข้าไป ซึ่ง key คือ วันเดือนปี ถ้าไม่มีให้เพิ่มค่าใหม่เข้าไป
                 double value = (double) map.get(date_formated);
                 value += myoDB.get(i).getPrice_include_vat();
                 map.put(date_formated, value);
-//                map.replace(date_formated, value);
             }
             else{
-                map.put(date_formated, myoDB.get(i).getPrice_include_vat());           
+                map.put(date_formated, myoDB.get(i).getPrice_include_vat());
             }
         }
-//        System.out.println(map.entrySet());
         return map;
     }
     public ArrayList<myOrderDB> getMyoDB() {
@@ -65,54 +63,53 @@ public class showDB {
     }
     public ChartPanel getGraph(){
         OrderController ordc = new OrderController();
-        showDB run = new showDB();
-        run.setMyoDB(ordc.collectData());
-        Set set = run.getPricePerDay().entrySet();
-        Iterator iterator = set.iterator();
+        showDB show = new showDB();
+        show.setMyoDB(ordc.getDataDB()); //get data from databasse then set to this array list
+        Set set = show.getPricePerDay().entrySet(); //make map to set to get key and value from map
+        Iterator iterator = set.iterator(); //ดึงข้อมูลจาก set
+
+        String[] xDate = new String[set.size()]; // แก้ไขตัวแปรในแกน x ที่แสดงในกราฟ
+        XYSeriesCollection dataset = new XYSeriesCollection(); //ประกาศ Dataset ที่ใช้ในการเก็บ Series
+        XYSeries series = new XYSeries("PPD"); // ประกาศซีรี่ส์
         
-        String[] xDate = new String[set.size()];
-        XYSeriesCollection dataset = new XYSeriesCollection();
-        XYSeries series = new XYSeries("Price per day");
-        
-        int k = 0;
+        int k = 0; // เก็บ index ของ []xDate
         while(iterator.hasNext()) {
-            Map.Entry mentry = (Map.Entry)iterator.next();
-            String key = (String) mentry.getKey();
-            double value = (double) mentry.getValue();
-            xDate[k] = key;
-            series.add(k, value);
-            k++;
+            Map.Entry mapentry = (Map.Entry)iterator.next(); // เรียก map แต่ละตัว
+            String key = (String) mapentry.getKey(); // set key ของ map (วันที่ขาย)
+            double value = (double) mapentry.getValue(); //set value ของ map (ยอดขาย)
+            xDate[k] = key; // เก็บ key ลงใน xDate
+            series.add(k, value); //เพิ่มค่าลงใน Series (x, y)
+            k++; // เพิ่มค่า k
         }
         
-        dataset.addSeries(series);
+        dataset.addSeries(series); // เพิ่ม series ลงใน dataset
+        //สรา้ง chart 
         JFreeChart chart = ChartFactory.createXYLineChart("Price per day", "Date", "Price", dataset, PlotOrientation.VERTICAL, true, true, false);
+        chart.setBackgroundPaint(Color.red);
         
         XYPlot plot = (XYPlot) chart.getPlot();
-        plot.setForegroundAlpha(0.7f);
         
-        SymbolAxis domainAxis = new SymbolAxis("Date", xDate);
-        domainAxis.setTickUnit(new NumberTickUnit(1));
-//        domainAxis.setRange(0, xDate.length);
-        plot.setDomainAxis(domainAxis);
-        
+        //แก้ไขแกน X
+        SymbolAxis domainAxis = new SymbolAxis("Date", xDate); //SymbolAxis แก้แกนจากตัวเลขเป็น String 
+        domainAxis.setTickUnit(new NumberTickUnit(1)); //กำหนดระยะห่างของแกน x
+        plot.setDomainAxis(domainAxis); // set แกน x เป็นค่าที่บันทึกไว้ใน xDate #ถ้าsetRange จะเป็นค่าในแกน Y
+        //แก้ไขสี
         XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer( );
-        renderer.setSeriesPaint(0, Color.GREEN);
-        renderer.setSeriesStroke(0, new BasicStroke(3.0f));
-        plot.setRenderer(renderer);
-        
-        chart.setBackgroundPaint(Color.red);
-                
+        renderer.setSeriesPaint(0, Color.GREEN); // สีของ series
+        renderer.setSeriesStroke(0, new BasicStroke(3.0f)); //ความหนาของเส้น
+        //แสดงเลขบนจุดที่ plot ไว้        
         NumberFormat format = NumberFormat.getNumberInstance();
-        format.setMaximumFractionDigits(2); 
-        XYItemLabelGenerator generator = new StandardXYItemLabelGenerator("{2}", format, format);
+        format.setMaximumFractionDigits(2); // โชว์ค่าเป็นเลขสองหลัก 
+        XYItemLabelGenerator generator = new StandardXYItemLabelGenerator("{2}", format, format); //gen ค่าตามที่ format ไว้ โดย {}ดึงข้อมูลจาก series โดย 0 เป็น ชื่อ series , 1 คือค่า x และ 2 คือค่า y
         renderer.setBaseItemLabelGenerator(generator);
         renderer.setBaseItemLabelsVisible(true);
         
-        ChartPanel panel = new ChartPanel(chart);
-        panel.setDomainZoomable(true);
-        panel.setVisible(true);
-        panel.setPreferredSize(new Dimension(1143, 616));
-        return panel;
+        plot.setRenderer(renderer); // set ตามที่ render ไว้
+        
+        ChartPanel panel = new ChartPanel(chart); //สร้าว chartpanel
+        panel.setDomainZoomable(false); // ทำให้ซูมไม่ได้
+        panel.setVisible(true); 
+        panel.setPreferredSize(new Dimension(1143, 616)); //ทำให้ขนาดเท่ากับ panel ที่สร้างเอาไว้
+        return panel; //คืนค่า panel กลับ
     }
-    
 }
