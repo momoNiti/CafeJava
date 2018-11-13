@@ -35,8 +35,6 @@ public class myOrder{
         this.price_include_vat = price_include_vat + temp ;
     }
     public double getPrice_include_vat() {
-        double temp = priceTotal * vat;
-        price_include_vat = temp + priceTotal;
         return price_include_vat;
     }
     

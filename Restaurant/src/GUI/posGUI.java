@@ -6,11 +6,15 @@
 package GUI;
 
 import GUI.MainGUI;
-import controller.OrderController;
+import DB.controller.OrderController;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.xml.bind.ParseConversionEvent;
 import restaurant.Order;
 import restaurant.myOrder;
 /**
@@ -28,15 +32,17 @@ public class posGUI extends javax.swing.JPanel {
     DefaultTableModel model;
     private int selected_row;
     
-    private int priceTotal;
-    
-    
+    myOrder myo;
+    OrderController oc;
     /**
      * Creates new form posGUI
      */
     public posGUI(MainGUI mg) {
         this.mg = mg;
         initComponents();
+        myo = new myOrder();
+        oc = new OrderController();
+        
         pmf = new PanelMainFood(this);
         ps = new PanelSnack(this);
         pd = new PanelDrink(this);
@@ -87,6 +93,12 @@ public class posGUI extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jDecreseQty = new javax.swing.JButton();
         jIncreseQty = new javax.swing.JButton();
+        jReceive = new javax.swing.JTextField();
+        jChange = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPrice_vat = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jMainFood = new javax.swing.JButton();
@@ -146,7 +158,7 @@ public class posGUI extends javax.swing.JPanel {
 
         jTotal.setEditable(false);
 
-        jLabel1.setText("Total");
+        jLabel1.setText("Price");
 
         jDecreseQty.setText("<");
         jDecreseQty.addActionListener(new java.awt.event.ActionListener() {
@@ -162,6 +174,24 @@ public class posGUI extends javax.swing.JPanel {
             }
         });
 
+        jReceive.setText("0.0");
+        jReceive.setPreferredSize(new java.awt.Dimension(6, 22));
+        jReceive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jReceiveActionPerformed(evt);
+            }
+        });
+
+        jChange.setEditable(false);
+
+        jLabel2.setText("Receive");
+
+        jLabel3.setText("Change");
+
+        jPrice_vat.setEditable(false);
+
+        jLabel4.setText("+ Vat 7%");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -171,19 +201,26 @@ public class posGUI extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(29, 29, 29)
-                        .addComponent(jTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jDecreseQty)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jIncreseQty)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jSubmit)
                         .addGap(18, 18, 18)
-                        .addComponent(jDelete)))
+                        .addComponent(jDelete))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPrice_vat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                            .addComponent(jChange)
+                            .addComponent(jReceive, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTotal, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -191,18 +228,60 @@ public class posGUI extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPrice_vat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jReceive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jDelete)
                     .addComponent(jSubmit)
                     .addComponent(jIncreseQty)
                     .addComponent(jDecreseQty))
-                .addContainerGap())
+                .addGap(37, 37, 37))
         );
+
+        jReceive.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                try{
+                    double receive = Double.parseDouble(jReceive.getText());
+                    double change = receive - myo.getPrice_include_vat();
+                    String result = String.format("%.2f",change);
+                    jChange.setText(result);
+                }catch(NumberFormatException ex){
+                    JOptionPane.showMessageDialog(null, "Use Number");
+                }
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                try{
+                    double receive = Double.parseDouble(jReceive.getText());
+                    double change = receive - myo.getPrice_include_vat();
+                    String result = String.format("%.2f",change);
+                    jChange.setText(result);
+                }catch(NumberFormatException ex){
+                    JOptionPane.showMessageDialog(null, "Use Number");
+                }
+            }
+        });
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -266,7 +345,7 @@ public class posGUI extends javax.swing.JPanel {
         DynamicPanel.setLayout(DynamicPanelLayout);
         DynamicPanelLayout.setHorizontalGroup(
             DynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 319, Short.MAX_VALUE)
+            .addGap(0, 350, Short.MAX_VALUE)
         );
         DynamicPanelLayout.setVerticalGroup(
             DynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,7 +384,7 @@ public class posGUI extends javax.swing.JPanel {
             .addComponent(pos_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteActionPerformed
         // TODO add your handling code here:
         selected_row = pos_jTable.getSelectedRow();
@@ -319,8 +398,7 @@ public class posGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_jDeleteActionPerformed
 
     private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
-        myOrder myo = new myOrder();
-        OrderController oc = new OrderController();
+        
         for(int i=0; i<model.getRowCount(); i++){
             int quantity = (int) model.getValueAt(i, 0);
             String name = (String) model.getValueAt(i, 1);
@@ -329,9 +407,7 @@ public class posGUI extends javax.swing.JPanel {
             myo.addFood(new Order(quantity, name, price_each, price));
         }
         myo.setUser(mg.getU().getUname());
-        myo.setPriceTotal(priceTotal);
-        myo.setPrice_include_vat(priceTotal);
-        
+
         int res = oc.insertOrder(myo);
         if(res > 0){
                 JOptionPane.showMessageDialog(null, "Finish insert order to database");
@@ -343,7 +419,6 @@ public class posGUI extends javax.swing.JPanel {
             else{
                 JOptionPane.showMessageDialog(null, "Unable to insert");
             }
-        
     }//GEN-LAST:event_jSubmitActionPerformed
 
     private void jMainFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFoodActionPerformed
@@ -402,14 +477,22 @@ public class posGUI extends javax.swing.JPanel {
         }
         calculatePrice();
     }//GEN-LAST:event_jDecreseQtyActionPerformed
-    
+
+    private void jReceiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jReceiveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jReceiveActionPerformed
+
     public void calculatePrice(){
         int temp = 0;
         for(int i=0; i<model.getRowCount(); i++){
             temp += (double)model.getValueAt(i, 3);
         }
-        priceTotal = temp;
-        jTotal.setText(Double.toString(priceTotal));
+        myo.setPriceTotal(temp);
+        myo.setPrice_include_vat(myo.getPriceTotal());
+        
+        DecimalFormat df = new DecimalFormat(".##");
+        jTotal.setText(df.format(myo.getPriceTotal()));
+        jPrice_vat.setText(df.format(myo.getPrice_include_vat()));
     }
     public boolean checkMenu(String foodname){
         for(int i=0; i<model.getRowCount(); i++){
@@ -430,15 +513,21 @@ public class posGUI extends javax.swing.JPanel {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DynamicPanel;
+    private javax.swing.JTextField jChange;
     private javax.swing.JButton jDecreseQty;
     private javax.swing.JButton jDelete;
     private javax.swing.JButton jDrink;
     private javax.swing.JButton jIncreseQty;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JButton jMainFood;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField jPrice_vat;
+    private javax.swing.JTextField jReceive;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jSnack;
     private javax.swing.JButton jSubmit;

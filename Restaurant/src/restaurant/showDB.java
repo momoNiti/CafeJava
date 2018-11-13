@@ -5,7 +5,7 @@
  */
 package restaurant;
 
-import controller.OrderController;
+import DB.controller.OrderController;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -62,11 +62,8 @@ public class showDB {
     public void setMyoDB(ArrayList<myOrderDB> myoDB) {
         this.myoDB = myoDB;
     }
-    public ChartPanel getGraph(){
-        OrderController ordc = new OrderController();
-        showDB show = new showDB();
-        show.setMyoDB(ordc.getDataDB()); //get data from databasse then set to this array list
-        Set set = show.getPricePerDay().entrySet(); //make map to set to get key and value from map
+    public ChartPanel getGraph(Map map){
+        Set set = map.entrySet(); //make map to set to get key and value from map
         Iterator iterator = set.iterator(); //ดึงข้อมูลจาก set
 
         String[] xDate = new String[set.size()]; // แก้ไขตัวแปรในแกน x ที่แสดงในกราฟ

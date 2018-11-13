@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import DB.controller.OrderController;
 import GUI.MainGUI;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -18,11 +19,11 @@ import restaurant.showDB;
 public class PanelDB extends javax.swing.JPanel {
     private MainGUI mg;
     showDB show;
+    OrderController ordc;
     /**
      * Creates new form PanelDB
      */
     public PanelDB(MainGUI mg) {
-        show = new showDB();
         initComponents();
         this.mg = mg;
         GridBagLayout layout = new GridBagLayout();
@@ -30,7 +31,11 @@ public class PanelDB extends javax.swing.JPanel {
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
-        this.add(show.getGraph(), c);
+        
+        ordc = new OrderController();;
+        show = new showDB();
+        show.setMyoDB(ordc.getDataDB()); //get data from databasse then set to this array list
+        this.add(show.getGraph(show.getPricePerDay()), c);
     }
 
     /**
