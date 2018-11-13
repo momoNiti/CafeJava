@@ -5,6 +5,8 @@
  */
 package restaurant;
 
+import GUI.Login;
+
 /**
  *
  * @author STUDY fuckin HARD
