@@ -5,7 +5,7 @@
  */
 package gui;
 
-import db.controller.OrderController;
+import db.OrderController;
 import gui.MainGUI;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

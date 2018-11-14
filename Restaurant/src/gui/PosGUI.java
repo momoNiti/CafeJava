@@ -6,7 +6,7 @@
 package gui;
 
 import gui.MainGUI;
-import db.controller.OrderController;
+import db.OrderController;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.text.DecimalFormat;
@@ -258,8 +258,10 @@ public class PosGUI extends javax.swing.JPanel {
             public void insertUpdate(DocumentEvent e) {
                 try{
                     double receive = Double.parseDouble(jReceive.getText());
-                    double change = receive - myo.getPrice_include_vat();
-                    String result = String.format("%.2f",change);
+                    myo.setReceive(receive);
+                    double change = myo.getReceive() - myo.getPrice_include_vat();
+                    myo.setChange(change);
+                    String result = String.format("%.2f", myo.getChange());
                     jChange.setText(result);
                 }catch(NumberFormatException ex){
                     JOptionPane.showMessageDialog(null, "Use Number");
@@ -487,6 +489,7 @@ public class PosGUI extends javax.swing.JPanel {
         for(int i=0; i<model.getRowCount(); i++){
             temp += (double)model.getValueAt(i, 3);
         }
+
         myo.setPriceTotal(temp);
         myo.setPrice_include_vat(myo.getPriceTotal());
         

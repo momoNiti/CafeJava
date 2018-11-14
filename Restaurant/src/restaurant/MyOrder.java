@@ -16,6 +16,25 @@ public class MyOrder{
     private double price_include_vat;
     private double priceTotal;
     private String user;
+    private double receive;
+    private double change;
+
+    public double getReceive() {
+        return receive;
+    }
+
+    public void setReceive(double receive) {
+        this.receive = receive;
+    }
+
+    public double getChange() {
+        return change;
+    }
+
+    public void setChange(double change) {
+        this.change = change;
+    }
+            
     final double vat = 0.07;
     public void addFood(Order o){
         this.o.add(o);
