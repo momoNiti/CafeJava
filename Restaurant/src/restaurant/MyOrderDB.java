@@ -12,15 +12,15 @@ import java.util.ArrayList;
  *
  * @author STUDY fuckin HARD
  */
-public class myOrderDB {
-    private ArrayList<orderedDB> odb = new ArrayList<orderedDB>();
+public class MyOrderDB {
+    private ArrayList<OrderedDB> odb = new ArrayList<OrderedDB>();
     private double price_include_vat;
     private double priceTotal;
     private String user;
     private int orderID;
     private Timestamp date;
     
-    public myOrderDB(int orderID, ArrayList<orderedDB> odb, double priceTotal, double price_include_vat, Timestamp date, String user) {
+    public MyOrderDB(int orderID, ArrayList<OrderedDB> odb, double priceTotal, double price_include_vat, Timestamp date, String user) {
         this.price_include_vat = price_include_vat;
         this.priceTotal = priceTotal;
         this.user = user;
@@ -28,7 +28,7 @@ public class myOrderDB {
         this.date = date;
         this.odb = odb;
     }
-    public ArrayList<orderedDB> getOdb() {
+    public ArrayList<OrderedDB> getOdb() {
         return odb;
     }
 

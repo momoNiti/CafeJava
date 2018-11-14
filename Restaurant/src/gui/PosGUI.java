@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package gui;
 
-import GUI.MainGUI;
-import DB.controller.OrderController;
+import gui.MainGUI;
+import db.controller.OrderController;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.text.DecimalFormat;
@@ -16,12 +16,12 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.bind.ParseConversionEvent;
 import restaurant.Order;
-import restaurant.myOrder;
+import restaurant.MyOrder;
 /**
  *
  * @author STUDY fuckin HARD
  */
-public class posGUI extends javax.swing.JPanel {
+public class PosGUI extends javax.swing.JPanel {
     GridBagLayout layout = new GridBagLayout();
     PanelMainFood pmf;
     PanelSnack ps;
@@ -32,15 +32,15 @@ public class posGUI extends javax.swing.JPanel {
     DefaultTableModel model;
     private int selected_row;
     
-    myOrder myo;
+    MyOrder myo;
     OrderController oc;
     /**
      * Creates new form posGUI
      */
-    public posGUI(MainGUI mg) {
+    public PosGUI(MainGUI mg) {
         this.mg = mg;
         initComponents();
-        myo = new myOrder();
+        myo = new MyOrder();
         oc = new OrderController();
         
         pmf = new PanelMainFood(this);

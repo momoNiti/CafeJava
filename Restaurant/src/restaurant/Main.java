@@ -5,7 +5,7 @@
  */
 package restaurant;
 
-import GUI.Login;
+import gui.Login;
 
 /**
  *

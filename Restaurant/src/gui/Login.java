@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package gui;
 
-import GUI.MainGUI;
-import DB.controller.UserController;
+import gui.MainGUI;
+import db.controller.UserController;
 import javax.swing.JOptionPane;
 import restaurant.User;
 

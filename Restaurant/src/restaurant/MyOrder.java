@@ -11,15 +11,11 @@ import java.util.ArrayList;
  *
  * @author STUDY fuckin HARD
  */
-public class myOrder{
+public class MyOrder{
     private ArrayList<Order> o = new ArrayList<Order>();
     private double price_include_vat;
-
-    
     private double priceTotal;
     private String user;
-
-
     final double vat = 0.07;
     public void addFood(Order o){
         this.o.add(o);

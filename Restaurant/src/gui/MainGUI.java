@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package gui;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.JPanel;
-import GUI.Login;
+import gui.Login;
 import restaurant.User;
 
 /**
@@ -18,7 +18,7 @@ import restaurant.User;
  */
 public class MainGUI extends javax.swing.JFrame {
     GridBagLayout layout = new GridBagLayout();
-    posGUI pos;
+    PosGUI pos;
     SignUpGUI sign;
     PanelDB pDB;
     
@@ -29,7 +29,7 @@ public class MainGUI extends javax.swing.JFrame {
     public MainGUI(User u) {
         this.u = u;
         initComponents();
-        pos = new posGUI(this);
+        pos = new PosGUI(this);
         sign = new SignUpGUI(this);
         pDB = new PanelDB(this);
         DynamicPanel.setLayout(layout);

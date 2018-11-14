@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package gui;
 
-import DB.controller.OrderController;
-import GUI.MainGUI;
+import db.controller.OrderController;
+import gui.MainGUI;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import restaurant.showDB;
+import restaurant.ShowDB;
 
 
 /**
@@ -18,7 +18,7 @@ import restaurant.showDB;
  */
 public class PanelDB extends javax.swing.JPanel {
     private MainGUI mg;
-    showDB show;
+    ShowDB show;
     OrderController ordc;
     /**
      * Creates new form PanelDB
@@ -33,7 +33,7 @@ public class PanelDB extends javax.swing.JPanel {
         c.gridy = 0;
         
         ordc = new OrderController();;
-        show = new showDB();
+        show = new ShowDB();
         show.setMyoDB(ordc.getDataDB()); //get data from databasse then set to this array list
         this.add(show.getGraph(show.getPricePerDay()), c);
     }

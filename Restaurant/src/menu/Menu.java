@@ -3,29 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package restaurant;
+package menu;
 
 /**
  *
  * @author STUDY fuckin HARD
  */
-public class orderedDB {
-    private int quantity;
+public class Menu {
     private String name;
     private double price;
-    private double price_each;
-    public orderedDB(int quantity, String name, double price_each, double price){
-        this.quantity = quantity;
+    public Menu(String name, double price){
         this.name = name;
         this.price = price;
-        this.price_each = price_each;
-    }
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public String getName() {
@@ -42,12 +31,5 @@ public class orderedDB {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-    public double getPrice_each() {
-        return price_each;
-    }
-
-    public void setPrice_each(double price_each) {
-        this.price_each = price_each;
     }
 }

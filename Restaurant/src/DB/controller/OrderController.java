@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DB.controller;
+package db.controller;
 
-import DB.Database;
+import db.Database;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mysql.jdbc.PreparedStatement;
@@ -16,10 +16,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import restaurant.myOrder;
-import restaurant.myOrderDB;
-import restaurant.orderedDB;
-import restaurant.showDB;
+import restaurant.MyOrder;
+import restaurant.MyOrderDB;
+import restaurant.OrderedDB;
+import restaurant.ShowDB;
 
         
 
@@ -38,7 +38,7 @@ public class OrderController{
         
     }
     
-    public int insertOrder(myOrder myo){
+    public int insertOrder(MyOrder myo){
         Gson gson = new Gson();
         String myJson = gson.toJson(myo.getO());
         int res = 0;
@@ -81,9 +81,9 @@ public class OrderController{
         }
         return size;
     }
-    public ArrayList<myOrderDB> getDataDB(){ //ดึงข้อมูลจาก DataBase ทั้งหมด
-        showDB result = new showDB();
-        ArrayList<myOrderDB> myoDB = new ArrayList<myOrderDB>();
+    public ArrayList<MyOrderDB> getDataDB(){ //ดึงข้อมูลจาก DataBase ทั้งหมด
+        ShowDB result = new ShowDB();
+        ArrayList<MyOrderDB> myoDB = new ArrayList<MyOrderDB>();
         Gson gson = new Gson();
         String sql = "";
         try{
@@ -95,14 +95,14 @@ public class OrderController{
                 ResultSet rs = pst.executeQuery();
                 while(rs.next()){
                     int orderID = rs.getInt(1);
-                    Type orderedDBType = new TypeToken<ArrayList<orderedDB>>(){}.getType(); //ดึง Type
-                    ArrayList<orderedDB> oDB = gson.fromJson(rs.getString(2), orderedDBType); // ดึงค่าจาก json มาเก็บในรูปแบบ arraylist เหมือนเดิม
+                    Type orderedDBType = new TypeToken<ArrayList<OrderedDB>>(){}.getType(); //ดึง Type
+                    ArrayList<OrderedDB> oDB = gson.fromJson(rs.getString(2), orderedDBType); // ดึงค่าจาก json มาเก็บในรูปแบบ arraylist เหมือนเดิม
                     double priceTotal = rs.getDouble(3);
                     double price_include_vat = rs.getDouble(4);
                     Timestamp date = rs.getTimestamp(5);
                     String user = rs.getString(6);
 
-                    myOrderDB temp = new myOrderDB(orderID, oDB, priceTotal, price_include_vat, date, user);
+                    MyOrderDB temp = new MyOrderDB(orderID, oDB, priceTotal, price_include_vat, date, user);
                     myoDB.add(temp);
                     }   
                 } 

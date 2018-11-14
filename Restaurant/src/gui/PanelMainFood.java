@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package gui;
 
-import GUI.posGUI;
+import gui.PosGUI;
 
 
 /**
@@ -14,11 +14,11 @@ import GUI.posGUI;
  */
 public class PanelMainFood extends javax.swing.JPanel {
     Object[] row_table;
-    private posGUI pos;
+    private PosGUI pos;
     /**
      * Creates new form PanelMainFood
      */
-    public PanelMainFood(posGUI pos) {
+    public PanelMainFood(PosGUI pos) {
         this.pos = pos;
         initComponents();
         row_table = new Object[4];

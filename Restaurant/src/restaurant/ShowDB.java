@@ -5,7 +5,7 @@
  */
 package restaurant;
 
-import DB.controller.OrderController;
+import db.controller.OrderController;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -36,8 +36,8 @@ import org.jfree.data.xy.XYSeriesCollection;
  *
  * @author STUDY fuckin HARD
  */
-public class showDB {
-    private ArrayList<myOrderDB> myoDB = new ArrayList<myOrderDB>();
+public class ShowDB {
+    private ArrayList<MyOrderDB> myoDB = new ArrayList<MyOrderDB>();
     private Map map = new TreeMap(); //Because Treemap -> order of key is important;
     public Map getPricePerDay(){
         for(int i=0; i<myoDB.size(); i++){
@@ -56,10 +56,10 @@ public class showDB {
         }
         return map;
     }
-    public ArrayList<myOrderDB> getMyoDB() {
+    public ArrayList<MyOrderDB> getMyoDB() {
         return myoDB;
     }
-    public void setMyoDB(ArrayList<myOrderDB> myoDB) {
+    public void setMyoDB(ArrayList<MyOrderDB> myoDB) {
         this.myoDB = myoDB;
     }
     public ChartPanel getGraph(Map map){
