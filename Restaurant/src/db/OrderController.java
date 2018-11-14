@@ -44,8 +44,6 @@ public class OrderController{
         int res = 0;
         String sql = "";
         
-        java.util.Date date=new java.util.Date();
-        java.sql.Timestamp sqlTime = new java.sql.Timestamp(date.getTime());
         try{
             sql = "INSERT INTO order_foods(detail, price_total, price_include_vat, orderDate, user) VALUES(cast(? as json), ?, ?, ?, ?)";
             pst = (PreparedStatement) conn.prepareStatement(sql);

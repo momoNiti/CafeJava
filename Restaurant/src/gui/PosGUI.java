@@ -10,6 +10,7 @@ import db.OrderController;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.text.DecimalFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -410,9 +411,12 @@ public class PosGUI extends javax.swing.JPanel {
             myo.addFood(new Order(quantity, name, price_each, price));
         }
         myo.setUser(mg.getU().getUname());
-
+        myo.setDate(new Date());
         int res = oc.insertOrder(myo);
         if(res > 0){
+                Receipt receipt = new Receipt(myo);
+                System.out.println(receipt.getMyReceipt());
+                receipt.printReceipt();
                 JOptionPane.showMessageDialog(null, "Finish insert order to database");
                 mg.dispose();
                 MainGUI run = new MainGUI(mg.getU());
@@ -422,12 +426,7 @@ public class PosGUI extends javax.swing.JPanel {
         else{
             JOptionPane.showMessageDialog(null, "Unable to insert");
         }
-//        Receipt receipt = new Receipt(myo);
-//        receipt.printTitle();
-//        for(int i=0; i<myo.getO().size(); i++){
-//            receipt.printDetail(myo.getO().get(i).getName(), myo.getO().get(i).getQuantity(), myo.getO().get(i).getPrice());
-//        }
-//        receipt.printTotal(myo.getPrice_include_vat());
+        
     }//GEN-LAST:event_jSubmitActionPerformed
 
     private void jMainFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFoodActionPerformed

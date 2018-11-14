@@ -56,42 +56,42 @@ public class PanelSnack extends javax.swing.JPanel {
 
         jLabel1.setText("Snack");
 
-        frenchFries_b.setText("เฟรนฟราย");
+        frenchFries_b.setText("Snack1");
         frenchFries_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 frenchFries_bActionPerformed(evt);
             }
         });
 
-        frenchFriesCheese_b.setText("เฟรนฟรายชีส");
+        frenchFriesCheese_b.setText("Snack2");
         frenchFriesCheese_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 frenchFriesCheese_bActionPerformed(evt);
             }
         });
 
-        mashPotato_b.setText("มันบด");
+        mashPotato_b.setText("Snack3");
         mashPotato_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mashPotato_bActionPerformed(evt);
             }
         });
 
-        mashPotatoXCornCheese_b.setText("มันบดอบชีส");
+        mashPotatoXCornCheese_b.setText("Snack4");
         mashPotatoXCornCheese_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mashPotatoXCornCheese_bActionPerformed(evt);
             }
         });
 
-        bakedSpinachXCheese_b.setText("ผักโขมอบชีส");
+        bakedSpinachXCheese_b.setText("Snack5");
         bakedSpinachXCheese_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bakedSpinachXCheese_bActionPerformed(evt);
             }
         });
 
-        garlicBread_b.setText("ขนมปังกระเทียม");
+        garlicBread_b.setText("Snack6");
         garlicBread_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 garlicBread_bActionPerformed(evt);
@@ -158,7 +158,7 @@ public class PanelSnack extends javax.swing.JPanel {
                     .addComponent(jLabel12)
                     .addComponent(jLabel13)
                     .addComponent(jLabel14))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

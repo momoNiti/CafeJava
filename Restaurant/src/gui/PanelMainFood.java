@@ -68,63 +68,63 @@ public class PanelMainFood extends javax.swing.JPanel {
 
         jLabel1.setText("Main Course");
 
-        honeyTostMango_b.setText("ฮันนี่โทสต์มะม่วง");
+        honeyTostMango_b.setText("MainFood1");
         honeyTostMango_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 honeyTostMango_bActionPerformed(evt);
             }
         });
 
-        rasberryPancake_b.setText("แพนเค้กราสเบอร์รี่");
+        rasberryPancake_b.setText("MainFood2");
         rasberryPancake_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rasberryPancake_bActionPerformed(evt);
             }
         });
 
-        icecremeWaffle_b.setText("วาฟเฟิลไอศกรีม");
+        icecremeWaffle_b.setText("MainFood3");
         icecremeWaffle_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 icecremeWaffle_bActionPerformed(evt);
             }
         });
 
-        chocolateLava_b.setText("ช็อกโกแลตลาวา");
+        chocolateLava_b.setText("MainFood4");
         chocolateLava_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chocolateLava_bActionPerformed(evt);
             }
         });
 
-        rasberryFrenchTost_b.setText("เฟรนช์โทสต์ราสป์เบอร์รี่");
+        rasberryFrenchTost_b.setText("MainFood5");
         rasberryFrenchTost_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rasberryFrenchTost_bActionPerformed(evt);
             }
         });
 
-        mangoStickyRiceCrepe_b.setText("เครปข้าวเหนียวมะม่วง");
+        mangoStickyRiceCrepe_b.setText("MainFood6");
         mangoStickyRiceCrepe_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mangoStickyRiceCrepe_bActionPerformed(evt);
             }
         });
 
-        mojiWater_b.setText("โมจิหยดน้ำ");
+        mojiWater_b.setText("MainFood7");
         mojiWater_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mojiWater_bActionPerformed(evt);
             }
         });
 
-        spaghettiCarbonara_b.setText("สปาเก็ตตี้คาโบนาร่า");
+        spaghettiCarbonara_b.setText("MainFood8");
         spaghettiCarbonara_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 spaghettiCarbonara_bActionPerformed(evt);
             }
         });
 
-        spaghettiSpicyXSeafood_b.setText("สปาเก็ตตี้ขี้เมาทะเล");
+        spaghettiSpicyXSeafood_b.setText("MainFood9");
         spaghettiSpicyXSeafood_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 spaghettiSpicyXSeafood_bActionPerformed(evt);
@@ -230,7 +230,7 @@ public class PanelMainFood extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel15))
                             .addComponent(jLabel3))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

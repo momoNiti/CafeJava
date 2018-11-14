@@ -7,6 +7,7 @@ package restaurant;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -19,12 +20,21 @@ public class MyOrder{
     private String user;
     private double receive;
     private double change;
+    private Timestamp date;
 
-    public Timestamp getDate(){
-        java.util.Date date=new java.util.Date();
-        java.sql.Timestamp sqlTime = new java.sql.Timestamp(date.getTime());
-        return sqlTime;
+    public Timestamp getDate() {
+        return date;
     }
+
+    public void setDate(Date date) {
+        java.sql.Timestamp sqlTime = new java.sql.Timestamp(date.getTime());
+        this.date = sqlTime;
+    }
+//    public Timestamp getDate(){
+//        java.util.Date date=new java.util.Date();
+//        java.sql.Timestamp sqlTime = new java.sql.Timestamp(date.getTime());
+//        return sqlTime;
+//    }
     public double getReceive() {
         return receive;
     }

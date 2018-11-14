@@ -55,35 +55,35 @@ public class PanelDrink extends javax.swing.JPanel {
 
         jLabel1.setText("Drink");
 
-        italianSoda_b.setText("อิตตาเลี่ยนโซดา");
+        italianSoda_b.setText("Drink2");
         italianSoda_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 italianSoda_bActionPerformed(evt);
             }
         });
 
-        greenTeaMacchiato_b.setText("กรีนทีมัคคิอาโต้");
+        greenTeaMacchiato_b.setText("Drink3");
         greenTeaMacchiato_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 greenTeaMacchiato_bActionPerformed(evt);
             }
         });
 
-        unicornFrappe_b.setText("ยูนิคอร์นเฟรปเป้");
+        unicornFrappe_b.setText("Drink4");
         unicornFrappe_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 unicornFrappe_bActionPerformed(evt);
             }
         });
 
-        doubleChoco_b.setText("ดับเบิ้ลช็อกโก้");
+        doubleChoco_b.setText("Drink5");
         doubleChoco_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 doubleChoco_bActionPerformed(evt);
             }
         });
 
-        water_b.setText("น้ำเปล่า");
+        water_b.setText("Drink6");
         water_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 water_bActionPerformed(evt);
@@ -102,7 +102,7 @@ public class PanelDrink extends javax.swing.JPanel {
 
         water_p.setText("15");
 
-        freshMilkXButterflyPea_b.setText("นมอัญชัน");
+        freshMilkXButterflyPea_b.setText("Drink1");
         freshMilkXButterflyPea_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 freshMilkXButterflyPea_bActionPerformed(evt);
@@ -160,7 +160,7 @@ public class PanelDrink extends javax.swing.JPanel {
                             .addComponent(jLabel11)
                             .addComponent(jLabel13)
                             .addComponent(jLabel14))))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

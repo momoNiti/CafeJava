@@ -95,7 +95,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace pref="87" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -173,7 +173,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="honeyTostMango_b">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe2e;&#xe31;&#xe19;&#xe19;&#xe35;&#xe48;&#xe42;&#xe17;&#xe2a;&#xe15;&#xe4c;&#xe21;&#xe30;&#xe21;&#xe48;&#xe27;&#xe07;"/>
+        <Property name="text" type="java.lang.String" value="MainFood1"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="honeyTostMango_bActionPerformed"/>
@@ -181,7 +181,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="rasberryPancake_b">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe41;&#xe1e;&#xe19;&#xe40;&#xe04;&#xe49;&#xe01;&#xe23;&#xe32;&#xe2a;&#xe40;&#xe1a;&#xe2d;&#xe23;&#xe4c;&#xe23;&#xe35;&#xe48;"/>
+        <Property name="text" type="java.lang.String" value="MainFood2"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rasberryPancake_bActionPerformed"/>
@@ -189,7 +189,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="icecremeWaffle_b">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe27;&#xe32;&#xe1f;&#xe40;&#xe1f;&#xe34;&#xe25;&#xe44;&#xe2d;&#xe28;&#xe01;&#xe23;&#xe35;&#xe21;"/>
+        <Property name="text" type="java.lang.String" value="MainFood3"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="icecremeWaffle_bActionPerformed"/>
@@ -197,7 +197,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="chocolateLava_b">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe0a;&#xe47;&#xe2d;&#xe01;&#xe42;&#xe01;&#xe41;&#xe25;&#xe15;&#xe25;&#xe32;&#xe27;&#xe32;"/>
+        <Property name="text" type="java.lang.String" value="MainFood4"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chocolateLava_bActionPerformed"/>
@@ -205,7 +205,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="rasberryFrenchTost_b">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe40;&#xe1f;&#xe23;&#xe19;&#xe0a;&#xe4c;&#xe42;&#xe17;&#xe2a;&#xe15;&#xe4c;&#xe23;&#xe32;&#xe2a;&#xe1b;&#xe4c;&#xe40;&#xe1a;&#xe2d;&#xe23;&#xe4c;&#xe23;&#xe35;&#xe48;"/>
+        <Property name="text" type="java.lang.String" value="MainFood5"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rasberryFrenchTost_bActionPerformed"/>
@@ -213,7 +213,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="mangoStickyRiceCrepe_b">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe40;&#xe04;&#xe23;&#xe1b;&#xe02;&#xe49;&#xe32;&#xe27;&#xe40;&#xe2b;&#xe19;&#xe35;&#xe22;&#xe27;&#xe21;&#xe30;&#xe21;&#xe48;&#xe27;&#xe07;"/>
+        <Property name="text" type="java.lang.String" value="MainFood6"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mangoStickyRiceCrepe_bActionPerformed"/>
@@ -221,7 +221,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="mojiWater_b">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe42;&#xe21;&#xe08;&#xe34;&#xe2b;&#xe22;&#xe14;&#xe19;&#xe49;&#xe33;"/>
+        <Property name="text" type="java.lang.String" value="MainFood7"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mojiWater_bActionPerformed"/>
@@ -229,7 +229,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="spaghettiCarbonara_b">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe2a;&#xe1b;&#xe32;&#xe40;&#xe01;&#xe47;&#xe15;&#xe15;&#xe35;&#xe49;&#xe04;&#xe32;&#xe42;&#xe1a;&#xe19;&#xe32;&#xe23;&#xe48;&#xe32;"/>
+        <Property name="text" type="java.lang.String" value="MainFood8"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="spaghettiCarbonara_bActionPerformed"/>
@@ -237,7 +237,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="spaghettiSpicyXSeafood_b">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe2a;&#xe1b;&#xe32;&#xe40;&#xe01;&#xe47;&#xe15;&#xe15;&#xe35;&#xe49;&#xe02;&#xe35;&#xe49;&#xe40;&#xe21;&#xe32;&#xe17;&#xe30;&#xe40;&#xe25;"/>
+        <Property name="text" type="java.lang.String" value="MainFood9"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="spaghettiSpicyXSeafood_bActionPerformed"/>
