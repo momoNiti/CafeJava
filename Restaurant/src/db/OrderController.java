@@ -52,7 +52,7 @@ public class OrderController{
             pst.setString(1, myJson);
             pst.setDouble(2, myo.getPriceTotal());
             pst.setDouble(3, myo.getPrice_include_vat());
-            pst.setTimestamp(4, sqlTime);
+            pst.setTimestamp(4, myo.getDate());
             pst.setString(5, myo.getUser());
             res = pst.executeUpdate();
             conn.close();

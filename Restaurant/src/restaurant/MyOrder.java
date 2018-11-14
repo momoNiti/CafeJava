@@ -5,6 +5,7 @@
  */
 package restaurant;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 /**
@@ -19,6 +20,11 @@ public class MyOrder{
     private double receive;
     private double change;
 
+    public Timestamp getDate(){
+        java.util.Date date=new java.util.Date();
+        java.sql.Timestamp sqlTime = new java.sql.Timestamp(date.getTime());
+        return sqlTime;
+    }
     public double getReceive() {
         return receive;
     }

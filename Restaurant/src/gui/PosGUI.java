@@ -15,6 +15,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.bind.ParseConversionEvent;
+import print.Receipt;
 import restaurant.Order;
 import restaurant.MyOrder;
 /**
@@ -418,9 +419,15 @@ public class PosGUI extends javax.swing.JPanel {
                 run.setVisible(true);
                 run.setLocationRelativeTo(null);
         }
-            else{
-                JOptionPane.showMessageDialog(null, "Unable to insert");
-            }
+        else{
+            JOptionPane.showMessageDialog(null, "Unable to insert");
+        }
+//        Receipt receipt = new Receipt(myo);
+//        receipt.printTitle();
+//        for(int i=0; i<myo.getO().size(); i++){
+//            receipt.printDetail(myo.getO().get(i).getName(), myo.getO().get(i).getQuantity(), myo.getO().get(i).getPrice());
+//        }
+//        receipt.printTotal(myo.getPrice_include_vat());
     }//GEN-LAST:event_jSubmitActionPerformed
 
     private void jMainFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFoodActionPerformed
