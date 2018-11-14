@@ -14,7 +14,14 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.event.UndoableEditListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
+import javax.swing.text.Element;
+import javax.swing.text.Position;
+import javax.swing.text.Segment;
 import javax.xml.bind.ParseConversionEvent;
 import print.Receipt;
 import restaurant.Order;
@@ -414,14 +421,14 @@ public class PosGUI extends javax.swing.JPanel {
         myo.setDate(new Date());
         int res = oc.insertOrder(myo);
         if(res > 0){
-                Receipt receipt = new Receipt(myo);
-                System.out.println(receipt.getMyReceipt());
-                receipt.printReceipt();
-                JOptionPane.showMessageDialog(null, "Finish insert order to database");
-                mg.dispose();
-                MainGUI run = new MainGUI(mg.getU());
-                run.setVisible(true);
-                run.setLocationRelativeTo(null);
+            Receipt receipt = new Receipt(myo);
+            receipt.saveReceipt();
+            System.out.println(receipt.getMyReceipt());
+            JOptionPane.showMessageDialog(null, "Finish insert order to database");
+            mg.dispose();
+            MainGUI run = new MainGUI(mg.getU());
+            run.setVisible(true);
+            run.setLocationRelativeTo(null);                
         }
         else{
             JOptionPane.showMessageDialog(null, "Unable to insert");
