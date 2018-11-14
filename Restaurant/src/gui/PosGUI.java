@@ -9,8 +9,11 @@ import gui.MainGUI;
 import db.OrderController;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -422,7 +425,11 @@ public class PosGUI extends javax.swing.JPanel {
         int res = oc.insertOrder(myo);
         if(res > 0){
             Receipt receipt = new Receipt(myo);
-            receipt.saveReceipt();
+            try {
+                receipt.saveReceipt();
+            } catch (IOException ex) {
+                Logger.getLogger(PosGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
             System.out.println(receipt.getMyReceipt());
             JOptionPane.showMessageDialog(null, "Finish insert order to database");
             mg.dispose();

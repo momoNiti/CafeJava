@@ -3,19 +3,20 @@
 
   Item              Qty      Price
   ----              ---      -----
-  MainFood2           1     159.00
-  MainFood4           1      85.00
+  MainFood9           1     199.00
+  MainFood8           1     189.00
+  MainFood7           3     387.00
   --------------- -----      -----
-  Total                     244.00
+  Total                     775.00
                              -----
   Tax                           7%
                              -----
-  Total                     261.00
+  Total                     829.25
   --------------- -----      -----
-  Received                  300.00
+  Received                  900.00
                              -----
-  Change                     39.00
+  Change                     70.75
 
                    User      admin
-  Date 14/11/2561 22:41          
+  Date 14/11/2561 22:43          
 
