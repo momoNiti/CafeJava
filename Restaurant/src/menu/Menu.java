@@ -10,9 +10,11 @@ package menu;
  * @author STUDY fuckin HARD
  */
 public class Menu {
+    private int nameID;
     private String name;
     private double price;
-    public Menu(String name, double price){
+    public Menu(int nameID, String name, double price){
+        this.nameID = nameID;
         this.name = name;
         this.price = price;
     }

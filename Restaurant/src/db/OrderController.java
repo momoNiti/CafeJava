@@ -65,7 +65,6 @@ public class OrderController{
     }
 
     public ArrayList<MyOrderDB> getDataDB(){ //ดึงข้อมูลจาก DataBase ทั้งหมด
-        ShowDB result = new ShowDB();
         ArrayList<MyOrderDB> myoDB = new ArrayList<MyOrderDB>();
         Gson gson = new Gson();
         String sql = "";
