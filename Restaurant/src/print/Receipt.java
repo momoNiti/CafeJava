@@ -101,7 +101,6 @@ public class Receipt{
             fout = new FileOutputStream("receipt.dat");
             oout = new OutputStreamWriter(fout);
             p = new PrintWriter(oout);
-//            p.print(getMyReceipt());
             p.println(getMyReceipt());
             p.close();
             oout.close();

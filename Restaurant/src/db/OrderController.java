@@ -63,47 +63,26 @@ public class OrderController{
         
         return res;
     }
-    public int getRowsOrderDB(){
-        //เช็คว่าข้อมูลใน DataBase มีทั้งหมดกี่แถว
-        int size = -1;
-        String sql = "";
-        try{
-            sql = "SELECT COUNT(*) FROM order_foods;";
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            if(rs.next()){
-                size = rs.getInt(1);
-            }
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }
-        return size;
-    }
+
     public ArrayList<MyOrderDB> getDataDB(){ //ดึงข้อมูลจาก DataBase ทั้งหมด
         ShowDB result = new ShowDB();
         ArrayList<MyOrderDB> myoDB = new ArrayList<MyOrderDB>();
         Gson gson = new Gson();
         String sql = "";
         try{
-            sql = "SELECT * FROM restaurant.order_foods WHERE orderID=?";
+            sql = "SELECT * FROM restaurant.order_foods";
             pst = (PreparedStatement) conn.prepareCall(sql);
-            if(getRowsOrderDB() != 0){
-                for(int i=0; i<=getRowsOrderDB(); i++){
-                pst.setInt(1, i);
-                ResultSet rs = pst.executeQuery();
-                while(rs.next()){
-                    int orderID = rs.getInt(1);
-                    Type orderedDBType = new TypeToken<ArrayList<OrderedDB>>(){}.getType(); //ดึง Type
-                    ArrayList<OrderedDB> oDB = gson.fromJson(rs.getString(2), orderedDBType); // ดึงค่าจาก json มาเก็บในรูปแบบ arraylist เหมือนเดิม
-                    double priceTotal = rs.getDouble(3);
-                    double price_include_vat = rs.getDouble(4);
-                    Timestamp date = rs.getTimestamp(5);
-                    String user = rs.getString(6);
-
-                    MyOrderDB temp = new MyOrderDB(orderID, oDB, priceTotal, price_include_vat, date, user);
-                    myoDB.add(temp);
-                    }   
-                } 
+            ResultSet rs = pst.executeQuery();
+            while(rs.next()){
+                int orderID = rs.getInt(1);
+                Type orderedDBType = new TypeToken<ArrayList<OrderedDB>>(){}.getType(); //ดึง Type
+                ArrayList<OrderedDB> oDB = gson.fromJson(rs.getString(2), orderedDBType); // ดึงค่าจาก json มาเก็บในรูปแบบ arraylist เหมือนเดิม
+                double priceTotal = rs.getDouble(3);
+                double price_include_vat = rs.getDouble(4);
+                Timestamp date = rs.getTimestamp(5);
+                String user = rs.getString(6);
+                MyOrderDB temp = new MyOrderDB(orderID, oDB, priceTotal, price_include_vat, date, user);
+                myoDB.add(temp);
             }
             conn.close();
             pst.close();
