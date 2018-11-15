@@ -65,7 +65,7 @@ public class PanelMainFood extends javax.swing.JPanel {
         };
         
         GridBagLayout layout = new GridBagLayout();
-        this.setLayout(layout);
+        jPanel1.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
@@ -78,9 +78,9 @@ public class PanelMainFood extends javax.swing.JPanel {
             button[i] = new JButton(fm.getMyMenu().get(i).getName());
             button[i].addActionListener(listener);
             label[i] = new JLabel(String.valueOf(fm.getMyMenu().get(i).getPrice()));
-            this.add(button[i], c);
+            jPanel1.add(button[i], c);
             c.gridx += 4;
-            this.add(label[i], c);
+            jPanel1.add(label[i], c);
             c.gridx = 0;
             c.gridy += 1;
         }
@@ -96,18 +96,33 @@ public class PanelMainFood extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel17 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
 
         jLabel17.setText("บาท");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 475, Short.MAX_VALUE)
+        );
+
+        jScrollPane1.setViewportView(jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 282, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 477, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -115,5 +130,7 @@ public class PanelMainFood extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
