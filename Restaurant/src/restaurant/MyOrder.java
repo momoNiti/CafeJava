@@ -17,12 +17,18 @@ import java.util.Date;
 public class MyOrder{
     private ArrayList<Order> o = new ArrayList<Order>();
     private double price_include_vat;
+    private double price_vat;
     private double priceTotal;
     private String user;
     private double receive;
     private double change;
     private Timestamp date;
-
+    
+    public double getPrice_vat() {
+        DecimalFormat df = new DecimalFormat(".##");
+        double out = Double.parseDouble(df.format(getPriceTotal()*vat));
+        return out;
+    }
     public Timestamp getDate() {
         return date;
     }
@@ -31,11 +37,6 @@ public class MyOrder{
         java.sql.Timestamp sqlTime = new java.sql.Timestamp(date.getTime());
         this.date = sqlTime;
     }
-//    public Timestamp getDate(){
-//        java.util.Date date=new java.util.Date();
-//        java.sql.Timestamp sqlTime = new java.sql.Timestamp(date.getTime());
-//        return sqlTime;
-//    }
     public double getReceive() {
         return receive;
     }
@@ -63,8 +64,8 @@ public class MyOrder{
     }
 
     public void setPrice_include_vat(double price_include_vat) {
-        double temp = price_include_vat * vat;
-        double result = price_include_vat + temp;
+//        double temp = price_include_vat * vat;
+        double result = price_include_vat + getPrice_vat();
         this.price_include_vat = Math.round(result);
     }
     public double getPrice_include_vat() {

@@ -3,18 +3,19 @@
 
   Item              Qty      Price
   ----              ---      -----
-  MainFood9           1     199.00
+  Drink6              1      60.00
+  Drink1              1      10.00
+  Drink3              2      60.00
   --------------- -----      -----
-  Total                     199.00
+  Total                     130.00
+  Vat               7%:        9.1
                              -----
-  Tax                           7%
-                             -----
-  Total                     213.00
+  Total                     139.00
   --------------- -----      -----
-  Received                  220.00
+  Received                    0.00
                              -----
-  Change                      7.00
+  Change                      0.00
 
-                   User      admin
-  Date 15/11/2561 15:36          
+                   User         mo
+  Date 15/11/2561 18:11          
 

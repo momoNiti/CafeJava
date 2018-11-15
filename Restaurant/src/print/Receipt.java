@@ -58,18 +58,18 @@ public class Receipt{
         String line1 = String.format("  %-15.15s %5d %10.2f\n", name, quantity, price);
         return line1;
     }
-    public String printTotal(double price, double price_include_vat, double received, double changed) {
+    public String printTotal(double price, double price_vat, double price_include_vat, double received, double changed) {
         String line1 = String.format("  %-15.15s %5.5s %10.5s\n", "---------------", "----------", "------------");
         String line2 = String.format("  %-15s %5s %10.2f\n", "Total", "", price);
-        String line3 = String.format("  %-15s %5s %10s\n", "", "", "-----");
-        String line4 = String.format("  %-15s %5s %10s\n", "Tax", "", "7%");
+//        String line3 = String.format("  %-15s %5s %10s\n", "", "", "-----");
+        String line4 = String.format("  %-15s %5s %10s\n", "Vat", "7%:", price_vat);
         String line5 = String.format("  %-15s %5s %10s\n", "", "", "-----");
         String line6 = String.format("  %-15s %5s %10.2f\n", "Total", "", price_include_vat);
         String line7 = String.format("  %-15.15s %5.5s %10.5s\n", "---------------", "----------", "------------");
         String line8 = String.format("  %-15s %5s %10.2f\n", "Received", "", received);
         String line9 = String.format("  %-15s %5s %10s\n", "", "", "-----");
         String line10 = String.format("  %-15s %5s %10.2f\n", "Change", "", changed);
-        String out = line1 + line2 + line3 + line4 + line5 + line6 + line7 + line8 + line9 + line10;
+        String out = line1 + line2 + line4 + line5 + line6 + line7 + line8 + line9 + line10;
         return out;
     }
     public String printUserDetail(String name, Timestamp time){ //ตอนจริงรับมาเป็น TimeStamp
@@ -88,7 +88,7 @@ public class Receipt{
         for(int i=0; i<myo.getO().size(); i++){
             myPage += printDetail(myo.getO().get(i).getName(), myo.getO().get(i).getQuantity(), myo.getO().get(i).getPrice());
         }
-        myPage += printTotal(myo.getPriceTotal(), myo.getPrice_include_vat(), myo.getReceive(), myo.getChange());
+        myPage += printTotal(myo.getPriceTotal(), myo.getPrice_vat(), myo.getPrice_include_vat(), myo.getReceive(), myo.getChange());
         myPage += printUserDetail(myo.getUser(), myo.getDate());
         return myPage;
     }
