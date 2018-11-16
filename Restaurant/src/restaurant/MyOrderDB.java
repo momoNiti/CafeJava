@@ -14,6 +14,10 @@ import java.util.ArrayList;
  */
 public class MyOrderDB {
     private ArrayList<OrderedDB> odb = new ArrayList<OrderedDB>();
+
+    public void setOdb(ArrayList<OrderedDB> odb) {
+        this.odb = odb;
+    }
     private double price_include_vat;
     private double priceTotal;
     private String user;

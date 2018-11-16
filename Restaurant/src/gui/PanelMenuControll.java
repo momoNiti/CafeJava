@@ -32,7 +32,6 @@ public class PanelMenuControll extends javax.swing.JPanel {
     //table
     Object[] row_table, column_table;
     DefaultTableModel model;
-    private int selected_row;
     /**
      * Creates new form MenuControllerGUI
      */

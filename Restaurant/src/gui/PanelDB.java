@@ -9,6 +9,9 @@ import db.OrderController;
 import gui.MainGUI;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import restaurant.MyOrderDB;
 import restaurant.ShowDB;
 
 
@@ -20,6 +23,10 @@ public class PanelDB extends javax.swing.JPanel {
     private MainGUI mg;
     ShowDB show;
     OrderController ordc;
+    
+    //table
+    Object[] row_table, column_table;
+    DefaultTableModel model;
     /**
      * Creates new form PanelDB
      */
@@ -27,7 +34,7 @@ public class PanelDB extends javax.swing.JPanel {
         initComponents();
         this.mg = mg;
         GridBagLayout layout = new GridBagLayout();
-        this.setLayout(layout);
+        graphPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
@@ -35,7 +42,27 @@ public class PanelDB extends javax.swing.JPanel {
         ordc = new OrderController();;
         show = new ShowDB();
         show.setMyoDB(ordc.getDataDB()); //get data from databasse then set to this array list
-        this.add(show.getGraph(show.getPricePerDay()), c);
+        graphPanel.add(show.getGraph(show.getPricePerDay()), c);
+        
+        //table
+        column_table = new Object[4];
+        row_table = new Object[4];
+        column_table[0] = "Order ID";
+        column_table[1] = "Price include vat";
+        column_table[2] = "Order Date";
+        column_table[3] = "User";
+
+        model = new DefaultTableModel();
+        model.setColumnIdentifiers(column_table);
+        jTableDB.setModel(model);
+        ArrayList<MyOrderDB> myoDB = ordc.getDataDB();
+        for(int i=0; i<myoDB.size(); i++){
+            row_table[0] = myoDB.get(i).getOrderID();
+            row_table[1] = myoDB.get(i).getPrice_include_vat();
+            row_table[2] = myoDB.get(i).getDate();
+            row_table[3] = myoDB.get(i).getUser();
+            model.addRow(row_table);
+         }
     }
 
     /**
@@ -47,21 +74,61 @@ public class PanelDB extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableDB = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false;   //Disallow the editing of any cell
+            }
+        };
+        graphPanel = new javax.swing.JPanel();
+
         setPreferredSize(new java.awt.Dimension(1143, 616));
+
+        jTableDB.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTableDB);
+        jTableDB.getTableHeader().setReorderingAllowed(false);
+
+        javax.swing.GroupLayout graphPanelLayout = new javax.swing.GroupLayout(graphPanel);
+        graphPanel.setLayout(graphPanelLayout);
+        graphPanelLayout.setHorizontalGroup(
+            graphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+        graphPanelLayout.setVerticalGroup(
+            graphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 616, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 950, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(graphPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 635, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
+            .addComponent(graphPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel graphPanel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableDB;
     // End of variables declaration//GEN-END:variables
 }

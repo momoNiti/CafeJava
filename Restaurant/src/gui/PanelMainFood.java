@@ -79,7 +79,7 @@ public class PanelMainFood extends javax.swing.JPanel {
             button[i].addActionListener(listener);
             label[i] = new JLabel(String.valueOf(fm.getMyMenu().get(i).getPrice()));
             jPanel1.add(button[i], c);
-            c.gridx += 4;
+            c.gridx = 4;
             jPanel1.add(label[i], c);
             c.gridx = 0;
             c.gridy += 1;

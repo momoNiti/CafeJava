@@ -82,15 +82,15 @@ public class MainGUI extends javax.swing.JFrame {
         btnDB = new javax.swing.JPanel();
         btnDB_color = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        btnSignUp = new javax.swing.JPanel();
-        btnSignUp_color = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         btnMenuController = new javax.swing.JPanel();
         btnEX_color = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLogOut = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jUsername = new javax.swing.JLabel();
+        btnSignUp = new javax.swing.JPanel();
+        btnSignUp_color = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         DynamicPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -149,34 +149,8 @@ public class MainGUI extends javax.swing.JFrame {
 
         btnDB.add(btnDB_color, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 10, -1));
 
-        jLabel4.setText("DataBase");
+        jLabel4.setText("sales volume");
         btnDB.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
-
-        btnSignUp.setBackground(new java.awt.Color(51, 51, 255));
-        btnSignUp.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSignUpMouseClicked(evt);
-            }
-        });
-        btnSignUp.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnSignUp_color.setBackground(new java.awt.Color(51, 51, 255));
-
-        javax.swing.GroupLayout btnSignUp_colorLayout = new javax.swing.GroupLayout(btnSignUp_color);
-        btnSignUp_color.setLayout(btnSignUp_colorLayout);
-        btnSignUp_colorLayout.setHorizontalGroup(
-            btnSignUp_colorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-        btnSignUp_colorLayout.setVerticalGroup(
-            btnSignUp_colorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        btnSignUp.add(btnSignUp_color, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 10, -1));
-
-        jLabel3.setText("SignUp");
-        btnSignUp.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
 
         btnMenuController.setBackground(new java.awt.Color(51, 51, 255));
         btnMenuController.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -216,17 +190,36 @@ public class MainGUI extends javax.swing.JFrame {
         jUsername.setBackground(new java.awt.Color(255, 204, 204));
         jUsername.setText("         ");
 
+        btnSignUp.setBackground(new java.awt.Color(51, 51, 255));
+        btnSignUp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSignUpMouseClicked(evt);
+            }
+        });
+        btnSignUp.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnSignUp_color.setBackground(new java.awt.Color(51, 51, 255));
+
+        javax.swing.GroupLayout btnSignUp_colorLayout = new javax.swing.GroupLayout(btnSignUp_color);
+        btnSignUp_color.setLayout(btnSignUp_colorLayout);
+        btnSignUp_colorLayout.setHorizontalGroup(
+            btnSignUp_colorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        btnSignUp_colorLayout.setVerticalGroup(
+            btnSignUp_colorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        btnSignUp.add(btnSignUp_color, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 10, -1));
+
+        jLabel3.setText("SignUp");
+        btnSignUp.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+
         javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
         sidePanel.setLayout(sidePanelLayout);
         sidePanelLayout.setHorizontalGroup(
             sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidePanelLayout.createSequentialGroup()
-                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnMenuController, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSignUp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPOS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(btnDB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(sidePanelLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jLabel1)
@@ -236,9 +229,15 @@ public class MainGUI extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
                 .addComponent(jUsername)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jLogOut)
                 .addContainerGap())
+            .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(btnSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnMenuController, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPOS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                    .addComponent(btnDB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         sidePanelLayout.setVerticalGroup(
             sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,10 +249,10 @@ public class MainGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(btnMenuController, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnMenuController, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 20, Short.MAX_VALUE)
                 .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLogOut)
                     .addComponent(jLabel7)

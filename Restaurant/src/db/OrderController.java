@@ -30,7 +30,6 @@ import restaurant.ShowDB;
 public class OrderController{
     Database db;
     Connection conn;
-    PreparedStatement pst;
     public OrderController(){
         super();
         db = new Database();
@@ -46,7 +45,7 @@ public class OrderController{
         
         try{
             sql = "INSERT INTO order_foods(detail, price_total, price_include_vat, orderDate, user) VALUES(cast(? as json), ?, ?, ?, ?)";
-            pst = (PreparedStatement) conn.prepareStatement(sql);
+            PreparedStatement pst = (PreparedStatement) conn.prepareStatement(sql);
             pst.setString(1, myJson);
             pst.setDouble(2, myo.getPriceTotal());
             pst.setDouble(3, myo.getPrice_include_vat());
@@ -70,7 +69,7 @@ public class OrderController{
         String sql = "";
         try{
             sql = "SELECT * FROM restaurant.order_foods";
-            pst = (PreparedStatement) conn.prepareCall(sql);
+            PreparedStatement pst = (PreparedStatement) conn.prepareCall(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
                 int orderID = rs.getInt(1);
@@ -83,7 +82,6 @@ public class OrderController{
                 MyOrderDB temp = new MyOrderDB(orderID, oDB, priceTotal, price_include_vat, date, user);
                 myoDB.add(temp);
             }
-            conn.close();
             pst.close();
             return myoDB;
         }
