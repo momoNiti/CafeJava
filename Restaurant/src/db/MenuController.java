@@ -102,6 +102,20 @@ public class MenuController {
         return myMenu;
     }
     
+    public void deleteMenu(String dbName, String menuID){
+        String sql = "";
+        try {
+            sql = "Delete from " + dbName +" where menuID = ?";
+            PreparedStatement pst = (PreparedStatement) conn.prepareStatement(sql);
+            pst.setString(1, menuID);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
+    
     public static void main(String[] args) {
 //        MenuController run = new MenuController();
 //        FoodDrink fd = new FoodDrink();
