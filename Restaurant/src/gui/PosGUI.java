@@ -5,8 +5,10 @@
  */
 package gui;
 
+import gui.PanelDrink;
 import gui.MainGUI;
 import db.OrderController;
+import gui.MainGUI;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.io.IOException;
@@ -80,6 +82,7 @@ public class PosGUI extends javax.swing.JPanel {
         model = new DefaultTableModel();
         model.setColumnIdentifiers(column_table);
         pos_jTable.setModel(model);
+        
     }
 
     /**
@@ -124,7 +127,6 @@ public class PosGUI extends javax.swing.JPanel {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        pos_jTable.getTableHeader().setReorderingAllowed(false);
         pos_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -148,6 +150,7 @@ public class PosGUI extends javax.swing.JPanel {
             pos_jTable.getColumnModel().getColumn(2).setResizable(false);
             pos_jTable.getColumnModel().getColumn(3).setResizable(false);
         }
+        pos_jTable.getTableHeader().setReorderingAllowed(false);
 
         jDelete.setText("Delete");
         jDelete.addActionListener(new java.awt.event.ActionListener() {

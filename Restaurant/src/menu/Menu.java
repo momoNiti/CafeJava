@@ -10,15 +10,23 @@ package menu;
  * @author STUDY fuckin HARD
  */
 public class Menu {
-    private int nameID;
+    private String menuID;
     private String name;
     private double price;
-    public Menu(int nameID, String name, double price){
-        this.nameID = nameID;
+
+    
+    public Menu(String menuID, String name, double price){
+        this.menuID = menuID;
         this.name = name;
         this.price = price;
     }
+    public String getMenuID() {
+        return menuID;
+    }
 
+    public void setMenuID(String menuID) {
+        this.menuID = menuID;
+    }
     public String getName() {
         return name;
     }

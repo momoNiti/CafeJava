@@ -166,7 +166,7 @@
                         <Column editable="false" title="&#xe23;&#xe27;&#xe21;" type="java.lang.Object"/>
                       </Table>
                     </Property>
-                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" postCode="pos_jTable.getTableHeader().setReorderingAllowed(false);">
                       <TableColumnModel selectionModel="0">
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
@@ -196,7 +196,6 @@
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable(){&#xa;    public boolean isCellEditable(int rowIndex, int colIndex) {&#xa;        return false;   //Disallow the editing of any cell&#xa;    }&#xa;}"/>
-                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="pos_jTable.getTableHeader().setReorderingAllowed(false);"/>
                   </AuxValues>
                 </Component>
               </SubComponents>

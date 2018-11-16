@@ -7,8 +7,8 @@
 package gui;
 
 import db.MenuController;
-import gui.PosGUI;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -78,6 +78,7 @@ public class PanelDrink extends javax.swing.JPanel {
         for(int i=0; i<fd.getMyMenu().size(); i++){
             button[i] = new JButton(fd.getMyMenu().get(i).getName());
             button[i].addActionListener(listener);
+            button[i].setSize(new Dimension(70, 20));
             label[i] = new JLabel(String.valueOf(fd.getMyMenu().get(i).getPrice()));
             jPanel1.add(button[i], c);
             c.gridx += 4;

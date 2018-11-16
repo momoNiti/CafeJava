@@ -32,14 +32,15 @@ public class MenuController {
         db = new Database();
         conn = db.getConnection();
     }
-    public void insertMenu(String dbName, String name, double price){
+    public void insertMenu(String dbName, String menuID, String name, double price){
         String sql = "";
         int res = 0;
         try {
-            sql = "Insert into " + dbName + " (MenuName, price) VALUES(?, ?)";
+            sql = "Insert into " + dbName + " (menuID, MenuName, price) VALUES(?, ?, ?)";
             PreparedStatement pst = (PreparedStatement) conn.prepareStatement(sql);
-            pst.setString(1, name);
-            pst.setDouble(2, price);
+            pst.setString(1, menuID);
+            pst.setString(2, name);
+            pst.setDouble(3, price);
             res = pst.executeUpdate();
             pst.close();
         } catch (SQLException ex) {
@@ -55,7 +56,7 @@ public class MenuController {
             PreparedStatement pst = (PreparedStatement) conn.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                Menu temp = new Menu(rs.getInt(1), rs.getString(2), rs.getDouble(3));
+                Menu temp = new Menu(rs.getString(1), rs.getString(2), rs.getDouble(3));
                 myMenu.add(temp);
             }
             pst.close();
@@ -73,7 +74,7 @@ public class MenuController {
             PreparedStatement pst = (PreparedStatement) conn.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                Menu temp = new Menu(rs.getInt(1), rs.getString(2), rs.getDouble(3));
+                Menu temp = new Menu(rs.getString(1), rs.getString(2), rs.getDouble(3));
                 myMenu.add(temp);
             }
             pst.close();
@@ -91,7 +92,7 @@ public class MenuController {
             PreparedStatement pst = (PreparedStatement) conn.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                Menu temp = new Menu(rs.getInt(1), rs.getString(2), rs.getDouble(3));
+                Menu temp = new Menu(rs.getString(1), rs.getString(2), rs.getDouble(3));
                 myMenu.add(temp);
             }
             pst.close();
@@ -102,24 +103,24 @@ public class MenuController {
     }
     
     public static void main(String[] args) {
-        MenuController run = new MenuController();
-        FoodDrink fd = new FoodDrink();
-        fd.setMyMenu(run.getDrinkMenu());
-        for(int i=0; i<fd.getMyMenu().size(); i++){
-            System.out.println(fd.getMyMenu().get(i).getName() + " : " + fd.getMyMenu().get(i).getPrice());
-        }
-        System.out.println("------------");
-        FoodMain fm = new FoodMain();
-        fm.setMyMenu(run.getMainMenu());
-        for(int i=0; i<fm.getMyMenu().size(); i++){
-            System.out.println(fm.getMyMenu().get(i).getName() + " : " + fm.getMyMenu().get(i).getPrice());
-        }
-        System.out.println("------------");
-        FoodSnack fs = new FoodSnack();
-        fs.setMyMenu(run.getSnackMenu());
-        for(int i=0; i<fs.getMyMenu().size(); i++){
-            System.out.println(fs.getMyMenu().get(i).getName() + " : " + fs.getMyMenu().get(i).getPrice());
-        }
+//        MenuController run = new MenuController();
+//        FoodDrink fd = new FoodDrink();
+//        fd.setMyMenu(run.getDrinkMenu());
+//        for(int i=0; i<fd.getMyMenu().size(); i++){
+//            System.out.println(fd.getMyMenu().get(i).getName() + " : " + fd.getMyMenu().get(i).getPrice());
+//        }
+//        System.out.println("------------");
+//        FoodMain fm = new FoodMain();
+//        fm.setMyMenu(run.getMainMenu());
+//        for(int i=0; i<fm.getMyMenu().size(); i++){
+//            System.out.println(fm.getMyMenu().get(i).getName() + " : " + fm.getMyMenu().get(i).getPrice());
+//        }
+//        System.out.println("------------");
+//        FoodSnack fs = new FoodSnack();
+//        fs.setMyMenu(run.getSnackMenu());
+//        for(int i=0; i<fs.getMyMenu().size(); i++){
+//            System.out.println(fs.getMyMenu().get(i).getName() + " : " + fs.getMyMenu().get(i).getPrice());
+//        }
         
     }
 }

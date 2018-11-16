@@ -21,6 +21,7 @@ public class MainGUI extends javax.swing.JFrame {
     PosGUI pos;
     SignUpGUI sign;
     PanelDB pDB;
+    PanelMenuControll pmc;
     
     private User u;
     /**
@@ -32,6 +33,7 @@ public class MainGUI extends javax.swing.JFrame {
         pos = new PosGUI(this);
         sign = new SignUpGUI(this);
         pDB = new PanelDB(this);
+        pmc = new PanelMenuControll(this);
         DynamicPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -39,13 +41,15 @@ public class MainGUI extends javax.swing.JFrame {
         DynamicPanel.add(pos, c);
         DynamicPanel.add(sign, c);
         DynamicPanel.add(pDB, c);
+        DynamicPanel.add(pmc, c);
         pos.setVisible(true);
         sign.setVisible(false);
         pDB.setVisible(false);
+        pmc.setVisible(false);
         setColor(btnPOS);
         resetColor(btnDB);
         resetColor(btnSignUp);
-        resetColor(btnEX);
+        resetColor(btnMenuController);
         btnPOS_color.setOpaque(true);
         btnDB_color.setOpaque(false);
         btnSignUp_color.setOpaque(false);
@@ -53,7 +57,7 @@ public class MainGUI extends javax.swing.JFrame {
         
         if(u.getRoles().equals("cashier")){
             btnDB.setVisible(false);
-            btnEX.setVisible(false);
+            btnMenuController.setVisible(false);
             btnSignUp.setVisible(false);
         }
         jUsername.setText(u.getUname());
@@ -81,7 +85,7 @@ public class MainGUI extends javax.swing.JFrame {
         btnSignUp = new javax.swing.JPanel();
         btnSignUp_color = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        btnEX = new javax.swing.JPanel();
+        btnMenuController = new javax.swing.JPanel();
         btnEX_color = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLogOut = new javax.swing.JButton();
@@ -174,13 +178,13 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel3.setText("SignUp");
         btnSignUp.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
 
-        btnEX.setBackground(new java.awt.Color(51, 51, 255));
-        btnEX.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnMenuController.setBackground(new java.awt.Color(51, 51, 255));
+        btnMenuController.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnEXMouseClicked(evt);
+                btnMenuControllerMouseClicked(evt);
             }
         });
-        btnEX.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnMenuController.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnEX_color.setBackground(new java.awt.Color(51, 51, 255));
 
@@ -195,10 +199,10 @@ public class MainGUI extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        btnEX.add(btnEX_color, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 10, -1));
+        btnMenuController.add(btnEX_color, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 10, -1));
 
-        jLabel5.setText("jLabel5");
-        btnEX.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+        jLabel5.setText("Menu Controll");
+        btnMenuController.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
 
         jLogOut.setText("log out");
         jLogOut.addActionListener(new java.awt.event.ActionListener() {
@@ -218,7 +222,7 @@ public class MainGUI extends javax.swing.JFrame {
             sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidePanelLayout.createSequentialGroup()
                 .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnEX, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMenuController, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSignUp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnPOS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                     .addComponent(btnDB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -248,7 +252,7 @@ public class MainGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnEX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMenuController, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 20, Short.MAX_VALUE)
                 .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLogOut)
@@ -287,75 +291,82 @@ public class MainGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPOSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPOSMouseClicked
-        // TODO add your handling code here:
-        setColor(btnPOS);
-        resetColor(btnDB);
-        resetColor(btnSignUp);
-        resetColor(btnEX);
-        
-        btnPOS_color.setOpaque(true);
-        btnDB_color.setOpaque(false);
-        btnSignUp_color.setOpaque(false);
-        btnEX_color.setOpaque(false);
-        
-        pos.setVisible(true);
-        pDB.setVisible(false);
-        sign.setVisible(false);
-    }//GEN-LAST:event_btnPOSMouseClicked
-
     private void btnDBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDBMouseClicked
         // TODO add your handling code here:
         resetColor(btnPOS);
         setColor(btnDB);
         resetColor(btnSignUp);
-        resetColor(btnEX);
+        resetColor(btnMenuController);
         btnPOS_color.setOpaque(false);
         btnDB_color.setOpaque(true);
         btnSignUp_color.setOpaque(false);
         btnEX_color.setOpaque(false);
-        
+
         pos.setVisible(false);
         pDB.setVisible(true);
         sign.setVisible(false);
+        pmc.setVisible(false);
     }//GEN-LAST:event_btnDBMouseClicked
+
+    private void btnPOSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPOSMouseClicked
+        // TODO add your handling code here:
+        setColor(btnPOS);
+        resetColor(btnDB);
+        resetColor(btnSignUp);
+        resetColor(btnMenuController);
+
+        btnPOS_color.setOpaque(true);
+        btnDB_color.setOpaque(false);
+        btnSignUp_color.setOpaque(false);
+        btnEX_color.setOpaque(false);
+
+        pos.setVisible(true);
+        pDB.setVisible(false);
+        sign.setVisible(false);
+        pmc.setVisible(false);
+    }//GEN-LAST:event_btnPOSMouseClicked
+
+    private void jLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogOutActionPerformed
+        // TODO add your handling code here:
+        new Login().run();
+        this.dispose();
+    }//GEN-LAST:event_jLogOutActionPerformed
+
+    private void btnMenuControllerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuControllerMouseClicked
+        // TODO add your handling code here:
+        resetColor(btnPOS);
+        resetColor(btnDB);
+        resetColor(btnSignUp);
+        setColor(btnMenuController);
+
+        btnPOS_color.setOpaque(false);
+        btnDB_color.setOpaque(false);
+        btnSignUp_color.setOpaque(false);
+        btnEX_color.setOpaque(true);
+
+        pos.setVisible(false);
+        pDB.setVisible(false);
+        sign.setVisible(false);
+        pmc.setVisible(true);
+    }//GEN-LAST:event_btnMenuControllerMouseClicked
 
     private void btnSignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSignUpMouseClicked
         // TODO add your handling code here:
         resetColor(btnPOS);
         resetColor(btnDB);
         setColor(btnSignUp);
-        resetColor(btnEX);
-        
+        resetColor(btnMenuController);
+
         btnPOS_color.setOpaque(false);
         btnDB_color.setOpaque(false);
         btnSignUp_color.setOpaque(true);
         btnEX_color.setOpaque(false);
-        
+
         pos.setVisible(false);
         pDB.setVisible(false);
         sign.setVisible(true);
+        pmc.setVisible(false);
     }//GEN-LAST:event_btnSignUpMouseClicked
-
-    private void btnEXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEXMouseClicked
-        // TODO add your handling code here:
-        resetColor(btnPOS);
-        resetColor(btnDB);
-        resetColor(btnSignUp);
-        setColor(btnEX);
-        
-        btnPOS_color.setOpaque(false);
-        btnDB_color.setOpaque(false);
-        btnSignUp_color.setOpaque(false);
-        btnEX_color.setOpaque(true);
-
-    }//GEN-LAST:event_btnEXMouseClicked
-
-    private void jLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogOutActionPerformed
-        // TODO add your handling code here:
-        new Login().run();
-        this.dispose(); 
-    }//GEN-LAST:event_jLogOutActionPerformed
     public void setColor(JPanel panel){
         panel.setBackground(new Color(102,153,255));
     }
@@ -371,8 +382,8 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JPanel DynamicPanel;
     private javax.swing.JPanel btnDB;
     private javax.swing.JPanel btnDB_color;
-    private javax.swing.JPanel btnEX;
     private javax.swing.JPanel btnEX_color;
+    private javax.swing.JPanel btnMenuController;
     private javax.swing.JPanel btnPOS;
     private javax.swing.JPanel btnPOS_color;
     private javax.swing.JPanel btnSignUp;

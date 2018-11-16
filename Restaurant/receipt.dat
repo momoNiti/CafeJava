@@ -3,19 +3,17 @@
 
   Item              Qty      Price
   ----              ---      -----
-  Drink6              1      60.00
-  Drink1              1      10.00
-  Drink3              2      60.00
+  GreenTea            1      69.00
   --------------- -----      -----
-  Total                     130.00
-  Vat               7%:        9.1
+  Total                      69.00
+  Vat               7%:       4.83
                              -----
-  Total                     139.00
+  Total                      74.00
   --------------- -----      -----
-  Received                    0.00
+  Received                   80.00
                              -----
-  Change                      0.00
+  Change                      6.00
 
-                   User         mo
-  Date 15/11/2561 18:11          
+                   User      admin
+  Date 16/11/2561 15:18          
 
