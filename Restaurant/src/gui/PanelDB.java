@@ -6,7 +6,6 @@
 package gui;
 
 import db.OrderController;
-import gui.MainGUI;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.util.ArrayList;
@@ -21,18 +20,18 @@ import restaurant.ShowDB;
  */
 public class PanelDB extends javax.swing.JPanel {
     private MainGUI mg;
-    ShowDB show;
-    OrderController ordc;
+    private ShowDB show;
+    private OrderController ordc;
     
     //table
-    Object[] row_table, column_table;
-    DefaultTableModel model;
+    private Object[] row_table, column_table;
+    private DefaultTableModel model;
     /**
      * Creates new form PanelDB
      */
-    public PanelDB(MainGUI mg) {
+    public PanelDB() {
         initComponents();
-        this.mg = mg;
+//        this.mg = mg;
         GridBagLayout layout = new GridBagLayout();
         graphPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();

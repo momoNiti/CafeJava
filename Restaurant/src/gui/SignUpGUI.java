@@ -5,8 +5,6 @@
  */
 package gui;
 
-import gui.Login;
-import gui.MainGUI;
 import db.UserController;
 import javax.swing.JOptionPane;
 import restaurant.User;
@@ -16,12 +14,12 @@ import restaurant.User;
  * @author STUDY fuckin HARD
  */
 public class SignUpGUI extends javax.swing.JPanel {
-    private MainGUI mg;
+//    private MainGUI mg;
     /**
      * Creates new form SignUpGUI
      */
-    public SignUpGUI(MainGUI mg) {
-        this.mg = mg;
+    public SignUpGUI() {
+//        this.mg = mg;
         initComponents();
     }
 

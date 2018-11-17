@@ -42,6 +42,7 @@ public class Login extends javax.swing.JFrame {
         jUsername = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cafe' V.2");
 
         jLabel1.setText("Log In");
 

@@ -11,6 +11,8 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -22,12 +24,13 @@ import menu.FoodDrink;
  * @author STUDY fuckin HARD
  */
 public class PanelDrink extends javax.swing.JPanel {
-    MenuController menuctrl = new MenuController();
-    FoodDrink fd = new FoodDrink();
-    Object[] row_table;
+    private MenuController menuctrl = new MenuController();
+    private FoodDrink fd = new FoodDrink();
+    private Object[] row_table;
     private PosGUI pos;
 
     private JButton[] button;
+    private JLabel[] label_price;
     private JLabel[] label;
 
     /** Creates new form PanelDrink */
@@ -63,29 +66,41 @@ public class PanelDrink extends javax.swing.JPanel {
                 pos.calculatePrice();
             }
         };
-                
-        
-        GridBagLayout layout = new GridBagLayout();
-        jPanel1.setLayout(layout);
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = 0;
-        c.gridy = 0;
 
+        GridBagLayout layout = new GridBagLayout();
+        GridBagConstraints c = new GridBagConstraints();
+        jPanel1.setLayout(layout);
+        label = new JLabel[2];
+        label[0] = new JLabel("Menu");
+        label[1] = new JLabel("Price");
+        c.gridx = 1;
+        c.gridy = 0;
+        c.gridwidth = 2;
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.insets = new Insets(5, 5, 5, 5);
+        jPanel1.add(label[0], c); // add menu
+        c.gridx = 2;
+        c.gridy = 0;
+        jPanel1.add(label[1], c); // add price
+        c.gridx = 0;
+        c.gridy = 1;
         fd.setMyMenu(menuctrl.getDrinkMenu());
         button = new JButton[fd.getMyMenu().size()];
-        label = new JLabel[fd.getMyMenu().size()];
+        label_price = new JLabel[fd.getMyMenu().size()];
         
         for(int i=0; i<fd.getMyMenu().size(); i++){
+            System.out.println("Grid x " + c.gridx);
+            System.out.println("Grid y " + c.gridy);
+            c.gridx = 0;
             button[i] = new JButton(fd.getMyMenu().get(i).getName());
             button[i].addActionListener(listener);
-            button[i].setPreferredSize(new Dimension(120, 40));
-//            button[i].setSize(new Dimension(70, 20));
-            label[i] = new JLabel(String.valueOf(fd.getMyMenu().get(i).getPrice()));
+            button[i].setSize(new Dimension(200, 40));
+            button[i].setPreferredSize(new Dimension(200, 40));
+            label_price[i] = new JLabel(String.valueOf(fd.getMyMenu().get(i).getPrice()));
             jPanel1.add(button[i], c);
-            c.gridx =+ 1;
-            jPanel1.add(label[i], c);
-            c.gridx = 0;
-            c.gridy += 1;
+            c.gridx = 2;
+            jPanel1.add(label_price[i], c);
+            c.gridy += 1; //new line
         }
     }
 
@@ -101,15 +116,24 @@ public class PanelDrink extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
 
+        setMaximumSize(new java.awt.Dimension(282, 477));
+        setMinimumSize(new java.awt.Dimension(282, 477));
+
+        jScrollPane1.setMaximumSize(new java.awt.Dimension(282, 477));
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(282, 477));
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(282, 477));
+        jPanel1.setMinimumSize(new java.awt.Dimension(282, 477));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -118,11 +142,11 @@ public class PanelDrink extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

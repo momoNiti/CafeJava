@@ -7,8 +7,10 @@ package gui;
 
 import db.MenuController;
 import gui.PosGUI;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -21,12 +23,13 @@ import menu.FoodMain;
  * @author STUDY fuckin HARD
  */
 public class PanelMainFood extends javax.swing.JPanel {
-    MenuController menuctrl = new MenuController();
-    FoodMain fm = new FoodMain();
-    Object[] row_table;
+    private MenuController menuctrl = new MenuController();
+    private FoodMain fm = new FoodMain();
+    private Object[] row_table;
     private PosGUI pos;
     
     private JButton[] button;
+    private JLabel[] label_price;
     private JLabel[] label;
     /**
      * Creates new form PanelMainFood
@@ -65,24 +68,39 @@ public class PanelMainFood extends javax.swing.JPanel {
         };
         
         GridBagLayout layout = new GridBagLayout();
-        jPanel1.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
-        c.gridx = 0;
+        jPanel1.setLayout(layout);
+        label = new JLabel[2];
+        label[0] = new JLabel("Menu");
+        label[1] = new JLabel("Price");
+        c.gridx = 1;
         c.gridy = 0;
-
+        c.gridwidth = 2;
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.insets = new Insets(5, 5, 5, 5);
+        jPanel1.add(label[0], c); // add menu
+        c.gridx = 2;
+        c.gridy = 0;
+        jPanel1.add(label[1], c); // add price
+        c.gridx = 0;
+        c.gridy = 1;
         fm.setMyMenu(menuctrl.getMainMenu());
         button = new JButton[fm.getMyMenu().size()];
-        label = new JLabel[fm.getMyMenu().size()];
+        label_price = new JLabel[fm.getMyMenu().size()];
         
         for(int i=0; i<fm.getMyMenu().size(); i++){
+            System.out.println("Grid x " + c.gridx);
+            System.out.println("Grid y " + c.gridy);
+            c.gridx = 0;
             button[i] = new JButton(fm.getMyMenu().get(i).getName());
             button[i].addActionListener(listener);
-            label[i] = new JLabel(String.valueOf(fm.getMyMenu().get(i).getPrice()));
+            button[i].setSize(new Dimension(200, 40));
+            button[i].setPreferredSize(new Dimension(200, 40));
+            label_price[i] = new JLabel(String.valueOf(fm.getMyMenu().get(i).getPrice()));
             jPanel1.add(button[i], c);
-            c.gridx = 4;
-            jPanel1.add(label[i], c);
-            c.gridx = 0;
-            c.gridy += 1;
+            c.gridx = 2;
+            jPanel1.add(label_price[i], c);
+            c.gridy += 1; //new line
         }
     }
 

@@ -6,12 +6,8 @@
 package gui;
 
 import db.MenuController;
-import java.awt.Color;
 import java.awt.GridBagLayout;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import menu.FoodDrink;
@@ -23,21 +19,21 @@ import menu.FoodSnack;
  * @author STUDY fuckin HARD
  */
 public class PanelMenuControll extends javax.swing.JPanel {
-    private MainGUI mg;
-    GridBagLayout layout = new GridBagLayout();
-    MenuController menuctrl = new MenuController();
-    FoodDrink fd = new FoodDrink();
-    FoodMain fm = new FoodMain();
-    FoodSnack fs = new FoodSnack();
+//    private MainGUI mg;
+    private GridBagLayout layout = new GridBagLayout();
+    private MenuController menuctrl = new MenuController();
+    private FoodDrink fd = new FoodDrink();
+    private FoodMain fm = new FoodMain();
+    private FoodSnack fs = new FoodSnack();
     //table
-    Object[] row_table, column_table;
-    DefaultTableModel model;
+    private Object[] row_table, column_table;
+    private DefaultTableModel model;
     /**
      * Creates new form MenuControllerGUI
      */
-    public PanelMenuControll(MainGUI mg) {
+    public PanelMenuControll() {
         initComponents();
-        this.mg = mg;
+//        this.mg = mg;
         //table
         column_table = new Object[3];
         row_table = new Object[3];
@@ -256,12 +252,7 @@ public class PanelMenuControll extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_jDeleteMenuActionPerformed
-    public void setColor(JPanel panel){
-        panel.setBackground(new Color(102,153,255));
-    }
-    public void resetColor(JPanel panel){
-        panel.setBackground(new Color(51,51,255));
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DynamicPanel;

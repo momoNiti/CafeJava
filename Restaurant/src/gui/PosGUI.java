@@ -5,10 +5,7 @@
  */
 package gui;
 
-import gui.PanelDrink;
-import gui.MainGUI;
 import db.OrderController;
-import gui.MainGUI;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.io.IOException;
@@ -19,15 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import javax.swing.event.UndoableEditListener;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Document;
-import javax.swing.text.Element;
-import javax.swing.text.Position;
-import javax.swing.text.Segment;
-import javax.xml.bind.ParseConversionEvent;
 import print.Receipt;
 import restaurant.Order;
 import restaurant.MyOrder;
@@ -36,13 +25,13 @@ import restaurant.MyOrder;
  * @author STUDY fuckin HARD
  */
 public class PosGUI extends javax.swing.JPanel {
-    GridBagLayout layout = new GridBagLayout();
-    PanelMainFood pmf;
-    PanelSnack ps;
-    PanelDrink pd;
+    private GridBagLayout layout = new GridBagLayout();
+    private PanelMainFood pmf;
+    private PanelSnack ps;
+    private PanelDrink pd;
     private MainGUI mg;
     //table
-    Object[] row_table, column_table;
+    private Object[] row_table, column_table;
     DefaultTableModel model;
     private int selected_row;
     
@@ -51,12 +40,11 @@ public class PosGUI extends javax.swing.JPanel {
     /**
      * Creates new form posGUI
      */
-    public PosGUI(MainGUI mg) {
-        this.mg = mg;
+    public PosGUI() {
+//        this.mg = mg;
         initComponents();
         myo = new MyOrder();
         oc = new OrderController();
-        
         pmf = new PanelMainFood(this);
         ps = new PanelSnack(this);
         pd = new PanelDrink(this);

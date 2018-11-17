@@ -9,7 +9,6 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.JPanel;
-import gui.Login;
 import restaurant.User;
 
 /**
@@ -17,11 +16,11 @@ import restaurant.User;
  * @author STUDY fuckin HARD
  */
 public class MainGUI extends javax.swing.JFrame {
-    GridBagLayout layout = new GridBagLayout();
-    PosGUI pos;
-    SignUpGUI sign;
-    PanelDB pDB;
-    PanelMenuControll pmc;
+    private GridBagLayout layout = new GridBagLayout();
+    private PosGUI pos;
+    private SignUpGUI sign;
+    private PanelDB pDB;
+    private PanelMenuControll pmc;
     
     private User u;
     /**
@@ -30,10 +29,10 @@ public class MainGUI extends javax.swing.JFrame {
     public MainGUI(User u) {
         this.u = u;
         initComponents();
-        pos = new PosGUI(this);
-        sign = new SignUpGUI(this);
-        pDB = new PanelDB(this);
-        pmc = new PanelMenuControll(this);
+        pos = new PosGUI();
+        sign = new SignUpGUI();
+        pDB = new PanelDB();
+        pmc = new PanelMenuControll();
         DynamicPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -94,6 +93,7 @@ public class MainGUI extends javax.swing.JFrame {
         DynamicPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cafe' V.2");
 
         sidePanel.setBackground(new java.awt.Color(51, 255, 153));
 
@@ -232,12 +232,11 @@ public class MainGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jLogOut)
                 .addContainerGap())
-            .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addComponent(btnSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnMenuController, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPOS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(btnDB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(btnSignUp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addComponent(btnMenuController, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnPOS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                .addComponent(btnDB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sidePanelLayout.setVerticalGroup(
             sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
