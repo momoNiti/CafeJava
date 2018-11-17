@@ -32,7 +32,7 @@ public class MainGUI extends javax.swing.JFrame {
         pos = new PosGUI();
         sign = new SignUpGUI();
         pDB = new PanelDB();
-        pmc = new PanelMenuControll();
+        pmc = new PanelMenuControll(this);
         DynamicPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;

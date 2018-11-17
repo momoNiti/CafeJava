@@ -13,13 +13,14 @@ import javax.swing.table.DefaultTableModel;
 import menu.FoodDrink;
 import menu.FoodMain;
 import menu.FoodSnack;
+import restaurant.User;
 
 /**
  *
  * @author STUDY fuckin HARD
  */
 public class PanelMenuControll extends javax.swing.JPanel {
-//    private MainGUI mg;
+    private MainGUI mg;
     private MenuController menuctrl = new MenuController();
     private FoodDrink fd = new FoodDrink();
     private FoodMain fm = new FoodMain();
@@ -30,10 +31,10 @@ public class PanelMenuControll extends javax.swing.JPanel {
     /**
      * Creates new form MenuControllerGUI
      */
-    public PanelMenuControll() {
+    public PanelMenuControll(MainGUI mg) {
         GridBagLayout layout = new GridBagLayout();
         initComponents();
-//        this.mg = mg;
+        this.mg = mg;
         //table
         column_table = new Object[3];
         row_table = new Object[3];
@@ -221,6 +222,11 @@ public class PanelMenuControll extends javax.swing.JPanel {
                 if( !menuID.getText().isEmpty() && !menuName.getText().isEmpty() && !price.getText().isEmpty() ){
                     menuctrl.insertMenu(jSelect_DB.getSelectedItem().toString(), menuID.getText(), menuName.getText(), Double.parseDouble(price.getText()));
                     jSelect_DBActionPerformed(evt);
+                    User user = mg.getU();
+                    mg.dispose();
+                    MainGUI mg_new = new MainGUI(user);
+                    mg_new.setVisible(true);
+                    mg_new.setLocationRelativeTo(null);                    
                 }
                 else{
                    JOptionPane.showMessageDialog(null, "Fill your empty", "ERROR", JOptionPane.ERROR_MESSAGE); 
@@ -245,6 +251,12 @@ public class PanelMenuControll extends javax.swing.JPanel {
                 if(!menuID.getText().isEmpty()){
                     menuctrl.deleteMenu(jSelect_DB.getSelectedItem().toString(), menuID.getText());
                     jSelect_DBActionPerformed(evt);
+                    User user = mg.getU();
+                    MainGUI mg_new = new MainGUI(user);
+                    mg_new.setVisible(true);
+                    mg_new.setLocationRelativeTo(null); 
+                    mg.dispose();
+                    
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Fill your empty", "ERROR", JOptionPane.ERROR_MESSAGE); 

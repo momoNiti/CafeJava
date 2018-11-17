@@ -90,8 +90,6 @@ public class PanelSnack extends javax.swing.JPanel {
         label_price = new JLabel[fs.getMyMenu().size()];
         
         for(int i=0; i<fs.getMyMenu().size(); i++){
-            System.out.println("Grid x " + c.gridx);
-            System.out.println("Grid y " + c.gridy);
             c.gridx = 0;
             button[i] = new JButton(fs.getMyMenu().get(i).getName());
             button[i].addActionListener(listener);
