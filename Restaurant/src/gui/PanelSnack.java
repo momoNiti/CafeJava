@@ -28,7 +28,6 @@ public class PanelSnack extends javax.swing.JPanel {
     private FoodSnack fs = new FoodSnack();
     private Object[] row_table;
     private PosGUI pos;
-
     private JButton[] button;
     private JLabel[] label_price;
     private JLabel[] label;

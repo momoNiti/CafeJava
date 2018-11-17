@@ -20,7 +20,6 @@ import menu.FoodSnack;
  */
 public class PanelMenuControll extends javax.swing.JPanel {
 //    private MainGUI mg;
-    private GridBagLayout layout = new GridBagLayout();
     private MenuController menuctrl = new MenuController();
     private FoodDrink fd = new FoodDrink();
     private FoodMain fm = new FoodMain();
@@ -32,6 +31,7 @@ public class PanelMenuControll extends javax.swing.JPanel {
      * Creates new form MenuControllerGUI
      */
     public PanelMenuControll() {
+        GridBagLayout layout = new GridBagLayout();
         initComponents();
 //        this.mg = mg;
         //table
