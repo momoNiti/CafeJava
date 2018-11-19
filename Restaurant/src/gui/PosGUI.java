@@ -40,8 +40,8 @@ public class PosGUI extends javax.swing.JPanel {
     /**
      * Creates new form posGUI
      */
-    public PosGUI() {
-//        this.mg = mg;
+    public PosGUI(MainGUI mg) {
+        this.mg = mg;
         initComponents();
         myo = new MyOrder();
         oc = new OrderController();

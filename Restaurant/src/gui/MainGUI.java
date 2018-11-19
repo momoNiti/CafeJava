@@ -29,7 +29,7 @@ public class MainGUI extends javax.swing.JFrame {
     public MainGUI(User u) {
         this.u = u;
         initComponents();
-        pos = new PosGUI();
+        pos = new PosGUI(this);
         sign = new SignUpGUI();
         pDB = new PanelDB();
         pmc = new PanelMenuControll(this);
