@@ -44,7 +44,7 @@ public class UserController{
             pst.close();
         }
         catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, ex);
+            JOptionPane.showMessageDialog(null, "Error Singup", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
         return res;
@@ -69,7 +69,7 @@ public class UserController{
     
         }
         catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, ex);
+            JOptionPane.showMessageDialog(null, "Error login", "Error", JOptionPane.ERROR_MESSAGE);
         }
         return false;
     }

@@ -44,6 +44,7 @@ public class MenuController {
             res = pst.executeUpdate();
             pst.close();
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Can not Insert", "Error", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -110,6 +111,7 @@ public class MenuController {
             pst.setString(1, menuID);
             pst.executeUpdate();
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Can not Delete", "Error", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
