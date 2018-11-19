@@ -220,13 +220,18 @@ public class PanelMenuControll extends javax.swing.JPanel {
             }
             else{
                 if( !menuID.getText().isEmpty() && !menuName.getText().isEmpty() && !price.getText().isEmpty() ){
-                    menuctrl.insertMenu(jSelect_DB.getSelectedItem().toString(), menuID.getText(), menuName.getText(), Double.parseDouble(price.getText()));
-                    jSelect_DBActionPerformed(evt);
-                    User user = mg.getU();
-                    mg.dispose();
-                    MainGUI mg_new = new MainGUI(user);
-                    mg_new.setVisible(true);
-                    mg_new.setLocationRelativeTo(null);                    
+                    int res = menuctrl.insertMenu(jSelect_DB.getSelectedItem().toString(), menuID.getText(), menuName.getText(), Double.parseDouble(price.getText()));
+                    if(res > 0){
+                        jSelect_DBActionPerformed(evt);
+                        User user = mg.getU();
+                        mg.dispose();
+                        MainGUI mg_new = new MainGUI(user);
+                        mg_new.setVisible(true);
+                        mg_new.setLocationRelativeTo(null);
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Duplicate ID", "ERROR", JOptionPane.ERROR_MESSAGE); 
+                    }                   
                 }
                 else{
                    JOptionPane.showMessageDialog(null, "Fill your empty", "ERROR", JOptionPane.ERROR_MESSAGE); 
@@ -249,17 +254,23 @@ public class PanelMenuControll extends javax.swing.JPanel {
             }
             else{
                 if(!menuID.getText().isEmpty()){
-                    menuctrl.deleteMenu(jSelect_DB.getSelectedItem().toString(), menuID.getText());
-                    jSelect_DBActionPerformed(evt);
-                    User user = mg.getU();
-                    MainGUI mg_new = new MainGUI(user);
-                    mg_new.setVisible(true);
-                    mg_new.setLocationRelativeTo(null); 
-                    mg.dispose();
+                    int res = menuctrl.deleteMenu(jSelect_DB.getSelectedItem().toString(), menuID.getText());
+                    if(res > 0){
+                        jSelect_DBActionPerformed(evt);
+                        User user = mg.getU();
+                        MainGUI mg_new = new MainGUI(user);
+                        mg_new.setVisible(true);
+                        mg_new.setLocationRelativeTo(null); 
+                        mg.dispose();
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "No ID Found", "ERROR", JOptionPane.ERROR_MESSAGE); 
+                    }
+                    
                     
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "Fill your empty", "ERROR", JOptionPane.ERROR_MESSAGE); 
+                    JOptionPane.showMessageDialog(null, "Error", "ERROR", JOptionPane.ERROR_MESSAGE); 
                 }
             }
         }

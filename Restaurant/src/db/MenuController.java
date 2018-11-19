@@ -32,7 +32,7 @@ public class MenuController {
         db = new Database();
         conn = db.getConnection();
     }
-    public void insertMenu(String dbName, String menuID, String name, double price){
+    public int insertMenu(String dbName, String menuID, String name, double price){
         String sql = "";
         int res = 0;
         try {
@@ -44,9 +44,9 @@ public class MenuController {
             res = pst.executeUpdate();
             pst.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Can not Insert", "Error", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return res;
     }
     
     public ArrayList<Menu> getDrinkMenu(){
@@ -106,19 +106,19 @@ public class MenuController {
         return myMenu;
     }
     
-    public void deleteMenu(String dbName, String menuID){
+    public int deleteMenu(String dbName, String menuID){
         String sql = "";
+        int res = 0;
         try {
             sql = "Delete from " + dbName +" where menuID = ?";
             PreparedStatement pst = (PreparedStatement) conn.prepareStatement(sql);
             pst.setString(1, menuID);
-            pst.executeUpdate();
+            res = pst.executeUpdate();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Can not Delete", "Error", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
+        return res;
     }
     
 //    public static void main(String[] args) {
