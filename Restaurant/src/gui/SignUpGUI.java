@@ -192,7 +192,8 @@ public class SignUpGUI extends javax.swing.JPanel {
                 
             }
             else{
-                JOptionPane.showMessageDialog(null, "Unable to Sing Up");
+                JOptionPane.showMessageDialog(null, "Can not sign up", "Error", JOptionPane.ERROR_MESSAGE);
+//                JOptionPane.showMessageDialog(null, "Unable to Sing /Up");
             }
 
         }

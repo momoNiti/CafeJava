@@ -5,21 +5,20 @@
  */
 package db;
 
-import db.Database;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.mysql.jdbc.PreparedStatement;
 import java.lang.reflect.Type;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import restaurant.MyOrder;
 import restaurant.MyOrderDB;
 import restaurant.OrderedDB;
-import restaurant.ShowDB;
 
         
 
@@ -85,8 +84,8 @@ public class OrderController{
             pst.close();
             return myoDB;
         }
-        catch(Exception ex){
-            ex.printStackTrace();       
+        catch(JsonSyntaxException | SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error while getting data from Database", "Error", JOptionPane.ERROR_MESSAGE);       
         }
         return myoDB;
     }

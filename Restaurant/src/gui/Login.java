@@ -159,7 +159,8 @@ public class Login extends javax.swing.JFrame {
             this.dispose();
         }
         else{
-            JOptionPane.showMessageDialog(null, "Wrong");
+            JOptionPane.showMessageDialog(null, "Wrong", "Error", JOptionPane.ERROR_MESSAGE);
+//            JOptionPane.showMessageDialog(null, "Wrong");
             jUsername.setText("");
             jPassword.setText("");
             jRoles.setSelectedIndex(0);

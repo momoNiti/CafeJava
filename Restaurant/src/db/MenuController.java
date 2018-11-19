@@ -62,6 +62,7 @@ public class MenuController {
             }
             pst.close();
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error while get Drink menu", "Error", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return myMenu;
@@ -80,6 +81,7 @@ public class MenuController {
             }
             pst.close();
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error while get Main menu", "Error", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return myMenu;
@@ -98,6 +100,7 @@ public class MenuController {
             }
             pst.close();
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error while get snack menu", "Error", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return myMenu;

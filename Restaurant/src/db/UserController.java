@@ -5,7 +5,6 @@
  */
 package db;
 
-import db.Database;
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -44,7 +43,8 @@ public class UserController{
             pst.close();
         }
         catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, "Error Singup", "Error", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+//            JOptionPane.showMessageDialog(null, "Error Singup", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
         return res;
@@ -69,7 +69,8 @@ public class UserController{
     
         }
         catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, "Error login", "Error", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+//            JOptionPane.showMessageDialog(null, "Error while login", "Error", JOptionPane.ERROR_MESSAGE);
         }
         return false;
     }
