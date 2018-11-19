@@ -30,7 +30,7 @@ public class MainGUI extends javax.swing.JFrame {
         this.u = u;
         initComponents();
         pos = new PosGUI(this);
-        sign = new SignUpGUI();
+        sign = new SignUpGUI(this);
         pDB = new PanelDB();
         pmc = new PanelMenuControll(this);
         DynamicPanel.setLayout(layout);

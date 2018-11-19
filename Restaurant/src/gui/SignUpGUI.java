@@ -14,12 +14,12 @@ import restaurant.User;
  * @author STUDY fuckin HARD
  */
 public class SignUpGUI extends javax.swing.JPanel {
-//    private MainGUI mg;
+    private MainGUI mg;
     /**
      * Creates new form SignUpGUI
      */
-    public SignUpGUI() {
-//        this.mg = mg;
+    public SignUpGUI(MainGUI mg) {
+        this.mg = mg;
         initComponents();
     }
 
@@ -184,7 +184,11 @@ public class SignUpGUI extends javax.swing.JPanel {
             int res = uc.createAccount(u);
             if(res > 0){
                 JOptionPane.showMessageDialog(null, "Finish Sign up & Welcome " + u.getName());
-                new Login().setVisible(true);
+                User user = mg.getU();
+                mg.dispose();
+                MainGUI mg_new = new MainGUI(user);
+                mg_new.setVisible(true);
+                mg_new.setLocationRelativeTo(null);                    
                 
             }
             else{
