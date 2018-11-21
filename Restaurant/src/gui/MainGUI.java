@@ -60,7 +60,6 @@ public class MainGUI extends javax.swing.JFrame {
             btnSignUp.setVisible(false);
         }
         jUsername.setText(u.getUname());
-//        System.out.println("check user in maingui = " + u.getUname());
     }
 
     /**
