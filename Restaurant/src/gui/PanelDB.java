@@ -31,7 +31,6 @@ public class PanelDB extends javax.swing.JPanel {
      */
     public PanelDB() {
         initComponents();
-//        this.mg = mg;
         GridBagLayout layout = new GridBagLayout();
         graphPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
