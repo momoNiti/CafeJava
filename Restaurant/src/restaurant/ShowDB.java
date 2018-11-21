@@ -67,7 +67,7 @@ public class ShowDB {
 
         String[] xDate = new String[set.size()]; // แก้ไขตัวแปรในแกน x ที่แสดงในกราฟ
         XYSeriesCollection dataset = new XYSeriesCollection(); //ประกาศ Dataset ที่ใช้ในการเก็บ Series
-        XYSeries series = new XYSeries("PPD"); // ประกาศซีรี่ส์
+        XYSeries series = new XYSeries("gross sales"); // ประกาศซีรี่ส์
         
         int k = 0; // เก็บ index ของ []xDate
         while(iterator.hasNext()) {
