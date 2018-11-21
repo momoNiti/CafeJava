@@ -51,11 +51,6 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("Password");
 
         jRoles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "admin", "cashier" }));
-        jRoles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRolesActionPerformed(evt);
-            }
-        });
 
         jLabel4.setText("Category");
 
@@ -132,10 +127,6 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRolesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRolesActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         System.exit(0);

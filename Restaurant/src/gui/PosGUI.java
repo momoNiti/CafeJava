@@ -124,11 +124,6 @@ public class PosGUI extends javax.swing.JPanel {
         });
 
         jSubmit.setText("Submit");
-        jSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jSubmitMouseClicked(evt);
-            }
-        });
         jSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSubmitActionPerformed(evt);
@@ -155,11 +150,6 @@ public class PosGUI extends javax.swing.JPanel {
 
         jReceive.setText("0.0");
         jReceive.setPreferredSize(new java.awt.Dimension(6, 22));
-        jReceive.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jReceiveActionPerformed(evt);
-            }
-        });
 
         jChange.setEditable(false);
 
@@ -214,7 +204,6 @@ public class PosGUI extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jDelete))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -417,10 +406,6 @@ public class PosGUI extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jDrinkActionPerformed
 
-    private void jReceiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jReceiveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jReceiveActionPerformed
-
     private void jIncreseQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIncreseQtyActionPerformed
         // TODO add your handling code here:
         selected_row = pos_jTable.getSelectedRow();
@@ -478,10 +463,6 @@ public class PosGUI extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event_jSubmitActionPerformed
-
-    private void jSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSubmitMouseClicked
-
-    }//GEN-LAST:event_jSubmitMouseClicked
 
     private void jDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteActionPerformed
         // TODO add your handling code here:

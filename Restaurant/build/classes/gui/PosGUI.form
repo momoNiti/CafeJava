@@ -160,7 +160,6 @@
                 <Property name="text" type="java.lang.String" value="Submit"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jSubmitMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jSubmitActionPerformed"/>
               </Events>
             </Component>
@@ -197,9 +196,6 @@
                   <Dimension value="[6, 22]"/>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jReceiveActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jReceive.getDocument().addDocumentListener(new DocumentListener() {&#xa;            @Override&#xa;            public void insertUpdate(DocumentEvent e) {&#xa;                try{&#xa;                    double receive = Double.parseDouble(jReceive.getText());&#xa;                    myo.setReceive(receive);&#xa;                    double change = myo.getReceive() - myo.getPrice_include_vat();&#xa;                    myo.setChange(change);&#xa;                    String result = String.format(&quot;%.2f&quot;, myo.getChange());&#xa;                    jChange.setText(result);&#xa;                }catch(NumberFormatException ex){&#xa;                   JOptionPane.showMessageDialog(null, &quot;Use Number&quot;);&#xa;                }&#xa;            }&#xa;&#xa;            @Override&#xa;            public void removeUpdate(DocumentEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void changedUpdate(DocumentEvent e) {&#xa;                try{&#xa;                    double receive = Double.parseDouble(jReceive.getText());&#xa;                    double change = receive - myo.getPrice_include_vat();&#xa;                    String result = String.format(&quot;%.2f&quot;,change);&#xa;                    jChange.setText(result);&#xa;                }catch(NumberFormatException ex){&#xa;                    JOptionPane.showMessageDialog(null, &quot;Use Number&quot;);&#xa;                }&#xa;            }&#xa;        });"/>
               </AuxValues>
