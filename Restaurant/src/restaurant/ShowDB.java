@@ -104,7 +104,7 @@ public class ShowDB {
         plot.setRenderer(renderer); // set ตามที่ render ไว้
         
         ChartPanel panel = new ChartPanel(chart); //สร้าว chartpanel
-        panel.setDomainZoomable(false); // ทำให้ซูมไม่ได้ตามแกน X
+        panel.setDomainZoomable(true); // ทำให้ซูมได้ตามแกน X
         panel.setRangeZoomable(false); // ซูมไม่ได้ตามแกน Y
         panel.setVisible(true); 
         panel.setPreferredSize(new Dimension(698, 616)); //ทำให้ขนาดเท่ากับ panel ที่สร้างเอาไว้
