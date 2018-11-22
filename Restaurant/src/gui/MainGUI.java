@@ -42,22 +42,15 @@ public class MainGUI extends javax.swing.JFrame {
         DynamicPanel.add(pDB, c);
         DynamicPanel.add(pmc, c);
         pos.setVisible(true);
+        btnPOS_color.setOpaque(true);
+        setColor(btnPOS);
         sign.setVisible(false);
         pDB.setVisible(false);
         pmc.setVisible(false);
-        setColor(btnPOS);
-        resetColor(btnDB);
-        resetColor(btnSignUp);
-        resetColor(btnMenuController);
-        btnPOS_color.setOpaque(true);
-        btnDB_color.setOpaque(false);
-        btnSignUp_color.setOpaque(false);
-        btnEX_color.setOpaque(false);
-        
         if(u.getRoles().equals("cashier")){
             btnDB.setVisible(false);
-            btnMenuController.setVisible(false);
             btnSignUp.setVisible(false);
+            btnMenuController.setVisible(false);
         }
         jUsername.setText(u.getUname());
     }
@@ -288,46 +281,29 @@ public class MainGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDBMouseClicked
-        // TODO add your handling code here:
-        resetColor(btnPOS);
-        setColor(btnDB);
-        resetColor(btnSignUp);
-        resetColor(btnMenuController);
-        btnPOS_color.setOpaque(false);
-        btnDB_color.setOpaque(true);
-        btnSignUp_color.setOpaque(false);
-        btnEX_color.setOpaque(false);
-
-        pos.setVisible(false);
-        pDB.setVisible(true);
-        sign.setVisible(false);
-        pmc.setVisible(false);
-    }//GEN-LAST:event_btnDBMouseClicked
-
-    private void btnPOSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPOSMouseClicked
-        // TODO add your handling code here:
-        setColor(btnPOS);
-        resetColor(btnDB);
-        resetColor(btnSignUp);
-        resetColor(btnMenuController);
-
-        btnPOS_color.setOpaque(true);
-        btnDB_color.setOpaque(false);
-        btnSignUp_color.setOpaque(false);
-        btnEX_color.setOpaque(false);
-
-        pos.setVisible(true);
-        pDB.setVisible(false);
-        sign.setVisible(false);
-        pmc.setVisible(false);
-    }//GEN-LAST:event_btnPOSMouseClicked
-
     private void jLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogOutActionPerformed
         // TODO add your handling code here:
         new Login().run();
         this.dispose();
     }//GEN-LAST:event_jLogOutActionPerformed
+
+    private void btnSignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSignUpMouseClicked
+        // TODO add your handling code here:
+        resetColor(btnPOS);
+        resetColor(btnDB);
+        setColor(btnSignUp);
+        resetColor(btnMenuController);
+
+        btnPOS_color.setOpaque(false);
+        btnDB_color.setOpaque(false);
+        btnSignUp_color.setOpaque(true);
+        btnEX_color.setOpaque(false);
+
+        pos.setVisible(false);
+        pDB.setVisible(false);
+        sign.setVisible(true);
+        pmc.setVisible(false);
+    }//GEN-LAST:event_btnSignUpMouseClicked
 
     private void btnMenuControllerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuControllerMouseClicked
         // TODO add your handling code here:
@@ -347,23 +323,42 @@ public class MainGUI extends javax.swing.JFrame {
         pmc.setVisible(true);
     }//GEN-LAST:event_btnMenuControllerMouseClicked
 
-    private void btnSignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSignUpMouseClicked
+    private void btnDBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDBMouseClicked
         // TODO add your handling code here:
         resetColor(btnPOS);
-        resetColor(btnDB);
-        setColor(btnSignUp);
         resetColor(btnMenuController);
+        resetColor(btnSignUp);
+        setColor(btnDB);
 
         btnPOS_color.setOpaque(false);
-        btnDB_color.setOpaque(false);
-        btnSignUp_color.setOpaque(true);
+        btnDB_color.setOpaque(true);
+        btnSignUp_color.setOpaque(false);
         btnEX_color.setOpaque(false);
 
         pos.setVisible(false);
-        pDB.setVisible(false);
-        sign.setVisible(true);
+        pDB.setVisible(true);
+        sign.setVisible(false);
         pmc.setVisible(false);
-    }//GEN-LAST:event_btnSignUpMouseClicked
+    }//GEN-LAST:event_btnDBMouseClicked
+
+    private void btnPOSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPOSMouseClicked
+        // TODO add your handling code here:
+        resetColor(btnDB);
+        resetColor(btnMenuController);
+        resetColor(btnSignUp);
+        setColor(btnPOS);
+
+        btnPOS_color.setOpaque(true);
+        btnDB_color.setOpaque(false);
+        btnSignUp_color.setOpaque(false);
+        btnEX_color.setOpaque(false);
+
+        pos.setVisible(true);
+        pDB.setVisible(false);
+        sign.setVisible(false);
+        pmc.setVisible(false);
+
+    }//GEN-LAST:event_btnPOSMouseClicked
     public void setColor(JPanel panel){
         panel.setBackground(new Color(102,153,255));
     }
