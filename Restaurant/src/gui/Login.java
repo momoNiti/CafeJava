@@ -6,6 +6,7 @@
 package gui;
 
 import db.UserController;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import restaurant.User;
 
@@ -42,6 +43,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cafe' V.2");
+        setBackground(new java.awt.Color(255, 204, 204));
 
         jLabel1.setText("Log In");
 

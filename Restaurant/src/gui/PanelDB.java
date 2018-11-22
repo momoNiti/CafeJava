@@ -82,6 +82,9 @@ public class PanelDB extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1143, 616));
 
+        jScrollPane1.setBorder(null);
+
+        jTableDB.setBackground(new java.awt.Color(255, 255, 204));
         jTableDB.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

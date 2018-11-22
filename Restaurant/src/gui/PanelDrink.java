@@ -57,9 +57,11 @@ public class PanelDrink extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(282, 477));
         setMinimumSize(new java.awt.Dimension(282, 477));
 
+        jScrollPane1.setBorder(null);
         jScrollPane1.setMaximumSize(new java.awt.Dimension(282, 477));
         jScrollPane1.setMinimumSize(new java.awt.Dimension(282, 477));
 
+        jPanel1.setBackground(new java.awt.Color(255, 102, 102));
         jPanel1.setMaximumSize(new java.awt.Dimension(282, 477));
         jPanel1.setMinimumSize(new java.awt.Dimension(282, 477));
 

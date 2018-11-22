@@ -112,8 +112,10 @@ public class PosGUI extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1143, 616));
 
+        pos_Panel.setBackground(new java.awt.Color(255, 153, 153));
         pos_Panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jPanel1.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jDelete.setText("Delete");
@@ -161,6 +163,7 @@ public class PosGUI extends javax.swing.JPanel {
 
         jLabel4.setText("+ Vat 7%");
 
+        pos_jTable.setBackground(new java.awt.Color(255, 255, 204));
         pos_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -279,6 +282,7 @@ public class PosGUI extends javax.swing.JPanel {
             }
         });
 
+        jPanel3.setBackground(new java.awt.Color(255, 153, 204));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel6.setText("ประเภทอาหาร");
@@ -333,6 +337,7 @@ public class PosGUI extends javax.swing.JPanel {
                 .addContainerGap(127, Short.MAX_VALUE))
         );
 
+        DynamicPanel.setBackground(new java.awt.Color(255, 102, 102));
         DynamicPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout DynamicPanelLayout = new javax.swing.GroupLayout(DynamicPanel);
