@@ -5,7 +5,6 @@
  */
 package gui;
 
-import gui.MainGUI;
 import db.UserController;
 import javax.swing.JOptionPane;
 import restaurant.User;

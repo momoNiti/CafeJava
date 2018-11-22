@@ -55,9 +55,9 @@ public class ShowDB {
         }
         return map;
     }
-    public ArrayList<MyOrderDB> getMyoDB() {
-        return myoDB;
-    }
+//    public ArrayList<MyOrderDB> getMyoDB() {
+//        return myoDB;
+//    }
     public void setMyoDB(ArrayList<MyOrderDB> myoDB) {
         this.myoDB = myoDB;
     }
