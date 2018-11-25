@@ -35,6 +35,8 @@ import org.jfree.data.xy.XYSeriesCollection;
  *
  * @author STUDY fuckin HARD
  */
+
+//สร้าง Graph
 public class ShowDB {
     private ArrayList<MyOrderDB> myoDB = new ArrayList<MyOrderDB>();
     private Map map = new TreeMap(); //Because Treemap -> order of key is important;

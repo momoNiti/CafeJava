@@ -9,6 +9,7 @@ package restaurant;
  *
  * @author STUDY fuckin HARD
  */
+//เมนูของแต่ละ Order
 public class OrderedDB {
     private int quantity;
     private String name;

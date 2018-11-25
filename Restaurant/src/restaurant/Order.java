@@ -9,6 +9,7 @@ package restaurant;
  *
  * @author STUDY fuckin HARD
  */
+// เป็น เมนูของ Order
 public class Order {
     private int quantity;
     private String name;

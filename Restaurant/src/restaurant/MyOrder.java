@@ -14,6 +14,7 @@ import java.util.Date;
  *
  * @author STUDY fuckin HARD
  */
+//เป็นคลาสที่รวมเมนูของ Order
 public class MyOrder{
     private ArrayList<Order> o = new ArrayList<Order>();
     private double price_include_vat;
@@ -64,7 +65,6 @@ public class MyOrder{
     }
 
     public void setPrice_include_vat(double price_include_vat) {
-//        double temp = price_include_vat * vat;
         double result = price_include_vat + getPrice_vat();
         this.price_include_vat = Math.round(result);
     }

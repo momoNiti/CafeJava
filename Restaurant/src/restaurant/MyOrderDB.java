@@ -12,6 +12,7 @@ import java.util.ArrayList;
  *
  * @author STUDY fuckin HARD
  */
+// เก็บ Array ของแต่ละ Order
 public class MyOrderDB {
     private ArrayList<OrderedDB> odb = new ArrayList<OrderedDB>();
 
