@@ -50,7 +50,7 @@ public class PosGUI extends javax.swing.JPanel {
         pmf = new PanelMainFood(this);
         ps = new PanelSnack(this);
         pd = new PanelDrink(this);
-        
+        //dynamic panel and layout
         DynamicPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -58,7 +58,7 @@ public class PosGUI extends javax.swing.JPanel {
         DynamicPanel.add(pmf, c);
         DynamicPanel.add(ps, c);
         DynamicPanel.add(pd, c);
-        
+        //set default
         setColor(jMainFood);
         resetColor(jDrink, jSnack);
         pmf.setVisible(true);
@@ -483,7 +483,7 @@ public class PosGUI extends javax.swing.JPanel {
                 Logger.getLogger(PosGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
             System.out.println(receipt.getMyReceipt());
-            JOptionPane.showMessageDialog(null, "Finish insert order to database");
+            JOptionPane.showMessageDialog(null, "Finish -> Please Print receipt");
             mg.dispose();
             MainGUI run = new MainGUI(mg.getU());
             run.setVisible(true);

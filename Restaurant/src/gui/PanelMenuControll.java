@@ -32,7 +32,6 @@ public class PanelMenuControll extends javax.swing.JPanel {
      * Creates new form MenuControllerGUI
      */
     public PanelMenuControll(MainGUI mg) {
-        GridBagLayout layout = new GridBagLayout();
         initComponents();
         this.mg = mg;
         //table

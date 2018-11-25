@@ -31,12 +31,14 @@ public class PanelDB extends javax.swing.JPanel {
      */
     public PanelDB() {
         initComponents();
+        //graph panel and set layout
         GridBagLayout layout = new GridBagLayout();
         graphPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
         
+        //get graph
         ordc = new OrderController();;
         show = new ShowDB();
         show.setMyoDB(ordc.getDataDB()); //get data from databasse then set to this array list

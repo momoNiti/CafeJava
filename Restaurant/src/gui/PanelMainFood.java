@@ -96,6 +96,7 @@ public class PanelMainFood extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
     public void myinit(){
+        // make action when click button (calculate price and show on table)
         ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -123,7 +124,7 @@ public class PanelMainFood extends javax.swing.JPanel {
                 pos.calculatePrice();
             }
         };
-        
+        //show menu button and price
         GridBagLayout layout = new GridBagLayout();
         GridBagConstraints c = new GridBagConstraints();
         jPanel1.setLayout(layout);

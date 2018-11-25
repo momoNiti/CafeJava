@@ -26,13 +26,14 @@ public class MainGUI extends javax.swing.JFrame {
     /**
      * Creates new form MainGUI
      */
-    public MainGUI(User u) {
+    public MainGUI(User u) { //get Object from User
         this.u = u;
         initComponents();
         pos = new PosGUI(this);
         sign = new SignUpGUI(this);
         pDB = new PanelDB();
         pmc = new PanelMenuControll(this);
+        //Dynamic Panel and set layout
         DynamicPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -41,17 +42,20 @@ public class MainGUI extends javax.swing.JFrame {
         DynamicPanel.add(sign, c);
         DynamicPanel.add(pDB, c);
         DynamicPanel.add(pmc, c);
+        //set panel default visible
         pos.setVisible(true);
         btnPOS_color.setOpaque(true);
         setColor(btnPOS);
         sign.setVisible(false);
         pDB.setVisible(false);
         pmc.setVisible(false);
+        //hide cashier menu
         if(u.getRoles().equals("cashier")){
             btnDB.setVisible(false);
             btnSignUp.setVisible(false);
             btnMenuController.setVisible(false);
         }
+        //get username 
         jUsername_out.setText(u.getUname());
     }
 
