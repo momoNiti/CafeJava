@@ -6,6 +6,7 @@
 package gui;
 
 import db.OrderController;
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -57,6 +59,8 @@ public class PosGUI extends javax.swing.JPanel {
         DynamicPanel.add(ps, c);
         DynamicPanel.add(pd, c);
         
+        setColor(jMainFood);
+        resetColor(jDrink, jSnack);
         pmf.setVisible(true);
         ps.setVisible(false);
         pd.setVisible(false);
@@ -103,7 +107,7 @@ public class PosGUI extends javax.swing.JPanel {
                 return false;   //Disallow the editing of any cell
             }
         };
-        jPanel3 = new javax.swing.JPanel();
+        SelectivePanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jMainFood = new javax.swing.JButton();
         jSnack = new javax.swing.JButton();
@@ -239,11 +243,12 @@ public class PosGUI extends javax.swing.JPanel {
                     .addComponent(jIncreseQty)
                     .addComponent(jDelete))
                 .addGap(18, 18, 18)
-                .addGroup(LeftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LeftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPrice_vat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4))
+                    .addGroup(LeftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel4)))
                 .addGap(18, 18, 18)
                 .addGroup(LeftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -287,11 +292,12 @@ public class PosGUI extends javax.swing.JPanel {
             }
         });
 
-        jPanel3.setBackground(new java.awt.Color(255, 153, 204));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SelectivePanel.setBackground(new java.awt.Color(255, 153, 204));
+        SelectivePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel6.setText("ประเภทอาหาร");
 
+        jMainFood.setBackground(new java.awt.Color(102, 204, 255));
         jMainFood.setText("เมนูหลัก");
         jMainFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,47 +305,56 @@ public class PosGUI extends javax.swing.JPanel {
             }
         });
 
+        jSnack.setBackground(new java.awt.Color(204, 204, 255));
         jSnack.setText("เมนูทานเล่น");
+        jSnack.setMaximumSize(new java.awt.Dimension(77, 25));
+        jSnack.setMinimumSize(new java.awt.Dimension(77, 25));
+        jSnack.setPreferredSize(new java.awt.Dimension(77, 25));
         jSnack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSnackActionPerformed(evt);
             }
         });
 
+        jDrink.setBackground(new java.awt.Color(204, 204, 255));
         jDrink.setText("เครื่องดื่ม");
+        jDrink.setMaximumSize(new java.awt.Dimension(77, 25));
+        jDrink.setMinimumSize(new java.awt.Dimension(77, 25));
+        jDrink.setPreferredSize(new java.awt.Dimension(77, 25));
         jDrink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDrinkActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSnack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout SelectivePanelLayout = new javax.swing.GroupLayout(SelectivePanel);
+        SelectivePanel.setLayout(SelectivePanelLayout);
+        SelectivePanelLayout.setHorizontalGroup(
+            SelectivePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SelectivePanelLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jLabel6)
+                .addContainerGap(54, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SelectivePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SelectivePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jDrink, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jMainFood, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel6)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                    .addComponent(jSnack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jMainFood, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        SelectivePanelLayout.setVerticalGroup(
+            SelectivePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SelectivePanelLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jMainFood, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSnack, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jMainFood)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSnack)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDrink)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addComponent(jDrink, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         DynamicPanel.setBackground(new java.awt.Color(255, 102, 102));
@@ -349,11 +364,11 @@ public class PosGUI extends javax.swing.JPanel {
         DynamicPanel.setLayout(DynamicPanelLayout);
         DynamicPanelLayout.setHorizontalGroup(
             DynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 319, Short.MAX_VALUE)
+            .addGap(0, 337, Short.MAX_VALUE)
         );
         DynamicPanelLayout.setVerticalGroup(
             DynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 614, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout pos_PanelLayout = new javax.swing.GroupLayout(pos_Panel);
@@ -362,8 +377,8 @@ public class PosGUI extends javax.swing.JPanel {
             pos_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pos_PanelLayout.createSequentialGroup()
                 .addComponent(LeftPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(SelectivePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(73, 73, 73)
                 .addComponent(DynamicPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -373,7 +388,7 @@ public class PosGUI extends javax.swing.JPanel {
             .addComponent(DynamicPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pos_PanelLayout.createSequentialGroup()
                 .addGap(75, 75, 75)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SelectivePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -392,6 +407,8 @@ public class PosGUI extends javax.swing.JPanel {
     private void jMainFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFoodActionPerformed
         // TODO add your handling code here:
         if(evt.getSource() == jMainFood){
+            setColor(jMainFood);
+            resetColor(jDrink, jSnack);
             pmf.setVisible(true);
             ps.setVisible(false);
             pd.setVisible(false);
@@ -401,6 +418,8 @@ public class PosGUI extends javax.swing.JPanel {
     private void jSnackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSnackActionPerformed
         // TODO add your handling code here:
         if(evt.getSource() == jSnack){
+            setColor(jSnack);
+            resetColor(jDrink, jMainFood);
             pmf.setVisible(false);
             ps.setVisible(true);
             pd.setVisible(false);
@@ -410,6 +429,8 @@ public class PosGUI extends javax.swing.JPanel {
     private void jDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDrinkActionPerformed
         // TODO add your handling code here:
         if(evt.getSource() == jDrink){
+            setColor(jDrink);
+            resetColor(jMainFood, jSnack);
             pmf.setVisible(false);
             ps.setVisible(false);
             pd.setVisible(true);
@@ -515,10 +536,18 @@ public class PosGUI extends javax.swing.JPanel {
         }
         return 0;
     }
+    public void setColor(JButton bt){
+        bt.setBackground(new Color(102,204,255));
+    }
+    public void resetColor(JButton bt1, JButton bt2){
+        bt1.setBackground(new Color(204,204,255));
+        bt2.setBackground(new Color(204,204,255));
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DynamicPanel;
     private javax.swing.JPanel LeftPanel;
+    private javax.swing.JPanel SelectivePanel;
     private javax.swing.JTextField jChange;
     private javax.swing.JButton jDecreseQty;
     private javax.swing.JButton jDelete;
@@ -530,7 +559,6 @@ public class PosGUI extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JButton jMainFood;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jPrice_vat;
     private javax.swing.JTextField jReceive;
     private javax.swing.JScrollPane jScrollPane1;
