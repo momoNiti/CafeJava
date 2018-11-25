@@ -13,9 +13,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import menu.FoodDrink;
-import menu.FoodMain;
-import menu.FoodSnack;
 import menu.Menu;
 
 /**
@@ -26,13 +23,11 @@ public class MenuController {
 //    ArrayList<Menu> menu = new ArrayList<Menu>();
     Database db;
     Connection conn;
-//    PreparedStatement pst;
     public MenuController(){
-        super();
         db = new Database();
         conn = db.getConnection();
     }
-    public int insertMenu(String dbName, String menuID, String name, double price){
+    public int insertMenu(String dbName, String menuID, String name, double price){ //เพิ่มเมนูอาหารใหม่
         String sql = "";
         int res = 0;
         try {
@@ -49,7 +44,7 @@ public class MenuController {
         return res;
     }
     
-    public ArrayList<Menu> getDrinkMenu(){
+    public ArrayList<Menu> getDrinkMenu(){//นำเมนูที่เก็บใน Database ออกมาเก็บเป็น arraylist
         String sql = "";
         ArrayList<Menu> myMenu = new ArrayList<Menu>();
         try {
@@ -68,7 +63,7 @@ public class MenuController {
         return myMenu;
     }
     
-    public ArrayList<Menu> getMainMenu(){
+    public ArrayList<Menu> getMainMenu(){//นำเมนูที่เก็บใน Database ออกมาเก็บเป็น arraylist
         String sql = "";
         ArrayList<Menu> myMenu = new ArrayList<Menu>();
         try {
@@ -87,7 +82,7 @@ public class MenuController {
         return myMenu;
     }
     
-    public ArrayList<Menu> getSnackMenu(){
+    public ArrayList<Menu> getSnackMenu(){//นำเมนูที่เก็บใน Database ออกมาเก็บเป็น arraylist
         String sql = "";
         ArrayList<Menu> myMenu = new ArrayList<Menu>();
         try {
@@ -106,7 +101,7 @@ public class MenuController {
         return myMenu;
     }
     
-    public int deleteMenu(String dbName, String menuID){
+    public int deleteMenu(String dbName, String menuID){//ลบเมนูอาหาร
         String sql = "";
         int res = 0;
         try {
@@ -120,7 +115,7 @@ public class MenuController {
         
         return res;
     }
-    
+    //Test
 //    public static void main(String[] args) {
 ////        MenuController run = new MenuController();
 ////        FoodDrink fd = new FoodDrink();

@@ -21,11 +21,10 @@ public class UserController{
     Connection conn;
     PreparedStatement pst;
     public UserController(){
-//        super();
         db = new Database();
         conn = db.getConnection();
     }
-    public int createAccount(User u){
+    public int createAccount(User u){ //สร้าง accout ใหม่
         int res = 0;
         String sql = "";
         
@@ -44,12 +43,11 @@ public class UserController{
         }
         catch(SQLException ex){
             ex.printStackTrace();
-//            JOptionPane.showMessageDialog(null, "Error Singup", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
         return res;
     }
-    public boolean checkLogin(User u){
+    public boolean checkLogin(User u){ // Check การ Login
         String sql = "";
         try{
             sql = "SELECT * FROM log_in WHERE uname=? and pwd=? and roles=?";
@@ -70,7 +68,6 @@ public class UserController{
         }
         catch(SQLException ex){
             ex.printStackTrace();
-//            JOptionPane.showMessageDialog(null, "Error while login", "Error", JOptionPane.ERROR_MESSAGE);
         }
         return false;
     }

@@ -30,13 +30,12 @@ public class OrderController{
     Database db;
     Connection conn;
     public OrderController(){
-        super();
         db = new Database();
         conn = db.getConnection();
         
     }
     
-    public int insertOrder(MyOrder myo){
+    public int insertOrder(MyOrder myo){ //เพิ่ม Order ลงใน Database
         Gson gson = new Gson();
         String myJson = gson.toJson(myo.getO());
         int res = 0;
