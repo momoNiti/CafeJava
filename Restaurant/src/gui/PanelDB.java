@@ -30,55 +30,18 @@ public class PanelDB extends javax.swing.JPanel {
     //table
     private Object[] row_table, column_table;
     private DefaultTableModel model;
+    
+    
     /**
      * Creates new form PanelDB
      */
     public PanelDB() {
         initComponents();
-        //graph panel and set layout
-        GridBagLayout layout = new GridBagLayout();
-        graphPanel.setLayout(layout);
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = 0;
-        c.gridy = 0;
-        
-        //get graph
         ordc = new OrderController();;
         show = new ShowDB();
-        show.setMyoDB(ordc.getDataDB()); //get data from databasse then set to this array list
-        graphPanel.add(show.getGraph(show.getPricePerDay()), c);
+        myGraph();
+        myTabel();
         
-        //table
-        column_table = new Object[4];
-        row_table = new Object[4];
-        column_table[0] = "Order ID";
-        column_table[1] = "Price include vat";
-        column_table[2] = "Order Date";
-        column_table[3] = "User";
-
-        model = new DefaultTableModel();
-        model.setColumnIdentifiers(column_table);
-        jTableDB.setModel(model);
-        ArrayList<MyOrderDB> myoDB = ordc.getDataDB();
-        for(int i=0; i<myoDB.size(); i++){
-            row_table[0] = myoDB.get(i).getOrderID();
-            row_table[1] = myoDB.get(i).getPrice_include_vat();
-            row_table[2] = myoDB.get(i).getDate();
-            row_table[3] = myoDB.get(i).getUser();
-            model.addRow(row_table);
-         }
-        
-        jTableDB.addMouseListener(new MouseAdapter() {
-            public void mousePressed(MouseEvent evt) {
-                JTable table =(JTable) evt.getSource();
-                int row = table.rowAtPoint(evt.getPoint()); //evt.getpoint() -> point -> (x,y)
-                if (evt.getClickCount() == 2 && table.getSelectedRow() != -1) { //double click on row
-                    SelectedOrder select = new SelectedOrder((int) model.getValueAt(row, 0));//send orderID
-                    select.setVisible(true);
-                    select.setLocationRelativeTo(null);
-                }
-            }
-        });
     }
 
     /**
@@ -150,4 +113,47 @@ public class PanelDB extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableDB;
     // End of variables declaration//GEN-END:variables
+
+    public void myGraph(){//graph panel and set layout
+        GridBagLayout layout = new GridBagLayout();
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        graphPanel.setLayout(layout);
+        //get graph
+        show.setMyoDB(ordc.getDataDB()); //get data from databasse then set to this array list
+        graphPanel.add(show.getGraph(show.getPricePerDay()), c);
+    }
+    public void myTabel(){
+        column_table = new Object[4];
+        row_table = new Object[4];
+        column_table[0] = "Order ID";
+        column_table[1] = "Price include vat";
+        column_table[2] = "Order Date";
+        column_table[3] = "User";
+
+        model = new DefaultTableModel();
+        model.setColumnIdentifiers(column_table);
+        jTableDB.setModel(model);
+        ArrayList<MyOrderDB> myoDB = ordc.getDataDB();
+        for(int i=0; i<myoDB.size(); i++){
+            row_table[0] = myoDB.get(i).getOrderID();
+            row_table[1] = myoDB.get(i).getPrice_include_vat();
+            row_table[2] = myoDB.get(i).getDate();
+            row_table[3] = myoDB.get(i).getUser();
+            model.addRow(row_table);
+         }
+        
+        jTableDB.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent evt) {
+                JTable table =(JTable) evt.getSource();
+                int row = table.rowAtPoint(evt.getPoint()); //evt.getpoint() -> point -> (x,y)
+                if (evt.getClickCount() == 2 && table.getSelectedRow() != -1) { //double click on row
+                    SelectedOrder select = new SelectedOrder((int) model.getValueAt(row, 0));//send orderID
+                    select.setVisible(true);
+                    select.setLocationRelativeTo(null);
+                }
+            }
+        });
+    }
 }

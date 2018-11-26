@@ -19,43 +19,15 @@ public class SelectedOrder extends javax.swing.JFrame {
     /**
      * Creates new form SelectedOrder
      */
-    private OrderController ordc;
     private int orderID;
     private int valueAt;
     //table
     private Object[] row_table, column_table;
     private DefaultTableModel model;
-    
     public SelectedOrder(int orderID) {
         initComponents();
         this.orderID = orderID;
-        ordc = new OrderController();
-        
-        //table
-        column_table = new Object[4];
-        row_table = new Object[4];
-        column_table[0] = "Name";
-        column_table[1] = "Quantity";
-        column_table[2] = "Price_each";
-        column_table[3] = "Price";
-
-        model = new DefaultTableModel();
-        model.setColumnIdentifiers(column_table);
-        jTable1.setModel(model);
-        ArrayList<MyOrderDB> myoDB = ordc.getDataDB();
-        for(int i=0; i<myoDB.size(); i++){
-            if(myoDB.get(i).getOrderID() == orderID){
-                valueAt = i;
-                break;
-            }
-        }
-        for(int i=0; i<myoDB.get(valueAt).getOdb().size(); i++){
-            row_table[0] = myoDB.get(valueAt).getOdb().get(i).getName();
-            row_table[1] = myoDB.get(valueAt).getOdb().get(i).getQuantity();
-            row_table[2] = myoDB.get(valueAt).getOdb().get(i).getPrice_each();
-            row_table[3] = myoDB.get(valueAt).getOdb().get(i).getPrice();
-            model.addRow(row_table);
-        }
+        showOrder();
     }
 
 
@@ -69,7 +41,7 @@ public class SelectedOrder extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable(){
+        jTableDetail = new javax.swing.JTable(){
             public boolean isCellEditable(int rowIndex, int colIndex) {
                 return false;   //Disallow the editing of any cell
             }
@@ -79,7 +51,7 @@ public class SelectedOrder extends javax.swing.JFrame {
         setTitle("Detail");
         setResizable(false);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableDetail.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -90,8 +62,8 @@ public class SelectedOrder extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jTableDetail);
+        jTableDetail.getTableHeader().setReorderingAllowed(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,43 +79,40 @@ public class SelectedOrder extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(SelectedOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(SelectedOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(SelectedOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(SelectedOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new SelectedOrder(row).setVisible(true);
-//            }
-//        });
-//    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableDetail;
     // End of variables declaration//GEN-END:variables
+
+    public void showOrder(){
+        OrderController ordc = new OrderController();
+        
+        //table
+        column_table = new Object[4];
+        row_table = new Object[4];
+        column_table[0] = "Name";
+        column_table[1] = "Quantity";
+        column_table[2] = "Price_each";
+        column_table[3] = "Price";
+
+        model = new DefaultTableModel();
+        model.setColumnIdentifiers(column_table);
+        jTableDetail.setModel(model);
+        //get index that have the same orderID
+        ArrayList<MyOrderDB> myoDB = ordc.getDataDB();
+        for(int i=0; i<myoDB.size(); i++){
+            if(myoDB.get(i).getOrderID() == orderID){
+                valueAt = i;
+                break;
+            }
+        }
+        //get detail to table
+        for(int i=0; i<myoDB.get(valueAt).getOdb().size(); i++){
+            row_table[0] = myoDB.get(valueAt).getOdb().get(i).getName();
+            row_table[1] = myoDB.get(valueAt).getOdb().get(i).getQuantity();
+            row_table[2] = myoDB.get(valueAt).getOdb().get(i).getPrice_each();
+            row_table[3] = myoDB.get(valueAt).getOdb().get(i).getPrice();
+            model.addRow(row_table);
+        }
+    }
 }
