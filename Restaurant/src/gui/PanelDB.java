@@ -8,7 +8,11 @@ package gui;
 import db.OrderController;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import restaurant.MyOrderDB;
 import restaurant.ShowDB;
@@ -63,6 +67,18 @@ public class PanelDB extends javax.swing.JPanel {
             row_table[3] = myoDB.get(i).getUser();
             model.addRow(row_table);
          }
+        
+        jTableDB.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent evt) {
+                JTable table =(JTable) evt.getSource();
+                int row = table.rowAtPoint(evt.getPoint()); //evt.getpoint() -> point -> (x,y)
+                if (evt.getClickCount() == 2 && table.getSelectedRow() != -1) { //double click on row
+                    SelectedOrder select = new SelectedOrder((int) model.getValueAt(row, 0));//send orderID
+                    select.setVisible(true);
+                    select.setLocationRelativeTo(null);
+                }
+            }
+        });
     }
 
     /**
@@ -105,7 +121,7 @@ public class PanelDB extends javax.swing.JPanel {
         graphPanel.setLayout(graphPanelLayout);
         graphPanelLayout.setHorizontalGroup(
             graphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 686, Short.MAX_VALUE)
+            .addGap(0, 698, Short.MAX_VALUE)
         );
         graphPanelLayout.setVerticalGroup(
             graphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +139,7 @@ public class PanelDB extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
             .addComponent(graphPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents

@@ -89,6 +89,7 @@ public class MainGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cafe' V.2");
+        setResizable(false);
 
         sidePanel.setBackground(new java.awt.Color(204, 204, 255));
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
