@@ -51,6 +51,7 @@ public class SelectedOrder extends javax.swing.JFrame {
         setTitle("Detail");
         setResizable(false);
 
+        jTableDetail.setBackground(new java.awt.Color(204, 255, 204));
         jTableDetail.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
