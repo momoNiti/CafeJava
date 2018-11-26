@@ -88,14 +88,14 @@ public class MainGUI extends javax.swing.JFrame {
         DynamicPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cafe' V.2");
+        setTitle("Happy Cafe'");
         setResizable(false);
 
         sidePanel.setBackground(new java.awt.Color(204, 204, 255));
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("ร้าน น้อยจนต้องสั่งเพิ่ม ");
-        sidePanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 51, -1, -1));
+        jLabel1.setText("Happy Cafe'");
+        sidePanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
 
         btnPOS.setBackground(new java.awt.Color(102, 204, 255));
         btnPOS.addMouseListener(new java.awt.event.MouseAdapter() {

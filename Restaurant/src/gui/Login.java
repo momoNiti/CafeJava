@@ -42,7 +42,7 @@ public class Login extends javax.swing.JFrame {
         jUsername = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cafe' V.2");
+        setTitle("Happy Cafe'");
         setBackground(new java.awt.Color(255, 204, 204));
         setResizable(false);
 
