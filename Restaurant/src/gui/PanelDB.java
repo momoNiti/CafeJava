@@ -77,6 +77,7 @@ public class PanelDB extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTableDB.setToolTipText("double click to see more detail");
         jScrollPane1.setViewportView(jTableDB);
         jTableDB.getTableHeader().setReorderingAllowed(false);
 

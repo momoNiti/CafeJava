@@ -139,14 +139,14 @@ public class PosGUI extends javax.swing.JPanel {
 
         jLabel1.setText("Price");
 
-        jDecreseQty.setText("<");
+        jDecreseQty.setText("-");
         jDecreseQty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDecreseQtyActionPerformed(evt);
             }
         });
 
-        jIncreseQty.setText(">");
+        jIncreseQty.setText("+");
         jIncreseQty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jIncreseQtyActionPerformed(evt);

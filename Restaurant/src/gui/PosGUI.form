@@ -186,7 +186,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jDecreseQty">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&lt;"/>
+                <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jDecreseQtyActionPerformed"/>
@@ -194,7 +194,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jIncreseQty">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&gt;"/>
+                <Property name="text" type="java.lang.String" value="+"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jIncreseQtyActionPerformed"/>
