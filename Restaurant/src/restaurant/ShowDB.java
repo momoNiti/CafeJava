@@ -28,6 +28,8 @@ import org.jfree.chart.labels.XYItemLabelGenerator;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
@@ -39,8 +41,13 @@ import org.jfree.data.xy.XYSeriesCollection;
 //สร้าง Graph
 public class ShowDB {
     private ArrayList<MyOrderDB> myoDB = new ArrayList<MyOrderDB>();
-    private Map map = new TreeMap(); //Because Treemap -> order of key is important;
+    
+    public ShowDB(ArrayList<MyOrderDB> myoDB){
+        this.myoDB = myoDB;
+    }
+    
     public Map getPricePerDay(){
+        Map map = new TreeMap(); //Because Treemap -> order of key is important;
         for(int i=0; i<myoDB.size(); i++){
             Timestamp time = myoDB.get(i).getDate(); //ดึงเวลาจาก database (เป็น format ของ sql)
             Date date = new Date(time.getTime()); // แปลงจาก sql เป็น Date
@@ -57,13 +64,47 @@ public class ShowDB {
         }
         return map;
     }
-//    public ArrayList<MyOrderDB> getMyoDB() {
-//        return myoDB;
-//    }
-    public void setMyoDB(ArrayList<MyOrderDB> myoDB) {
-        this.myoDB = myoDB;
+    public Map getTopMenu(){
+        Map map = new TreeMap(); //Because Treemap -> order of key is important;
+        for(int i=0; i<myoDB.size(); i++){
+            for(int j=0; j<myoDB.get(i).getOdb().size(); j++){
+                String name = myoDB.get(i).getOdb().get(j).getName();
+                if(map.containsKey(name)){
+                    int value = (int) map.get(name);
+                    value += myoDB.get(i).getOdb().get(j).getQuantity();
+                    map.put(name, value);
+                }
+                else{
+                    map.put(name, myoDB.get(i).getOdb().get(j).getQuantity());
+                }
+            }
+        }
+        return map;
     }
-    public ChartPanel getGraph(Map map){
+//    public void setMyoDB(ArrayList<MyOrderDB> myoDB) {
+//        this.myoDB = myoDB;
+//    }
+    public ChartPanel getTopMenuGraph(Map map){
+        Set set = map.entrySet(); //make map to set to get key and value from map
+        Iterator iterator = set.iterator(); //ดึงข้อมูลจาก set
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        while(iterator.hasNext()) {
+            Map.Entry mapentry = (Map.Entry)iterator.next(); // เรียก map แต่ละตัว
+            String key = (String) mapentry.getKey(); // set key ของ map (วันที่ขาย)
+            int value = (int) mapentry.getValue(); //set value ของ map (ยอดขาย)
+            dataset.addValue(value, key, "Menu");
+        }
+        
+        //สรา้ง chart 
+        JFreeChart chart = ChartFactory.createBarChart("Top Menu", "Menu name", "Quantity", dataset, PlotOrientation.VERTICAL, true, true, false);
+        chart.setBackgroundPaint(Color.red);
+        ChartPanel panel = new ChartPanel(chart); //สร้าว chartpanel
+        panel.setVisible(true); 
+        panel.setPreferredSize(new Dimension(696, 614)); //ทำให้ขนาดเท่ากับ panel ที่สร้างเอาไว้
+        return panel; //คืนค่า panel กลับ
+    }
+    
+    public ChartPanel getPricePerDayGraph(Map map){
         Set set = map.entrySet(); //make map to set to get key and value from map
         Iterator iterator = set.iterator(); //ดึงข้อมูลจาก set
 
@@ -109,7 +150,7 @@ public class ShowDB {
         panel.setDomainZoomable(true); // ทำให้ซูมได้ตามแกน X
         panel.setRangeZoomable(false); // ซูมไม่ได้ตามแกน Y
         panel.setVisible(true); 
-        panel.setPreferredSize(new Dimension(698, 616)); //ทำให้ขนาดเท่ากับ panel ที่สร้างเอาไว้
+        panel.setPreferredSize(new Dimension(696, 614)); //ทำให้ขนาดเท่ากับ panel ที่สร้างเอาไว้
         return panel; //คืนค่า panel กลับ
     }
 }

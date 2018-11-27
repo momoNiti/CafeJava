@@ -38,7 +38,7 @@ public class PanelDB extends javax.swing.JPanel {
     public PanelDB() {
         initComponents();
         ordc = new OrderController();;
-        show = new ShowDB();
+        show = new ShowDB(ordc.getDataDB());
         myGraph();
         myTabel();
         
@@ -59,7 +59,7 @@ public class PanelDB extends javax.swing.JPanel {
                 return false;   //Disallow the editing of any cell
             }
         };
-        graphPanel = new javax.swing.JPanel();
+        jGraphPane = new javax.swing.JTabbedPane();
 
         setPreferredSize(new java.awt.Dimension(1143, 616));
 
@@ -81,16 +81,7 @@ public class PanelDB extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTableDB);
         jTableDB.getTableHeader().setReorderingAllowed(false);
 
-        javax.swing.GroupLayout graphPanelLayout = new javax.swing.GroupLayout(graphPanel);
-        graphPanel.setLayout(graphPanelLayout);
-        graphPanelLayout.setHorizontalGroup(
-            graphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
-        );
-        graphPanelLayout.setVerticalGroup(
-            graphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 616, Short.MAX_VALUE)
-        );
+        jGraphPane.setPreferredSize(new java.awt.Dimension(698, 616));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -99,18 +90,18 @@ public class PanelDB extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(graphPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jGraphPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
-            .addComponent(graphPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
+            .addComponent(jGraphPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel graphPanel;
+    private javax.swing.JTabbedPane jGraphPane;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableDB;
     // End of variables declaration//GEN-END:variables
@@ -120,10 +111,13 @@ public class PanelDB extends javax.swing.JPanel {
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
-        graphPanel.setLayout(layout);
+//        jGraphPane.setLayout(layout);
         //get graph
-        show.setMyoDB(ordc.getDataDB()); //get data from databasse then set to this array list
-        graphPanel.add(show.getGraph(show.getPricePerDay()), c);
+//        show.setMyoDB(ordc.getDataDB()); //get data from databasse then set to this array list
+//        jGraphPane.add(show.getPricePerDayGraph(show.getPricePerDay()), c);
+        jGraphPane.addTab("Price per Day", show.getPricePerDayGraph(show.getPricePerDay()));
+        jGraphPane.addTab("Top Menu", show.getTopMenuGraph(show.getTopMenu()));
+        
     }
     public void myTabel(){
         column_table = new Object[4];

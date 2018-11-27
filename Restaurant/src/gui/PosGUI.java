@@ -481,8 +481,8 @@ public class PosGUI extends javax.swing.JPanel {
         }
         myo.setUser(mg.getU().getUname());
         myo.setDate(new Date());
-//        int res = oc.insertOrder(myo);
-//        if(res > 0){
+        int res = oc.insertOrder(myo);
+        if(res > 0){
             Receipt receipt = new Receipt(myo);
             try {
                 receipt.saveReceipt();
@@ -495,10 +495,10 @@ public class PosGUI extends javax.swing.JPanel {
             MainGUI run = new MainGUI(mg.getU());
             run.setVisible(true);
             run.setLocationRelativeTo(null);
-//        }
-//        else{
-//            JOptionPane.showMessageDialog(null, "Unable to insert");
-//        }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Unable to insert");
+        }
 
     }//GEN-LAST:event_jSubmitActionPerformed
 
