@@ -488,37 +488,32 @@ public class PosGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_jDecreseQtyActionPerformed
 
     private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
-
-        for (int i = 0; i < model.getRowCount(); i++) {
-            int quantity = (int) model.getValueAt(i, 0);
-            String name = (String) model.getValueAt(i, 1);
-            Double price_each = (Double) model.getValueAt(i, 2);
-            Double price = (Double) model.getValueAt(i, 3);
-            String detail = (String) model.getValueAt(i, 4);
-            myo.addFood(new Order(quantity, name, price_each, price, detail));
-        }
-        myo.setUser(mg.getU().getUname());
-        myo.setDate(new Date());
-        
         int res = 0;
-        if(!jTableInput.getText().isEmpty()){
-            if(!jReceive.getText().isEmpty()){
-                if(Double.parseDouble(jReceive.getText()) >= Double.parseDouble(jPrice_vat.getText())){
+        if (!jTableInput.getText().isEmpty()) {
+            if (!jReceive.getText().isEmpty()) {
+                if (Double.parseDouble(jReceive.getText()) >= Double.parseDouble(jPrice_vat.getText())) {
+                    for (int i = 0; i < model.getRowCount(); i++) {
+                        int quantity = (int) model.getValueAt(i, 0);
+                        String name = (String) model.getValueAt(i, 1);
+                        Double price_each = (Double) model.getValueAt(i, 2);
+                        Double price = (Double) model.getValueAt(i, 3);
+                        String detail = (String) model.getValueAt(i, 4);
+                        myo.addFood(new Order(quantity, name, price_each, price, detail));
+                    }
+                    myo.setUser(mg.getU().getUname());
+                    myo.setDate(new Date());
                     myo.setTableNumber(Integer.parseInt(jTableInput.getText()));
                     res = oc.insertOrder(myo);
-                }
-                else{
+                } else {
                     JOptionPane.showMessageDialog(null, "Plese fill recieve again", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
-            }
-            else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Plese fill recieve", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Plese fill the table", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-        
+
         if (res > 0) {
             Receipt receipt = new Receipt(myo);
             try {
