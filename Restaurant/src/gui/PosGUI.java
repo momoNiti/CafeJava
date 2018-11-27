@@ -9,6 +9,8 @@ import db.OrderController;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Date;
@@ -16,6 +18,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
@@ -66,14 +71,16 @@ public class PosGUI extends javax.swing.JPanel {
         pd.setVisible(false);
         
         //table
-        column_table = new Object[4];
+        column_table = new Object[5];
         column_table[0] = "Qty";
         column_table[1] = "Product";
         column_table[2] = "ราคาต่อจำนวน";
         column_table[3] = "ราคารวม";
+        column_table[4] = "หมายเหตุ";
         model = new DefaultTableModel();
         model.setColumnIdentifiers(column_table);
         pos_jTable.setModel(model);
+        makeTableAction();
         
     }
 
@@ -105,6 +112,7 @@ public class PosGUI extends javax.swing.JPanel {
             public boolean isCellEditable(int rowIndex, int colIndex) {
                 return false;   //Disallow the editing of any cell
             }
+
         };
         SelectivePanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -540,6 +548,24 @@ public class PosGUI extends javax.swing.JPanel {
         bt1.setBackground(new Color(204,204,255));
         bt2.setBackground(new Color(204,204,255));
     }
+    public void makeTableAction(){
+        pos_jTable.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent evt) {
+                JTable table =(JTable) evt.getSource();
+                int row = table.rowAtPoint(evt.getPoint()); //evt.getpoint() -> point -> (x,y)
+                if (evt.getClickCount() == 2 && table.getSelectedRow() != -1) { //double click on row
+                    JTextArea comment = new JTextArea();
+                    Object[] message = {
+                        "หมายเหตุ", comment
+                    };
+                    int check = JOptionPane.showConfirmDialog(null, message, "หมายเหตุ", JOptionPane.OK_CANCEL_OPTION);
+                    if(check == JOptionPane.OK_OPTION){
+                        model.setValueAt(comment.getText(), row, 4);
+                    }
+                }
+            }
+        });
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DynamicPanel;
@@ -558,7 +584,6 @@ public class PosGUI extends javax.swing.JPanel {
     private javax.swing.JButton jMainFood;
     private javax.swing.JTextField jPrice_vat;
     private javax.swing.JTextField jReceive;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jSnack;
     private javax.swing.JButton jSubmit;
