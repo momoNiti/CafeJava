@@ -15,11 +15,13 @@ public class Order {
     private String name;
     private double price;
     private double price_each;
-    public Order(int quantity, String name, double price_each, double price){
+    private String detail;
+    public Order(int quantity, String name, double price_each, double price, String detail){
         this.quantity = quantity;
         this.name = name;
         this.price = price;
         this.price_each = price_each;
+        this.detail = detail;
     }
     public int getQuantity() {
         return quantity;
@@ -51,5 +53,10 @@ public class Order {
     public void setPrice_each(double price_each) {
         this.price_each = price_each;
     }
-    
+    public String getDetail() {
+        return detail;
+    }
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
 }

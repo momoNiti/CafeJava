@@ -179,11 +179,11 @@ public class PosGUI extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Qty", "Product", "ราคาต่อจำนวน", "รวม"
+                "Qty", "Product", "ราคาต่อจำนวน", "รวม", "หมายเหตุ"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -196,6 +196,7 @@ public class PosGUI extends javax.swing.JPanel {
             pos_jTable.getColumnModel().getColumn(1).setResizable(false);
             pos_jTable.getColumnModel().getColumn(2).setResizable(false);
             pos_jTable.getColumnModel().getColumn(3).setResizable(false);
+            pos_jTable.getColumnModel().getColumn(4).setResizable(false);
         }
         pos_jTable.getTableHeader().setReorderingAllowed(false);
 
@@ -475,12 +476,13 @@ public class PosGUI extends javax.swing.JPanel {
             String name = (String) model.getValueAt(i, 1);
             Double price_each = (Double) model.getValueAt(i, 2);
             Double price = (Double) model.getValueAt(i, 3);
-            myo.addFood(new Order(quantity, name, price_each, price));
+            String detail = (String) model.getValueAt(i, 4);
+            myo.addFood(new Order(quantity, name, price_each, price, detail));
         }
         myo.setUser(mg.getU().getUname());
         myo.setDate(new Date());
-        int res = oc.insertOrder(myo);
-        if(res > 0){
+//        int res = oc.insertOrder(myo);
+//        if(res > 0){
             Receipt receipt = new Receipt(myo);
             try {
                 receipt.saveReceipt();
@@ -493,10 +495,10 @@ public class PosGUI extends javax.swing.JPanel {
             MainGUI run = new MainGUI(mg.getU());
             run.setVisible(true);
             run.setLocationRelativeTo(null);
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Unable to insert");
-        }
+//        }
+//        else{
+//            JOptionPane.showMessageDialog(null, "Unable to insert");
+//        }
 
     }//GEN-LAST:event_jSubmitActionPerformed
 

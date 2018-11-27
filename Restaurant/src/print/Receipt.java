@@ -82,6 +82,10 @@ public class Receipt{
         String line2 = String.format("  Date %-26s\n", date_formated);
         return line1 + line2;
     }
+    public String printDetailEx(String name, int quantity, double price, String detail) {
+        String line1 = String.format("  %-15.15s %5d %10.2f %-15s\n", name, quantity, price, detail);
+        return line1;
+    }
 
     public String getMyReceipt(){
         myPage = printTitle();
@@ -90,6 +94,11 @@ public class Receipt{
         }
         myPage += printTotal(myo.getPriceTotal(), myo.getPrice_vat(), myo.getPrice_include_vat(), myo.getReceive(), myo.getChange());
         myPage += printUserDetail(myo.getUser(), myo.getDate());
+        myPage += String.format("%32.32s\n", "----------------------------");
+        myPage += printTitle();
+        for(int i=0; i<myo.getO().size(); i++){
+            myPage += printDetailEx(myo.getO().get(i).getName(), myo.getO().get(i).getQuantity(), myo.getO().get(i).getPrice(), myo.getO().get(i).getDetail());
+        }
         return myPage;
     }
     
@@ -103,13 +112,14 @@ public class Receipt{
             p = new PrintWriter(oout);
             p.println(getMyReceipt());
             p.close();
-            oout.close();
-            fout.close();
+
         } catch(IOException ex) {
             System.out.println(ex.toString());
         }
         File file = new File("receipt.dat");
         Desktop desktop = Desktop.getDesktop();
-        if(file.exists()) desktop.open(file);
+        if(file.exists()){
+            desktop.open(file);
+        }
     }
 }
