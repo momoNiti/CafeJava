@@ -23,15 +23,22 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberTickUnit;
 import org.jfree.chart.axis.SymbolAxis;
+import org.jfree.chart.labels.ItemLabelAnchor;
+import org.jfree.chart.labels.ItemLabelPosition;
+import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.labels.StandardXYItemLabelGenerator;
 import org.jfree.chart.labels.XYItemLabelGenerator;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.Plot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.category.CategoryItemRenderer;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
+import org.jfree.ui.TextAnchor;
 
 /**
  *
@@ -81,22 +88,20 @@ public class ShowDB {
         }
         return map;
     }
-//    public void setMyoDB(ArrayList<MyOrderDB> myoDB) {
-//        this.myoDB = myoDB;
-//    }
+
     public ChartPanel getTopMenuGraph(Map map){
         Set set = map.entrySet(); //make map to set to get key and value from map
         Iterator iterator = set.iterator(); //ดึงข้อมูลจาก set
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         while(iterator.hasNext()) {
             Map.Entry mapentry = (Map.Entry)iterator.next(); // เรียก map แต่ละตัว
-            String key = (String) mapentry.getKey(); // set key ของ map (วันที่ขาย)
+            String key = (String) mapentry.getKey(); // set key ของ map (ชื่อเมนู)
             int value = (int) mapentry.getValue(); //set value ของ map (ยอดขาย)
-            dataset.addValue(value, key, "Menu");
+            dataset.addValue(value, key, "");
         }
         
         //สรา้ง chart 
-        JFreeChart chart = ChartFactory.createBarChart("Top Menu", "Menu name", "Quantity", dataset, PlotOrientation.VERTICAL, true, true, false);
+        JFreeChart chart = ChartFactory.createBarChart("Top Menu", "Menu name", "Quantity", dataset, PlotOrientation.VERTICAL, true, true, false); //legend tooltips url
         chart.setBackgroundPaint(Color.red);
         ChartPanel panel = new ChartPanel(chart); //สร้าว chartpanel
         panel.setVisible(true); 

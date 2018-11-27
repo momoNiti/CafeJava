@@ -556,7 +556,7 @@ public class PosGUI extends javax.swing.JPanel {
                 JTable table =(JTable) evt.getSource();
                 int row = table.rowAtPoint(evt.getPoint()); //evt.getpoint() -> point -> (x,y)
                 if (evt.getClickCount() == 2 && table.getSelectedRow() != -1) { //double click on row
-                    JTextArea comment = new JTextArea();
+                    JTextField comment = new JTextField();
                     Object[] message = {
                         "หมายเหตุ", comment
                     };
