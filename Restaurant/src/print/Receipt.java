@@ -46,12 +46,13 @@ public class Receipt{
         this.myo = myo;
     }
 
-    public String printTitle(){
+    public String printTitle(int table){
         String line1 = String.format("  %-10s%-11s%11s\n", "", "Happy Cafe'", "");
         String line2 = String.format("  %-32s\n\n", "Contact 0617689874(โม)");
-        String line3 = String.format("  %-15s %5s %10s\n", "Item", "Qty", "Price");
-        String line4 = String.format("  %-15s %5s %10s\n", "----", "---", "-----");
-        String out = line1 + line2 + line3 + line4;
+        String line3 = String.format("  %-10s%02d\n", "Table", table);
+        String line4 = String.format("  %-15s %5s %10s\n", "Item", "Qty", "Price");
+        String line5 = String.format("  %-15s %5s %10s\n", "----", "---", "-----");
+        String out = line1 + line2 + line3 + line4 + line5;
         return out;
     }
     public String printDetail(String name, int quantity, double price) {
@@ -88,14 +89,14 @@ public class Receipt{
     }
 
     public String getMyReceipt(){
-        myPage = printTitle();
+        myPage = printTitle(myo.getTableNumber());
         for(int i=0; i<myo.getO().size(); i++){
             myPage += printDetail(myo.getO().get(i).getName(), myo.getO().get(i).getQuantity(), myo.getO().get(i).getPrice());
         }
         myPage += printTotal(myo.getPriceTotal(), myo.getPrice_vat(), myo.getPrice_include_vat(), myo.getReceive(), myo.getChange());
         myPage += printUserDetail(myo.getUser(), myo.getDate());
         myPage += String.format("%32.32s\n", "----------------------------");
-        myPage += printTitle();
+        myPage += printTitle(myo.getTableNumber());
         for(int i=0; i<myo.getO().size(); i++){
             myPage += printDetailEx(myo.getO().get(i).getName(), myo.getO().get(i).getQuantity(), myo.getO().get(i).getPrice(), myo.getO().get(i).getDetail());
         }
