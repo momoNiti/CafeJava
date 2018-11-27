@@ -65,6 +65,7 @@ public class PanelMenuControll extends javax.swing.JPanel {
         };
         jAddMenu = new javax.swing.JButton();
         jDeleteMenu = new javax.swing.JButton();
+        jEditMenu = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1143, 616));
 
@@ -130,6 +131,13 @@ public class PanelMenuControll extends javax.swing.JPanel {
             }
         });
 
+        jEditMenu.setText("Edit Menu");
+        jEditMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jEditMenuActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout DynamicPanelLayout = new javax.swing.GroupLayout(DynamicPanel);
         DynamicPanel.setLayout(DynamicPanelLayout);
         DynamicPanelLayout.setHorizontalGroup(
@@ -139,7 +147,8 @@ public class PanelMenuControll extends javax.swing.JPanel {
                 .addGroup(DynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSelect_DB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jAddMenu)
-                    .addComponent(jDeleteMenu))
+                    .addComponent(jDeleteMenu)
+                    .addComponent(jEditMenu))
                 .addGap(43, 43, 43)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -152,6 +161,8 @@ public class PanelMenuControll extends javax.swing.JPanel {
                 .addComponent(jAddMenu)
                 .addGap(27, 27, 27)
                 .addComponent(jDeleteMenu)
+                .addGap(18, 18, 18)
+                .addComponent(jEditMenu)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -276,12 +287,50 @@ public class PanelMenuControll extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jDeleteMenuActionPerformed
 
+    private void jEditMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEditMenuActionPerformed
+        // TODO add your handling code here:
+        JTextField menuID = new JTextField();
+        JTextField menuName = new JTextField();
+        JTextField price = new JTextField();
+        Object[] message = {
+            "Menu ID", menuID,
+            "Menu name", menuName,
+            "Price", price
+        };
+        int check = JOptionPane.showConfirmDialog(null, message, "Edit Menu", JOptionPane.OK_CANCEL_OPTION);
+        if(check == JOptionPane.OK_OPTION){
+            if(jSelect_DB.getSelectedIndex() == 0){
+                JOptionPane.showMessageDialog(null, "Plese select your database", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                if( !menuID.getText().isEmpty() && !menuName.getText().isEmpty() && !price.getText().isEmpty() ){
+                    int res = menuctrl.editMenu(jSelect_DB.getSelectedItem().toString(), menuID.getText(), menuName.getText(), Double.parseDouble(price.getText()));
+                    if(res > 0){
+                        jSelect_DBActionPerformed(evt);
+                        User user = mg.getU();
+                        mg.dispose();
+                        MainGUI mg_new = new MainGUI(user);
+                        mg_new.setVisible(true);
+                        mg_new.setLocationRelativeTo(null);
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "No ID found", "ERROR", JOptionPane.ERROR_MESSAGE); 
+                    }                   
+                }
+                else{
+                   JOptionPane.showMessageDialog(null, "Fill your empty", "ERROR", JOptionPane.ERROR_MESSAGE); 
+                }
+            }
+        }
+    }//GEN-LAST:event_jEditMenuActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DynamicPanel;
     private javax.swing.JTable JTable_menu;
     private javax.swing.JButton jAddMenu;
     private javax.swing.JButton jDeleteMenu;
+    private javax.swing.JButton jEditMenu;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> jSelect_DB;
     private javax.swing.JScrollPane scrollPane;

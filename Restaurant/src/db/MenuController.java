@@ -115,6 +115,21 @@ public class MenuController {
         
         return res;
     }
+    public int editMenu(String dbName, String menuID, String MenuName, double price){
+        String sql = "";
+        int res = 0;
+        try {
+            sql = "UPDATE " + dbName + " set MenuName = ?, price = ? where menuID = ?";
+            PreparedStatement pst = (PreparedStatement) conn.prepareStatement(sql);
+            pst.setString(1, MenuName);
+            pst.setDouble(2, price);
+            pst.setString(3, menuID);
+            res = pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return res;
+    }
     //Test
 //    public static void main(String[] args) {
 ////        MenuController run = new MenuController();
