@@ -24,7 +24,6 @@ public class MyOrder{
     private double receive;
     private double change;
     private Timestamp date;
-    
     public double getPrice_vat() {
         DecimalFormat df = new DecimalFormat(".##");
         double out = Double.parseDouble(df.format(getPriceTotal()*vat));
