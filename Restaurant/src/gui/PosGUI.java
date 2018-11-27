@@ -101,7 +101,6 @@ public class PosGUI extends javax.swing.JPanel {
         jPrice_vat = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
         pos_jTable = new javax.swing.JTable(){
             public boolean isCellEditable(int rowIndex, int colIndex) {
                 return false;   //Disallow the editing of any cell
@@ -183,7 +182,7 @@ public class PosGUI extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(pos_jTable);
+        jScrollPane2.setViewportView(pos_jTable);
         if (pos_jTable.getColumnModel().getColumnCount() > 0) {
             pos_jTable.getColumnModel().getColumn(0).setResizable(false);
             pos_jTable.getColumnModel().getColumn(1).setResizable(false);
@@ -191,8 +190,6 @@ public class PosGUI extends javax.swing.JPanel {
             pos_jTable.getColumnModel().getColumn(3).setResizable(false);
         }
         pos_jTable.getTableHeader().setReorderingAllowed(false);
-
-        jScrollPane2.setViewportView(jScrollPane1);
 
         javax.swing.GroupLayout LeftPanelLayout = new javax.swing.GroupLayout(LeftPanel);
         LeftPanel.setLayout(LeftPanelLayout);

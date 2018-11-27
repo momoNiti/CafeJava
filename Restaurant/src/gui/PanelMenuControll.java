@@ -241,7 +241,7 @@ public class PanelMenuControll extends javax.swing.JPanel {
                         mg_new.setLocationRelativeTo(null);
                     }
                     else{
-                        JOptionPane.showMessageDialog(null, "Duplicate ID", "ERROR", JOptionPane.ERROR_MESSAGE); 
+                        JOptionPane.showMessageDialog(null, "Duplicate ID or menu name", "ERROR", JOptionPane.ERROR_MESSAGE); 
                     }                   
                 }
                 else{
@@ -314,7 +314,7 @@ public class PanelMenuControll extends javax.swing.JPanel {
                         mg_new.setLocationRelativeTo(null);
                     }
                     else{
-                        JOptionPane.showMessageDialog(null, "No ID found", "ERROR", JOptionPane.ERROR_MESSAGE); 
+                        JOptionPane.showMessageDialog(null, "No ID found or Duplicate menu name", "ERROR", JOptionPane.ERROR_MESSAGE); 
                     }                   
                 }
                 else{
