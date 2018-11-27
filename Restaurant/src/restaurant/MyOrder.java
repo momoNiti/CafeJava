@@ -24,6 +24,8 @@ public class MyOrder{
     private double receive;
     private double change;
     private Timestamp date;
+    private int tableNumber;
+
     public double getPrice_vat() {
         DecimalFormat df = new DecimalFormat(".##");
         double out = Double.parseDouble(df.format(getPriceTotal()*vat));
@@ -62,7 +64,6 @@ public class MyOrder{
             System.out.println(o.get(i).getQuantity() + " " + o.get(i).getName() + " " + o.get(i).getPrice_each() + " " + o.get(i).getPrice());
         }
     }
-
     public void setPrice_include_vat(double price_include_vat) {
         double result = price_include_vat + getPrice_vat();
         this.price_include_vat = Math.round(result);
@@ -87,4 +88,10 @@ public class MyOrder{
     public void setUser(String user) {
         this.user = user;
     }
+    public int getTableNumber() {
+        return tableNumber;
+    }
+    public void setTableNumber(int tableNumber) {
+        this.tableNumber = tableNumber;
+    }   
 }

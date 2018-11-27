@@ -5,6 +5,7 @@
  */
 package restaurant;
 
+import db.MenuController;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -18,6 +19,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import menu.FoodDrink;
+import menu.FoodMain;
+import menu.FoodSnack;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -73,6 +77,25 @@ public class ShowDB {
     }
     public Map getTopMenu(){
         Map map = new TreeMap(); //Because Treemap -> order of key is important;
+        FoodMain fm = new FoodMain();
+        FoodSnack fs = new FoodSnack();
+        FoodDrink fd = new FoodDrink();
+        MenuController menuctrl = new MenuController();
+        fm.setMyMenu(menuctrl.getMainMenu());
+        fd.setMyMenu(menuctrl.getDrinkMenu());
+        fs.setMyMenu(menuctrl.getSnackMenu());
+        for(int i=0; i<fm.getMyMenu().size(); i++){
+            String name = fm.getMyMenu().get(i).getName();
+            map.put(name, 0);
+        }
+        for(int i=0; i<fs.getMyMenu().size(); i++){
+            String name = fs.getMyMenu().get(i).getName();
+            map.put(name, 0);
+        }
+        for(int i=0; i<fd.getMyMenu().size(); i++){
+            String name = fd.getMyMenu().get(i).getName();
+            map.put(name, 0);
+        }
         for(int i=0; i<myoDB.size(); i++){
             for(int j=0; j<myoDB.get(i).getOdb().size(); j++){
                 String name = myoDB.get(i).getOdb().get(j).getName();
@@ -101,7 +124,7 @@ public class ShowDB {
         }
         
         //สรา้ง chart 
-        JFreeChart chart = ChartFactory.createBarChart("Top Menu", "Menu name", "Quantity", dataset, PlotOrientation.VERTICAL, true, true, false); //legend tooltips url
+        JFreeChart chart = ChartFactory.createBarChart("Top Menu", "Menu", "Quantity", dataset, PlotOrientation.VERTICAL, true, true, false); //legend tooltips url
         chart.setBackgroundPaint(Color.red);
         ChartPanel panel = new ChartPanel(chart); //สร้าว chartpanel
         panel.setVisible(true); 
