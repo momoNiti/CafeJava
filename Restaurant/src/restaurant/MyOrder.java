@@ -9,6 +9,8 @@ import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -25,7 +27,6 @@ public class MyOrder{
     private double change;
     private Timestamp date;
     private int tableNumber;
-
     public double getPrice_vat() {
         DecimalFormat df = new DecimalFormat(".##");
         double out = Double.parseDouble(df.format(getPriceTotal()*vat));
@@ -93,5 +94,5 @@ public class MyOrder{
     }
     public void setTableNumber(int tableNumber) {
         this.tableNumber = tableNumber;
-    }   
+    }
 }

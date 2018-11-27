@@ -19,7 +19,6 @@ import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -27,11 +26,13 @@ import javax.swing.table.DefaultTableModel;
 import print.Receipt;
 import restaurant.Order;
 import restaurant.MyOrder;
+
 /**
  *
  * @author STUDY fuckin HARD
  */
 public class PosGUI extends javax.swing.JPanel {
+
     private GridBagLayout layout = new GridBagLayout();
     private PanelMainFood pmf;
     private PanelSnack ps;
@@ -41,9 +42,10 @@ public class PosGUI extends javax.swing.JPanel {
     private Object[] row_table, column_table;
     DefaultTableModel model;
     private int selected_row;
-    
+
     MyOrder myo;
     OrderController oc;
+
     /**
      * Creates new form posGUI
      */
@@ -69,7 +71,7 @@ public class PosGUI extends javax.swing.JPanel {
         pmf.setVisible(true);
         ps.setVisible(false);
         pd.setVisible(false);
-        
+
         //table
         column_table = new Object[5];
         column_table[0] = "Qty";
@@ -81,7 +83,7 @@ public class PosGUI extends javax.swing.JPanel {
         model.setColumnIdentifiers(column_table);
         pos_jTable.setModel(model);
         makeTableAction();
-        
+
     }
 
     /**
@@ -148,6 +150,7 @@ public class PosGUI extends javax.swing.JPanel {
         });
 
         jTotal.setEditable(false);
+        jTotal.setText("0.0");
 
         jLabel1.setText("Price");
 
@@ -165,16 +168,17 @@ public class PosGUI extends javax.swing.JPanel {
             }
         });
 
-        jReceive.setText("0.0");
         jReceive.setPreferredSize(new java.awt.Dimension(6, 22));
 
         jChange.setEditable(false);
+        jChange.setText("0.0");
 
         jLabel2.setText("Receive");
 
         jLabel3.setText("Change");
 
         jPrice_vat.setEditable(false);
+        jPrice_vat.setText("0.0");
 
         jLabel4.setText("+ Vat 7%");
 
@@ -424,10 +428,10 @@ public class PosGUI extends javax.swing.JPanel {
             .addComponent(pos_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void jMainFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFoodActionPerformed
         // TODO add your handling code here:
-        if(evt.getSource() == jMainFood){
+        if (evt.getSource() == jMainFood) {
             setColor(jMainFood);
             resetColor(jDrink, jSnack);
             pmf.setVisible(true);
@@ -438,7 +442,7 @@ public class PosGUI extends javax.swing.JPanel {
 
     private void jSnackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSnackActionPerformed
         // TODO add your handling code here:
-        if(evt.getSource() == jSnack){
+        if (evt.getSource() == jSnack) {
             setColor(jSnack);
             resetColor(jDrink, jMainFood);
             pmf.setVisible(false);
@@ -449,7 +453,7 @@ public class PosGUI extends javax.swing.JPanel {
 
     private void jDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDrinkActionPerformed
         // TODO add your handling code here:
-        if(evt.getSource() == jDrink){
+        if (evt.getSource() == jDrink) {
             setColor(jDrink);
             resetColor(jMainFood, jSnack);
             pmf.setVisible(false);
@@ -462,9 +466,9 @@ public class PosGUI extends javax.swing.JPanel {
         // TODO add your handling code here:
         selected_row = pos_jTable.getSelectedRow();
         int value = (int) model.getValueAt(selected_row, 0);
-        model.setValueAt(value+1, selected_row, 0);
+        model.setValueAt(value + 1, selected_row, 0);
         double price_each = (double) model.getValueAt(selected_row, 2);
-        model.setValueAt(price_each*(value+1), selected_row, 3);
+        model.setValueAt(price_each * (value + 1), selected_row, 3);
         calculatePrice();
     }//GEN-LAST:event_jIncreseQtyActionPerformed
 
@@ -474,19 +478,18 @@ public class PosGUI extends javax.swing.JPanel {
         int value = (int) model.getValueAt(selected_row, 0);
         double price_each = (double) model.getValueAt(selected_row, 2);
 
-        if(value > 1){
-            model.setValueAt(value-1, selected_row, 0);
-            model.setValueAt(price_each*(value-1), selected_row, 3);
-        }
-        else{
+        if (value > 1) {
+            model.setValueAt(value - 1, selected_row, 0);
+            model.setValueAt(price_each * (value - 1), selected_row, 3);
+        } else {
             model.removeRow(selected_row);
         }
         calculatePrice();
     }//GEN-LAST:event_jDecreseQtyActionPerformed
 
     private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
-        
-        for(int i=0; i<model.getRowCount(); i++){
+
+        for (int i = 0; i < model.getRowCount(); i++) {
             int quantity = (int) model.getValueAt(i, 0);
             String name = (String) model.getValueAt(i, 1);
             Double price_each = (Double) model.getValueAt(i, 2);
@@ -496,9 +499,27 @@ public class PosGUI extends javax.swing.JPanel {
         }
         myo.setUser(mg.getU().getUname());
         myo.setDate(new Date());
-        myo.setTableNumber(Integer.parseInt(jTableInput.getText()));
-//        int res = oc.insertOrder(myo);
-//        if(res > 0){
+        
+        int res = 0;
+        if(!jTableInput.getText().isEmpty()){
+            if(!jReceive.getText().isEmpty()){
+                if(Double.parseDouble(jReceive.getText()) >= Double.parseDouble(jPrice_vat.getText())){
+                    myo.setTableNumber(Integer.parseInt(jTableInput.getText()));
+                    res = oc.insertOrder(myo);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Plese fill recieve again", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Plese fill recieve", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Plese fill the table", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        if (res > 0) {
             Receipt receipt = new Receipt(myo);
             try {
                 receipt.saveReceipt();
@@ -511,65 +532,68 @@ public class PosGUI extends javax.swing.JPanel {
             MainGUI run = new MainGUI(mg.getU());
             run.setVisible(true);
             run.setLocationRelativeTo(null);
-//        }
-//        else{
-//            JOptionPane.showMessageDialog(null, "Unable to insert");
-//        }
+        } else {
+            JOptionPane.showMessageDialog(null, "Unable to finish ordering");
+        }
 
     }//GEN-LAST:event_jSubmitActionPerformed
 
     private void jDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteActionPerformed
         // TODO add your handling code here:
         selected_row = pos_jTable.getSelectedRow();
-        if(selected_row>=0){
+        if (selected_row >= 0) {
             model.removeRow(selected_row);
-        }
-        else{
+        } else {
             System.out.println("Cant delete");
         }
         calculatePrice();
     }//GEN-LAST:event_jDeleteActionPerformed
 
-    public void calculatePrice(){
+    public void calculatePrice() {
         int temp = 0;
-        for(int i=0; i<model.getRowCount(); i++){
-            temp += (double)model.getValueAt(i, 3);
+        for (int i = 0; i < model.getRowCount(); i++) {
+            temp += (double) model.getValueAt(i, 3);
         }
 
         myo.setPriceTotal(temp);
         myo.setPrice_include_vat(myo.getPriceTotal());
-        
+
         DecimalFormat df = new DecimalFormat(".##");
         jTotal.setText(df.format(myo.getPriceTotal()));
         jPrice_vat.setText(df.format(myo.getPrice_include_vat()));
     }
-    public boolean checkMenu(String foodname){
-        for(int i=0; i<model.getRowCount(); i++){
-            if(model.getValueAt(i, 1).equals(foodname)){
+
+    public boolean checkMenu(String foodname) {
+        for (int i = 0; i < model.getRowCount(); i++) {
+            if (model.getValueAt(i, 1).equals(foodname)) {
                 return true;
-            }            
+            }
         }
         return false;
     }
-    public int checkRowDuplicate(String foodname){
-        for(int i=0; i<model.getRowCount(); i++){
-            if(model.getValueAt(i, 1).equals(foodname)){
+
+    public int checkRowDuplicate(String foodname) {
+        for (int i = 0; i < model.getRowCount(); i++) {
+            if (model.getValueAt(i, 1).equals(foodname)) {
                 return i;
-            }            
+            }
         }
         return 0;
     }
-    public void setColor(JButton bt){
-        bt.setBackground(new Color(102,204,255));
+
+    public void setColor(JButton bt) {
+        bt.setBackground(new Color(102, 204, 255));
     }
-    public void resetColor(JButton bt1, JButton bt2){
-        bt1.setBackground(new Color(204,204,255));
-        bt2.setBackground(new Color(204,204,255));
+
+    public void resetColor(JButton bt1, JButton bt2) {
+        bt1.setBackground(new Color(204, 204, 255));
+        bt2.setBackground(new Color(204, 204, 255));
     }
-    public void makeTableAction(){
+
+    public void makeTableAction() {
         pos_jTable.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent evt) {
-                JTable table =(JTable) evt.getSource();
+                JTable table = (JTable) evt.getSource();
                 int row = table.rowAtPoint(evt.getPoint()); //evt.getpoint() -> point -> (x,y)
                 if (evt.getClickCount() == 2 && table.getSelectedRow() != -1) { //double click on row
                     JTextField comment = new JTextField();
@@ -577,14 +601,14 @@ public class PosGUI extends javax.swing.JPanel {
                         "หมายเหตุ", comment
                     };
                     int check = JOptionPane.showConfirmDialog(null, message, "หมายเหตุ", JOptionPane.OK_CANCEL_OPTION);
-                    if(check == JOptionPane.OK_OPTION){
+                    if (check == JOptionPane.OK_OPTION) {
                         model.setValueAt(comment.getText(), row, 4);
                     }
                 }
             }
         });
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DynamicPanel;
     private javax.swing.JPanel LeftPanel;

@@ -4,20 +4,20 @@
   Table     01
   Item              Qty      Price
   ----              ---      -----
-  Mix Berry Panca     1     159.00
-  Chocolat Mousse     1     169.00
+  Nuty Waffle         1     149.00
+  Nuty Waffle         1     149.00
   --------------- -----      -----
-  Total                     328.00
-  Vat               7%:      22.96
+  Total                     149.00
+  Vat               7%:      10.43
                              -----
-  Total                     351.00
+  Total                     159.00
   --------------- -----      -----
-  Received                  600.00
+  Received                  159.00
                              -----
-  Change                    249.00
+  Change                      0.00
 
-                   User         mo
-  Date 27/11/2561 21:59          
+                   User      admin
+  Date 27/11/2561 23:15          
     ----------------------------
             Happy Cafe'           
   Contact 0617689874(โม)          
@@ -25,6 +25,6 @@
   Table     01
   Item              Qty      Price
   ----              ---      -----
-  Mix Berry Panca     1     159.00 null           
-  Chocolat Mousse     1     169.00 null           
+  Nuty Waffle         1     149.00 null           
+  Nuty Waffle         1     149.00 null           
 

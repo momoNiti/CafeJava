@@ -6,9 +6,6 @@
 package gui;
 
 import db.OrderController;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -107,14 +104,7 @@ public class PanelDB extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     public void myGraph(){//graph panel and set layout
-        GridBagLayout layout = new GridBagLayout();
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = 0;
-        c.gridy = 0;
-//        jGraphPane.setLayout(layout);
         //get graph
-//        show.setMyoDB(ordc.getDataDB()); //get data from databasse then set to this array list
-//        jGraphPane.add(show.getPricePerDayGraph(show.getPricePerDay()), c);
         jGraphPane.addTab("Price per Day", show.getPricePerDayGraph(show.getPricePerDay()));
         jGraphPane.addTab("Top Menu", show.getTopMenuGraph(show.getTopMenu()));
         
