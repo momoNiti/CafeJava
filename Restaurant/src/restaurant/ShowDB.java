@@ -52,7 +52,7 @@ public class ShowDB {
     }
     
     public Map getPricePerDay(){
-        Map map = new LinkedHashMap(); //Because Treemap -> order of key is important;
+        Map map = new LinkedHashMap();// order of key is important;
         for(int i=0; i<myoDB.size(); i++){
             Timestamp time = myoDB.get(i).getDate(); //ดึงเวลาจาก database (เป็น format ของ sql)
             Date date = new Date(time.getTime()); // แปลงจาก sql เป็น Date
@@ -70,7 +70,7 @@ public class ShowDB {
         return map;
     }
     public Map getTopMenu(){
-        Map map = new LinkedHashMap(); //Because Treemap -> order of key is important;
+        Map map = new LinkedHashMap(); //order of key is important;
         FoodMain fm = new FoodMain();
         FoodSnack fs = new FoodSnack();
         FoodDrink fd = new FoodDrink();
