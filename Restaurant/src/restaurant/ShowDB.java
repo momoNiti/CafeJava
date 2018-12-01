@@ -15,7 +15,9 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -50,7 +52,7 @@ public class ShowDB {
     }
     
     public Map getPricePerDay(){
-        Map map = new TreeMap(); //Because Treemap -> order of key is important;
+        Map map = new LinkedHashMap(); //Because Treemap -> order of key is important;
         for(int i=0; i<myoDB.size(); i++){
             Timestamp time = myoDB.get(i).getDate(); //ดึงเวลาจาก database (เป็น format ของ sql)
             Date date = new Date(time.getTime()); // แปลงจาก sql เป็น Date
@@ -68,7 +70,7 @@ public class ShowDB {
         return map;
     }
     public Map getTopMenu(){
-        Map map = new TreeMap(); //Because Treemap -> order of key is important;
+        Map map = new LinkedHashMap(); //Because Treemap -> order of key is important;
         FoodMain fm = new FoodMain();
         FoodSnack fs = new FoodSnack();
         FoodDrink fd = new FoodDrink();
