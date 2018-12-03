@@ -4,20 +4,21 @@
   Table     01
   Item              Qty      Price
   ----              ---      -----
-  Chocolat Mousse     1     169.00
-  Super Sunday        1      79.00
+  Hot Chocolate       3     297.00
+  Banana              1       9.00
+  Chocolat Lava       1      89.00
   --------------- -----      -----
-  Total                     248.00
-  Vat               7%:      17.36
+  Total                     395.00
+  Vat               7%:      27.65
                              -----
-  Total                     265.00
+  Total                     423.00
   --------------- -----      -----
-  Received                  265.00
+  Received                  423.00
                              -----
   Change                      0.00
 
                    User         mo
-  Date 01/12/2561 13:38          
+  Date 02/12/2561 01:11          
     ----------------------------
             Happy Cafe'           
   Contact 0617689874(โม)          
@@ -25,6 +26,7 @@
   Table     01
   Item              Qty      Price
   ----              ---      -----
-  Chocolat Mousse     1     169.00 null           
-  Super Sunday        1      79.00 null           
+  Hot Chocolate       3     297.00 null           
+  Banana              1       9.00 null           
+  Chocolat Lava       1      89.00 null           
 
