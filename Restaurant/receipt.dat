@@ -4,21 +4,19 @@
   Table     01
   Item              Qty      Price
   ----              ---      -----
-  Hot Chocolate       3     297.00
-  Banana              1       9.00
   Chocolat Lava       1      89.00
   --------------- -----      -----
-  Total                     395.00
-  Vat               7%:      27.65
+  Total                      89.00
+  Vat               7%:       6.23
                              -----
-  Total                     423.00
+  Total                      95.00
   --------------- -----      -----
-  Received                  423.00
+  Received                  100.00
                              -----
-  Change                      0.00
+  Change                      5.00
 
                    User         mo
-  Date 02/12/2561 01:11          
+  Date 08/12/2561 15:28          
     ----------------------------
             Happy Cafe'           
   Contact 0617689874(โม)          
@@ -26,7 +24,5 @@
   Table     01
   Item              Qty      Price
   ----              ---      -----
-  Hot Chocolate       3     297.00 null           
-  Banana              1       9.00 null           
   Chocolat Lava       1      89.00 null           
 

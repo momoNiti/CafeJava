@@ -16,29 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `food_drink`
+-- Table structure for table `log_in`
 --
 
-DROP TABLE IF EXISTS `food_drink`;
+DROP TABLE IF EXISTS `log_in`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `food_drink` (
-  `menuID` varchar(250) NOT NULL,
-  `MenuName` varchar(255) NOT NULL,
-  `price` double NOT NULL,
-  PRIMARY KEY (`menuID`),
-  UNIQUE KEY `name_UNIQUE` (`MenuName`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `log_in` (
+  `uname` varchar(50) DEFAULT NULL,
+  `pwd` varchar(50) DEFAULT NULL,
+  `roles` varchar(10) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `surname` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `food_drink`
+-- Dumping data for table `log_in`
 --
 
-LOCK TABLES `food_drink` WRITE;
-/*!40000 ALTER TABLE `food_drink` DISABLE KEYS */;
-INSERT INTO `food_drink` VALUES ('d1','GreenTea',69),('d2','Milk',55),('d3','Latte',79),('d4','Espresso',79),('d5','Juice',49),('d6','water',10),('d7','Hot Chocolate',99);
-/*!40000 ALTER TABLE `food_drink` ENABLE KEYS */;
+LOCK TABLES `log_in` WRITE;
+/*!40000 ALTER TABLE `log_in` DISABLE KEYS */;
+INSERT INTO `log_in` VALUES ('somjuk','somjuk','cashier','Nantasiri','Maungthong','60070040@kmitl.ac.th'),('mo','mo','cashier','Niti','Jirakarnwutikrai','60070041@kmitl.ac.th'),('admin','admin','admin','adminName','adminSurName','admin@email.com');
+/*!40000 ALTER TABLE `log_in` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-26 17:29:05
+-- Dump completed on 2018-12-08 15:34:11

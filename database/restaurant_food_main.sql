@@ -16,15 +16,15 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `food_snack`
+-- Table structure for table `food_main`
 --
 
-DROP TABLE IF EXISTS `food_snack`;
+DROP TABLE IF EXISTS `food_main`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `food_snack` (
+CREATE TABLE `food_main` (
   `menuID` varchar(250) NOT NULL,
-  `MenuName` varchar(255) NOT NULL,
+  `MenuName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `price` double NOT NULL,
   PRIMARY KEY (`menuID`),
   UNIQUE KEY `name_UNIQUE` (`MenuName`)
@@ -32,13 +32,13 @@ CREATE TABLE `food_snack` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `food_snack`
+-- Dumping data for table `food_main`
 --
 
-LOCK TABLES `food_snack` WRITE;
-/*!40000 ALTER TABLE `food_snack` DISABLE KEYS */;
-INSERT INTO `food_snack` VALUES ('sn1','Cupcake',80),('sn2','Frenchfries',60),('sn3','Frenchfries Cheese',79),('sn4','Cookies',55),('sn5','Mash Potato',60),('sn6','Mash Potato Cheese',89),('sn7','Banana',9);
-/*!40000 ALTER TABLE `food_snack` ENABLE KEYS */;
+LOCK TABLES `food_main` WRITE;
+/*!40000 ALTER TABLE `food_main` DISABLE KEYS */;
+INSERT INTO `food_main` VALUES ('m1','GreenTea Lava',89),('m2','Honey Toast',189),('m3','Mix Berry Pancake',159),('m4','Nuty Waffle',149),('m5','Super Sunday',79),('m6','Chocolat Mousse Cake',169),('m7','Chocolat Lava',89);
+/*!40000 ALTER TABLE `food_main` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-26 17:29:04
+-- Dump completed on 2018-12-08 15:34:11
