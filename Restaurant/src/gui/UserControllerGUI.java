@@ -250,8 +250,7 @@ public class UserControllerGUI extends javax.swing.JPanel {
 
     private void jEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEditActionPerformed
         // TODO add your handling code here:
-
-        JTextField username = new JTextField((String) jTableDB.getValueAt(jTableDB.getSelectedRow(), 0));
+        JTextField username = new JTextField();
         username.setEditable(false);
         JTextField name = new JTextField();
         JTextField surname = new JTextField();
@@ -263,22 +262,28 @@ public class UserControllerGUI extends javax.swing.JPanel {
             "Email", email
         };
         int check = JOptionPane.showConfirmDialog(null, message, "Edit Detail of User", JOptionPane.OK_CANCEL_OPTION);
-        if (check == JOptionPane.OK_OPTION) {
-            if (!username.getText().isEmpty() && !name.getText().isEmpty() && !surname.getText().isEmpty() && !email.getText().isEmpty()) {
-                int res = uc.editUser(username.getText(), name.getText(), surname.getText(), email.getText());
-                if (res > 0) {
-                    User user = mg.getU();
-                    mg.dispose();
-                    MainGUI mg_new = new MainGUI(user);
-                    mg_new.setVisible(true);
-                    mg_new.setLocationRelativeTo(null);
+        if (jTableDB.getSelectedRow() >= 0) {
+            username.setText((String) jTableDB.getValueAt(jTableDB.getSelectedRow(), 0));
+            if (check == JOptionPane.OK_OPTION) {
+                if (!username.getText().isEmpty() && !name.getText().isEmpty() && !surname.getText().isEmpty() && !email.getText().isEmpty()) {
+                    int res = uc.editUser(username.getText(), name.getText(), surname.getText(), email.getText());
+                    if (res > 0) {
+                        User user = mg.getU();
+                        mg.dispose();
+                        MainGUI mg_new = new MainGUI(user);
+                        mg_new.setVisible(true);
+                        mg_new.setLocationRelativeTo(null);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No User found", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
                 } else {
-                    JOptionPane.showMessageDialog(null, "No User found", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Fill your empty", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
-            } else {
-                JOptionPane.showMessageDialog(null, "Fill your empty", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Select row fist", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
+
     }//GEN-LAST:event_jEditActionPerformed
 
     private void jDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteActionPerformed
