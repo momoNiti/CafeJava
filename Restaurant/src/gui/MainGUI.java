@@ -18,7 +18,7 @@ import restaurant.User;
 public class MainGUI extends javax.swing.JFrame {
     private GridBagLayout layout = new GridBagLayout();
     private PosGUI pos;
-    private SignUpGUI sign;
+    private UserControllerGUI userCtrl;
     private PanelDB pDB;
     private PanelMenuControll pmc;
     
@@ -30,7 +30,7 @@ public class MainGUI extends javax.swing.JFrame {
         this.u = u;
         initComponents();
         pos = new PosGUI(this);
-        sign = new SignUpGUI(this);
+        userCtrl = new UserControllerGUI(this);
         pDB = new PanelDB();
         pmc = new PanelMenuControll(this);
         //Dynamic Panel and set layout
@@ -39,14 +39,14 @@ public class MainGUI extends javax.swing.JFrame {
         c.gridx = 0;
         c.gridy = 0;
         DynamicPanel.add(pos, c);
-        DynamicPanel.add(sign, c);
+        DynamicPanel.add(userCtrl, c);
         DynamicPanel.add(pDB, c);
         DynamicPanel.add(pmc, c);
         //set panel default visible
         pos.setVisible(true);
         btnPOS_color.setOpaque(true);
         setColor(btnPOS);
-        sign.setVisible(false);
+        userCtrl.setVisible(false);
         pDB.setVisible(false);
         pmc.setVisible(false);
         //hide cashier menu
@@ -270,7 +270,7 @@ public class MainGUI extends javax.swing.JFrame {
 
         pos.setVisible(false);
         pDB.setVisible(false);
-        sign.setVisible(true);
+        userCtrl.setVisible(true);
         pmc.setVisible(false);
     }//GEN-LAST:event_btnSignUpMouseClicked
 
@@ -294,7 +294,7 @@ public class MainGUI extends javax.swing.JFrame {
 
         pos.setVisible(false);
         pDB.setVisible(false);
-        sign.setVisible(false);
+        userCtrl.setVisible(false);
         pmc.setVisible(true);
     }//GEN-LAST:event_btnMenuControllerMouseClicked
 
@@ -312,7 +312,7 @@ public class MainGUI extends javax.swing.JFrame {
 
         pos.setVisible(false);
         pDB.setVisible(true);
-        sign.setVisible(false);
+        userCtrl.setVisible(false);
         pmc.setVisible(false);
     }//GEN-LAST:event_btnDBMouseClicked
 
@@ -330,7 +330,7 @@ public class MainGUI extends javax.swing.JFrame {
 
         pos.setVisible(true);
         pDB.setVisible(false);
-        sign.setVisible(false);
+        userCtrl.setVisible(false);
         pmc.setVisible(false);
     }//GEN-LAST:event_btnPOSMouseClicked
     public void setColor(JPanel panel){

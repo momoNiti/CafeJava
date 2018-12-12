@@ -12,7 +12,7 @@ package restaurant;
 //สิ่งที่ User จะต้องมี
 public class User {
     private String uname, pwd, roles, name, surname, email;
-    
+
 	public String getUname() {
 		return uname;
 	}

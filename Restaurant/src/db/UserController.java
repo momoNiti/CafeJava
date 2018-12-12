@@ -9,6 +9,7 @@ import com.mysql.jdbc.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import restaurant.User;
 
@@ -70,6 +71,39 @@ public class UserController{
             ex.printStackTrace();
         }
         return false;
+    }
+    
+    public ArrayList<User> getAllUser(){ //ดึงข้อมูลจาก DataBase ทั้งหมด
+        ArrayList<User> user = new ArrayList<User>();
+        String sql = "";
+        try{
+            sql = "SELECT * FROM restaurant.log_in";
+            PreparedStatement pst = (PreparedStatement) conn.prepareCall(sql);
+            ResultSet rs = pst.executeQuery();
+            while(rs.next()){
+                String username = rs.getString(1);
+                String password = rs.getString(2);
+                String role = rs.getString(3);
+                String realname = rs.getString(4);
+                String surname = rs.getString(5);
+                String email = rs.getString(6);
+      
+                User temp = new User();
+                temp.setUname(username);
+                temp.setPwd(password);
+                temp.setRoles(role);
+                temp.setName(realname);
+                temp.setSurname(surname);
+                temp.setEmail(email);
+                user.add(temp);
+            }
+            pst.close();
+            return user;
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error while getting data from Database", "Error", JOptionPane.ERROR_MESSAGE);       
+        }
+        return user;
     }
 
 }
