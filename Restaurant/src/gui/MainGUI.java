@@ -220,7 +220,7 @@ public class MainGUI extends javax.swing.JFrame {
 
         btnSignUp.add(btnSignUp_color, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 10, -1));
 
-        jLabel3.setText("SignUp");
+        jLabel3.setText("User Controll");
         btnSignUp.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
 
         sidePanel.add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 226, -1));

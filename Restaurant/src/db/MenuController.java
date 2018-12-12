@@ -130,26 +130,4 @@ public class MenuController {
         }
         return res;
     }
-    //Test
-//    public static void main(String[] args) {
-////        MenuController run = new MenuController();
-////        FoodDrink fd = new FoodDrink();
-////        fd.setMyMenu(run.getDrinkMenu());
-////        for(int i=0; i<fd.getMyMenu().size(); i++){
-////            System.out.println(fd.getMyMenu().get(i).getName() + " : " + fd.getMyMenu().get(i).getPrice());
-////        }
-////        System.out.println("------------");
-////        FoodMain fm = new FoodMain();
-////        fm.setMyMenu(run.getMainMenu());
-////        for(int i=0; i<fm.getMyMenu().size(); i++){
-////            System.out.println(fm.getMyMenu().get(i).getName() + " : " + fm.getMyMenu().get(i).getPrice());
-////        }
-////        System.out.println("------------");
-////        FoodSnack fs = new FoodSnack();
-////        fs.setMyMenu(run.getSnackMenu());
-////        for(int i=0; i<fs.getMyMenu().size(); i++){
-////            System.out.println(fs.getMyMenu().get(i).getName() + " : " + fs.getMyMenu().get(i).getPrice());
-////        }
-//        
-//    }
 }

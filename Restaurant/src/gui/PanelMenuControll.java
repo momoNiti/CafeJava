@@ -258,7 +258,7 @@ public class PanelMenuControll extends javax.swing.JPanel {
             "Menu ID", menuID
         };
         JOptionPane.showMessageDialog(null, "This is DELTE MENU Function !!", "WARNING", JOptionPane.WARNING_MESSAGE);
-        int check = JOptionPane.showConfirmDialog(null, message, "Delete new Menu", JOptionPane.OK_CANCEL_OPTION);
+        int check = JOptionPane.showConfirmDialog(null, message, "Delete Menu", JOptionPane.OK_CANCEL_OPTION);
         if(check == JOptionPane.OK_OPTION){
             if(jSelect_DB.getSelectedIndex() == 0){
                 JOptionPane.showMessageDialog(null, "Plese select your database", "ERROR", JOptionPane.ERROR_MESSAGE);

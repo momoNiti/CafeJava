@@ -8,6 +8,7 @@ package gui;
 import db.UserController;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import restaurant.MyOrderDB;
 import restaurant.User;
@@ -57,9 +58,11 @@ public class UserControllerGUI extends javax.swing.JPanel {
         label_surname = new javax.swing.JLabel();
         label_realname = new javax.swing.JLabel();
         label_role = new javax.swing.JLabel();
-        submit = new javax.swing.JButton();
+        jSignUp = new javax.swing.JButton();
         label_username = new javax.swing.JLabel();
         label_password = new javax.swing.JLabel();
+        jEdit = new javax.swing.JButton();
+        jDelete = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 204, 204));
         setPreferredSize(new java.awt.Dimension(1143, 616));
@@ -99,11 +102,11 @@ public class UserControllerGUI extends javax.swing.JPanel {
         label_role.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         label_role.setText("Role");
 
-        submit.setText("Submit");
-        submit.setPreferredSize(new java.awt.Dimension(91, 49));
-        submit.addActionListener(new java.awt.event.ActionListener() {
+        jSignUp.setText("Sign up");
+        jSignUp.setPreferredSize(new java.awt.Dimension(91, 49));
+        jSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitActionPerformed(evt);
+                jSignUpActionPerformed(evt);
             }
         });
 
@@ -112,6 +115,22 @@ public class UserControllerGUI extends javax.swing.JPanel {
 
         label_password.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         label_password.setText("Password");
+
+        jEdit.setText("Edit");
+        jEdit.setPreferredSize(new java.awt.Dimension(91, 49));
+        jEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jEditActionPerformed(evt);
+            }
+        });
+
+        jDelete.setText("Delete");
+        jDelete.setPreferredSize(new java.awt.Dimension(91, 49));
+        jDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -139,50 +158,62 @@ public class UserControllerGUI extends javax.swing.JPanel {
                                 .addComponent(jEmail, javax.swing.GroupLayout.Alignment.TRAILING)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(120, 120, 120)
                         .addComponent(label_signup)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(label_signup)
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(label_signup)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_username))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(label_password)
+                            .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRoles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_role))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(label_realname)
+                            .addComponent(jRealName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(label_surname)
+                            .addComponent(jRealSurname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(label_email)
+                            .addComponent(jEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_username))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_password)
-                    .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRoles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_role))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_realname)
-                    .addComponent(jRealName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_surname)
-                    .addComponent(jRealSurname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_email)
-                    .addComponent(jEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
+                    .addComponent(jDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+    private void jSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSignUpActionPerformed
         String uname = jUsername.getText();
         String pwd = jPassword.getText();
         String roles = jRoles.getSelectedItem().toString();
@@ -190,7 +221,7 @@ public class UserControllerGUI extends javax.swing.JPanel {
         String surname = jRealSurname.getText();
         String email = jEmail.getText();
         if(uname.equals(null)|| pwd.equals(null) || roles.equals("Select") || name.equals(null) || surname.equals(null) || email.equals(null)){
-            JOptionPane.showMessageDialog(null, "Fill again please");
+            JOptionPane.showMessageDialog(null, "Fill your empty");
         }
         else{
             User u  = new User();
@@ -216,7 +247,70 @@ public class UserControllerGUI extends javax.swing.JPanel {
 
         }
 
-    }//GEN-LAST:event_submitActionPerformed
+    }//GEN-LAST:event_jSignUpActionPerformed
+
+    private void jEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEditActionPerformed
+        // TODO add your handling code here:
+        JTextField username = new JTextField();
+        JTextField name = new JTextField();
+        JTextField surname = new JTextField();
+        JTextField email = new JTextField();
+        Object[] message = {
+            "Username", username,
+            "Name", name,
+            "Surname", surname,
+            "Email", email
+        };
+        int check = JOptionPane.showConfirmDialog(null, message, "Edit Detail of User", JOptionPane.OK_CANCEL_OPTION);
+        if(check == JOptionPane.OK_OPTION){
+                if( !username.getText().isEmpty() && !name.getText().isEmpty() && !surname.getText().isEmpty() && !email.getText().isEmpty() ){
+                    int res = uc.editUser(username.getText(), name.getText(), surname.getText(), email.getText());
+                    if(res > 0){
+                        User user = mg.getU();
+                        mg.dispose();
+                        MainGUI mg_new = new MainGUI(user);
+                        mg_new.setVisible(true);
+                        mg_new.setLocationRelativeTo(null);
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "No User found", "ERROR", JOptionPane.ERROR_MESSAGE); 
+                    }                   
+                }
+                else{
+                   JOptionPane.showMessageDialog(null, "Fill your empty", "ERROR", JOptionPane.ERROR_MESSAGE); 
+                }
+            }
+    }//GEN-LAST:event_jEditActionPerformed
+
+    private void jDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteActionPerformed
+        // TODO add your handling code here:
+        JTextField uname = new JTextField();
+        Object[] message = {
+            "Username", uname
+        };
+        JOptionPane.showMessageDialog(null, "This is DELTE User Function !!", "WARNING", JOptionPane.WARNING_MESSAGE);
+        int check = JOptionPane.showConfirmDialog(null, message, "Delete User", JOptionPane.OK_CANCEL_OPTION);
+        if(check == JOptionPane.OK_OPTION){
+ 
+                if(!uname.getText().isEmpty()){
+                    int res = uc.deleteUser(uname.getText());
+                    if(res > 0){
+                        User user = mg.getU();
+                        MainGUI mg_new = new MainGUI(user);
+                        mg_new.setVisible(true);
+                        mg_new.setLocationRelativeTo(null); 
+                        mg.dispose();
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "No User Found", "ERROR", JOptionPane.ERROR_MESSAGE); 
+                    } 
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Fill your empty", "ERROR", JOptionPane.ERROR_MESSAGE); 
+                }
+            
+        }
+    }//GEN-LAST:event_jDeleteActionPerformed
     public void getAllUser(){
         column_table = new Object[6];
         row_table = new Object[6];
@@ -244,12 +338,15 @@ public class UserControllerGUI extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jDelete;
+    private javax.swing.JButton jEdit;
     private javax.swing.JTextField jEmail;
     private javax.swing.JTextField jPassword;
     private javax.swing.JTextField jRealName;
     private javax.swing.JTextField jRealSurname;
     private javax.swing.JComboBox<String> jRoles;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jSignUp;
     private javax.swing.JTable jTableDB;
     private javax.swing.JTextField jUsername;
     private javax.swing.JLabel label_email;
@@ -259,6 +356,5 @@ public class UserControllerGUI extends javax.swing.JPanel {
     private javax.swing.JLabel label_signup;
     private javax.swing.JLabel label_surname;
     private javax.swing.JLabel label_username;
-    private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import restaurant.User;
 
@@ -105,5 +107,35 @@ public class UserController{
         }
         return user;
     }
-
+    
+    public int deleteUser(String username){//User
+        String sql = "";
+        int res = 0;
+        try {
+            sql = "Delete from log_in where uname = ?";
+            PreparedStatement pst = (PreparedStatement) conn.prepareStatement(sql);
+            pst.setString(1, username);
+            res = pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return res;
+    }
+    public int editUser(String username, String name, String surname, String email){
+        String sql = "";
+        int res = 0;
+        try {
+            sql = "UPDATE log_in set name = ?, surname = ?, email = ? where uname = ?";
+            PreparedStatement pst = (PreparedStatement) conn.prepareStatement(sql);
+            pst.setString(1, name);
+            pst.setString(2, surname);
+            pst.setString(3, email);
+            pst.setString(4, username);
+            res = pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return res;
+    }
 }
