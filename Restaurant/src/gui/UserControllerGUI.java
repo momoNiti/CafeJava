@@ -80,7 +80,6 @@ public class UserControllerGUI extends javax.swing.JPanel {
 
             }
         ));
-        jTableDB.setToolTipText("double click to see more detail");
         jScrollPane1.setViewportView(jTableDB);
         jTableDB.getTableHeader().setReorderingAllowed(false);
 
@@ -252,7 +251,9 @@ public class UserControllerGUI extends javax.swing.JPanel {
 
     private void jEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEditActionPerformed
         // TODO add your handling code here:
-        JTextField username = new JTextField();
+        
+        JTextField username = new JTextField((String) jTableDB.getValueAt(jTableDB.getSelectedRow(), 0));
+        username.setEditable(false);
         JTextField name = new JTextField();
         JTextField surname = new JTextField();
         JTextField email = new JTextField();
