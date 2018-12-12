@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import restaurant.MyOrderDB;
 import restaurant.User;
 
 /**
