@@ -39,7 +39,7 @@ CREATE TABLE `log_in` (
 
 LOCK TABLES `log_in` WRITE;
 /*!40000 ALTER TABLE `log_in` DISABLE KEYS */;
-INSERT INTO `log_in` VALUES ('somjuk','somjuk','cashier','Nantasiri','Maungthong','60070040@kmitl.ac.th'),('mo','mo','cashier','Niti','Jirakarnwutikrai','60070041@kmitl.ac.th'),('admin','admin','admin','adminName','adminSurName','admin@email.com');
+INSERT INTO `log_in` VALUES ('mo','mo','cashier','Niti','Jirakarnwuttikrai','60070041@kmitl.ac.th'),('admin','admin','admin','adminName','adminSurName','admin@email.com');
 /*!40000 ALTER TABLE `log_in` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-08 15:34:11
+-- Dump completed on 2018-12-12 15:48:03
