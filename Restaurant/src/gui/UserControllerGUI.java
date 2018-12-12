@@ -250,7 +250,11 @@ public class UserControllerGUI extends javax.swing.JPanel {
 
     private void jEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEditActionPerformed
         // TODO add your handling code here:
-        JTextField username = new JTextField();
+        String tempusername = "";
+        if(jTableDB.getSelectedRow()>=0){
+            tempusername = (String) jTableDB.getValueAt(jTableDB.getSelectedRow(), 0);
+        }
+        JTextField username = new JTextField(tempusername);
         username.setEditable(false);
         JTextField name = new JTextField();
         JTextField surname = new JTextField();
@@ -263,7 +267,6 @@ public class UserControllerGUI extends javax.swing.JPanel {
         };
         int check = JOptionPane.showConfirmDialog(null, message, "Edit Detail of User", JOptionPane.OK_CANCEL_OPTION);
         if (jTableDB.getSelectedRow() >= 0) {
-            username.setText((String) jTableDB.getValueAt(jTableDB.getSelectedRow(), 0));
             if (check == JOptionPane.OK_OPTION) {
                 if (!username.getText().isEmpty() && !name.getText().isEmpty() && !surname.getText().isEmpty() && !email.getText().isEmpty()) {
                     int res = uc.editUser(username.getText(), name.getText(), surname.getText(), email.getText());
